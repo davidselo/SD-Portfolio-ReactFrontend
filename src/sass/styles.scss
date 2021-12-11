@@ -1,5 +1,5 @@
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@import './colors.scss';
+
+.body {
+    background-color: red;
 }
