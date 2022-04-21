@@ -13,6 +13,9 @@ const webpackConfig = (): Configuration => ({
     resolve: {
         extensions: ['.ts', '.tsx', '.js'],
         plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })],
+        alias: {
+            components: path.resolve(__dirname, 'src/components/')
+        }
     },
     output: {
         path: path.join(__dirname, '/build'),
@@ -63,5 +66,7 @@ const webpackConfig = (): Configuration => ({
         }),
     ],
 });
+
+console.log("Patata", path.resolve(__dirname, 'src/components/'));
 
 export default webpackConfig;

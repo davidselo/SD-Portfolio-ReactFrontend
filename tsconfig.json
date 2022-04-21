@@ -12,7 +12,8 @@
     "resolveJsonModule": true,
     "downlevelIteration": true,
     "paths": {
-      "*": ["src/*"]
+      "*": ["src/*"],
+      "components/*": ["src/components/*"],
     },
     "lib": [
       "esnext",

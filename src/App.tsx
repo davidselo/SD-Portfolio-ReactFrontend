@@ -1,6 +1,6 @@
 import React from 'react';
-import { Header } from './components/Header/Header';
-import HeadlessHtml from './components/HeadlessHtml';
+import { Header } from 'components/Header/Header';
+import HeadlessHtml from 'components/HeadlessHtml';
 
 
 import './sass/styles.scss';
