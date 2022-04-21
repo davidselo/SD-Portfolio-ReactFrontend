@@ -24,6 +24,7 @@
   },
   "exclude": ["node_modules", "build"],
   "include": [
-    "./src",
+    "src/**/*.ts",
+    "tests/**/*.ts",
     "webpack.config.ts" ]
 }
