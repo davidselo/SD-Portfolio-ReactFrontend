@@ -7,7 +7,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "allowJs": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "downlevelIteration": true,
@@ -26,6 +26,7 @@
   "exclude": ["node_modules", "build"],
   "include": [
     "src/**/*.ts",
+    "src/**/*.tsx",
     "tests/**/*.ts",
     "webpack.config.ts" ]
 }
