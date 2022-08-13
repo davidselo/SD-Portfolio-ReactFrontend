@@ -1,8 +1,8 @@
 import React from 'react';
 // import { Header } from 'components/Header/Header';
-import HomeBanner from 'components/HomeBanner/Index';
-import HeadlessHtml from 'components/HeadlessHtml/Index';
-import Header from 'components/Header/Index';
+import HomeBanner from 'components/HomeBanner';
+import HeadlessHtml from 'components/HeadlessHtml';
+import Header from 'components/Header';
 
 import './sass/styles.scss';
 
