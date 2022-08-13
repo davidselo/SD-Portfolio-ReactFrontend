@@ -1,6 +1,6 @@
 export interface Skills {
-    introductionSkills: Array<SkillItem>
+    introductionSkills: Array<SkillItem>;
 }
 interface SkillItem {
-    description: string
+    description: string;
 }
