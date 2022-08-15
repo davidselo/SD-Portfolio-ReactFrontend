@@ -1,0 +1,13 @@
+@import '../../sass/styles.scss';
+
+@media (min-width: $mobile) {
+    .header--menu-items {
+      display: none;
+    }
+  }
+  @media (min-width: $tablet) {
+    .header--menu-items {
+      display: block;
+    }
+  }
+

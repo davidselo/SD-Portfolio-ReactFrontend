@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Avatar from '@material-ui/core/Avatar';
+import './styles.scss';
 
 // @todo: to get this data from Keystone. Define types too.
 const navigationLinks = [
@@ -18,6 +19,13 @@ const useStyles = makeStyles((theme) => ({
     link: {
         marginRight: 20,
     },
+    avatar: {
+        marginRight: 'auto',
+        color: 'white',
+        backgroundColor: 'black',
+        borderRadius: 0,
+        height: 30,
+    },
 }));
 
 const Header: React.FC = () => {
@@ -26,18 +34,20 @@ const Header: React.FC = () => {
         <AppBar position="sticky" color="default">
             <Container maxWidth="md">
                 <ToolBar disableGutters>
-                    <Avatar>DS</Avatar>
-                    {navigationLinks.map((item) => (
-                        // eslint-disable-next-line react/jsx-key
-                        <Link
-                            className={styles.link}
-                            color="textPrimary"
-                            variant="button"
-                            component="button"
-                            underline="none">
-                            {item.name}
-                        </Link>
-                    ))}
+                    <Avatar className={styles.avatar}>DS</Avatar>
+                    <div className="header--menu-items">
+                        {navigationLinks.map((item) => (
+                            // eslint-disable-next-line react/jsx-key
+                            <Link
+                                className={styles.link}
+                                color="textPrimary"
+                                variant="button"
+                                component="button"
+                                underline="none">
+                                {item.name}
+                            </Link>
+                        ))}
+                    </div>
                 </ToolBar>
             </Container>
         </AppBar>
