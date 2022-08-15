@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Link from '@material-ui/core/Link';
 import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Avatar from '@material-ui/core/Avatar';
+import MenuIcon from '@mui/icons-material/Menu';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import Divider from '@material-ui/core/Divider';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
 import './styles.scss';
 
 // @todo: to get this data from Keystone. Define types too.
@@ -30,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header: React.FC = () => {
     const styles = useStyles();
+    const [open,setOpen] = useState(false);
     return (
         <AppBar position="sticky" color="default">
             <Container maxWidth="md">
@@ -48,8 +55,37 @@ const Header: React.FC = () => {
                             </Link>
                         ))}
                     </div>
+                    <div className="header--burger-menu">
+                        <MenuIcon onClick={() => setOpen(true)} />
+                    </div>
                 </ToolBar>
             </Container>
+            <SwipeableDrawer
+                open={open}
+                anchor="right"
+                onOpen={() => setOpen(true)}
+                onClose={() => setOpen(false)}>
+                <div>
+                    <ChevronRightIcon onClick={() => setOpen(false)} />
+                </div>
+                <Divider />
+                {/* @todo: Create a function/helper to retrieve the links. DRY */}
+                <List>
+                    {navigationLinks.map((item) => (
+                        // eslint-disable-next-line react/jsx-key
+                        <ListItem>
+                            <Link
+                                className={styles.link}
+                                color="textPrimary"
+                                variant="button"
+                                component="button"
+                                underline="none">
+                                {item.name}
+                            </Link>
+                        </ListItem>
+                    ))}
+                </List>
+            </SwipeableDrawer>
         </AppBar>
     );
 };
