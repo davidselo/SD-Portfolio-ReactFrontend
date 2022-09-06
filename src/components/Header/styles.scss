@@ -2,20 +2,19 @@
 
 @media (min-width: $mobile) {
     .header--menu-items {
-      display: none;
+        display: none;
     }
 
-    .header--burger-menu{
-      display: block;
+    .header--burger-menu {
+        display: block;
     }
-  }
-  @media (min-width: $tablet) {
+}
+@media (min-width: $tablet) {
     .header--menu-items {
-      display: block;
+        display: block;
     }
-    
-    .header--burger-menu{
-      display: none;
-    }
-  }
 
+    .header--burger-menu {
+        display: none;
+    }
+}

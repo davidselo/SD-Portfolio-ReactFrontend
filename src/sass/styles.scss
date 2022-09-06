@@ -1,11 +1,12 @@
 @import './colors.scss';
 @import './screen-breakpoints.scss';
 
-.body {
-    background-color: red;
+body {
+    margin: 0;
 }
 
-#root{
-    font-family: cera-round-pro, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+#root {
+    font-family: cera-round-pro, 'Helvetica Neue', 'Helvetica', 'Arial',
+        sans-serif;
     font-size: 18px;
 }

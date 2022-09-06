@@ -11,13 +11,15 @@ import Divider from '@material-ui/core/Divider';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import './styles.scss';
+// import './styles.scss';
+import Box from '@mui/material/Box';
 
 // @todo: to get this data from Keystone. Define types too.
 const navigationLinks = [
     {name: 'About', href: '/about'},
     {name: 'Projects', href: '/projects'},
     {name: 'Resume', href: '/resume'},
+    {name: 'Contact', href: '/resume'},
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -36,30 +38,53 @@ const useStyles = makeStyles((theme) => ({
 
 const Header: React.FC = () => {
     const styles = useStyles();
-    const [open,setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
     return (
         <AppBar position="sticky" color="default">
             <Container maxWidth="md">
                 <ToolBar disableGutters>
                     <Avatar className={styles.avatar}>DS</Avatar>
-                    <div className="header--menu-items">
-                        {navigationLinks.map((item) => (
-                            // eslint-disable-next-line react/jsx-key
-                            <Link
-                                className={styles.link}
-                                color="textPrimary"
-                                variant="button"
-                                component="button"
-                                underline="none">
-                                {item.name}
-                            </Link>
-                        ))}
-                    </div>
-                    <div className="header--burger-menu">
-                        <MenuIcon onClick={() => setOpen(true)} />
-                    </div>
+                    <Box
+                        component="div"
+                        sx={{
+                            display: {
+                                xl: 'block',
+                                lg: 'block',
+                                md: 'block',
+                                xs: 'none',
+                            },
+                        }}>
+                        <div className="header--menu-items">
+                            {navigationLinks.map((item) => (
+                                // eslint-disable-next-line react/jsx-key
+                                <Link
+                                    className={styles.link}
+                                    color="textPrimary"
+                                    variant="button"
+                                    component="button"
+                                    underline="none">
+                                    {item.name}
+                                </Link>
+                            ))}
+                        </div>
+                    </Box>
+                    <Box
+                        component="div"
+                        sx={{
+                            display: {
+                                xl: 'none',
+                                lg: 'none',
+                                md: 'none',
+                                xs: 'block',
+                            },
+                        }}>
+                        <div className="header--burger-menu">
+                            <MenuIcon onClick={() => setOpen(true)} />
+                        </div>
+                    </Box>
                 </ToolBar>
             </Container>
+
             <SwipeableDrawer
                 open={open}
                 anchor="right"
