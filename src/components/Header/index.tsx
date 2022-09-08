@@ -37,12 +37,12 @@ const Header: React.FC = () => {
         <AppBar position="sticky" color="default">
             <Container maxWidth="xl">
                 <ToolBar disableGutters>
-                    <Grid container>
+                    <Grid container justifyContent="center">
                         <Grid item xl lg md sm={0} xs={0} />
                         <Grid item xl={6} lg={6} md={4} sm={9} xs={9}>
                             <Avatar>DS</Avatar>
                         </Grid>
-                        <Grid item xl={4} lg={5} md={6} xs={2}>
+                        <Grid item xl={4} lg={5} md={6} xs={2} textAlign="end">
                             <Box
                                 component="div"
                                 sx={{
@@ -52,7 +52,7 @@ const Header: React.FC = () => {
                                         md: 'block',
                                         xs: 'none',
                                     },
-                                    float: 'left',
+                                    paddingTop: '7.25',
                                 }}>
                                 <div className="header--menu-items">
                                     {navigationLinks.map((item) => (
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
                                 </div>
                             </Box>
                         </Grid>
-                        <Grid item xl lg={0} md sm xs>
+                        <Grid item xl lg={0} md sm xs textAlign="end">
                             <Box
                                 component="div"
                                 sx={{
@@ -80,9 +80,11 @@ const Header: React.FC = () => {
                                         xs: 'block',
                                     },
                                 }}>
-                                <div className="header--burger-menu">
+                                <Box
+                                    className="header--burger-menu"
+                                    sx={{paddingTop: '8'}}>
                                     <MenuIcon onClick={() => setOpen(true)} />
-                                </div>
+                                </Box>
                             </Box>
                         </Grid>
                     </Grid>
