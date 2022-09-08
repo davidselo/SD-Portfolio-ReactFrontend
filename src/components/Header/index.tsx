@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Link from '@material-ui/core/Link';
+import Link from '@mui/material/Link';
 import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';

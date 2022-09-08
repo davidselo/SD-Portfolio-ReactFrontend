@@ -3,13 +3,18 @@ import React from 'react';
 import HomeBanner from 'components/HomeBanner';
 import SkillsSumary from 'components/SkillsSumary';
 import Header from 'components/Header';
+import Typhography from '@mui/material/Typography';
 import {
     createTheme,
     responsiveFontSizes,
     ThemeProvider,
 } from '@mui/material/styles';
 
-let theme = createTheme();
+let theme = createTheme({
+    typography: {
+        fontFamily: ['Raleway'].join(','),
+    },
+});
 theme = responsiveFontSizes(theme);
 
 import './sass/styles.scss';
