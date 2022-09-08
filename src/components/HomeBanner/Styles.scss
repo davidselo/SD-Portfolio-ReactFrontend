@@ -19,7 +19,10 @@
     justify-content: center;
 
     &-text {
-        color: $base-color-fulvous;
+        color: $base-color-timberwolf;
+        span {
+            color: $base-color-fulvous;
+        }
     }
 }
 

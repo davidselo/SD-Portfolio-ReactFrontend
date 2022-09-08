@@ -17,6 +17,7 @@ const SkillsSumary: React.FC = () => {
                 container
                 spacing={0}
                 alignContent="center"
+                rowSpacing={5}
                 sx={{
                     backgroundColor: '#98B9F2',
                     padding: '30px 30px 30px 30px',
@@ -25,7 +26,7 @@ const SkillsSumary: React.FC = () => {
                 <Grid item xl={7} lg={8} md={6} sm={12} xs={12}>
                     <Stack spacing={3}>
                         <Typography variant="h4">
-                            What Do I enjoy what I do?
+                            Why Do I enjoy what I do?
                         </Typography>
                         {data.introductionSkills.map((skill, index) => (
                             <Typography variant="h5" key={index}>
