@@ -3,7 +3,7 @@ import {GET_SKILLS} from '../../graphql/query/introdutionSkill';
 import {useQuery} from '@apollo/client';
 import {Skills} from '../../contracts/Skills';
 import Grid from '@mui/material/Grid';
-import Box from '@material-ui/core/Box';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 
