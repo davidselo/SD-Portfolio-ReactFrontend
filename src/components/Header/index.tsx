@@ -11,6 +11,7 @@ import Divider from '@material-ui/core/Divider';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import Grid from '@mui/material/Grid';
 // import './styles.scss';
 import Box from '@mui/material/Box';
 
@@ -27,13 +28,6 @@ const useStyles = makeStyles((theme) => ({
     link: {
         marginRight: 20,
     },
-    avatar: {
-        marginRight: 'auto',
-        color: 'white',
-        backgroundColor: 'black',
-        borderRadius: 0,
-        height: 30,
-    },
 }));
 
 const Header: React.FC = () => {
@@ -41,47 +35,57 @@ const Header: React.FC = () => {
     const [open, setOpen] = useState(false);
     return (
         <AppBar position="sticky" color="default">
-            <Container maxWidth="md">
+            <Container maxWidth="xl">
                 <ToolBar disableGutters>
-                    <Avatar className={styles.avatar}>DS</Avatar>
-                    <Box
-                        component="div"
-                        sx={{
-                            display: {
-                                xl: 'block',
-                                lg: 'block',
-                                md: 'block',
-                                xs: 'none',
-                            },
-                        }}>
-                        <div className="header--menu-items">
-                            {navigationLinks.map((item) => (
-                                // eslint-disable-next-line react/jsx-key
-                                <Link
-                                    className={styles.link}
-                                    color="textPrimary"
-                                    variant="button"
-                                    component="button"
-                                    underline="none">
-                                    {item.name}
-                                </Link>
-                            ))}
-                        </div>
-                    </Box>
-                    <Box
-                        component="div"
-                        sx={{
-                            display: {
-                                xl: 'none',
-                                lg: 'none',
-                                md: 'none',
-                                xs: 'block',
-                            },
-                        }}>
-                        <div className="header--burger-menu">
-                            <MenuIcon onClick={() => setOpen(true)} />
-                        </div>
-                    </Box>
+                    <Grid container>
+                        <Grid item xl lg md sm={0} xs={0} />
+                        <Grid item xl={6} lg={6} md={4} sm={9} xs={9}>
+                            <Avatar>DS</Avatar>
+                        </Grid>
+                        <Grid item xl={4} lg={5} md={6} xs={2}>
+                            <Box
+                                component="div"
+                                sx={{
+                                    display: {
+                                        xl: 'block',
+                                        lg: 'block',
+                                        md: 'block',
+                                        xs: 'none',
+                                    },
+                                    float: 'left',
+                                }}>
+                                <div className="header--menu-items">
+                                    {navigationLinks.map((item) => (
+                                        // eslint-disable-next-line react/jsx-key
+                                        <Link
+                                            className={styles.link}
+                                            color="textPrimary"
+                                            variant="button"
+                                            component="button"
+                                            underline="none">
+                                            {item.name}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </Box>
+                        </Grid>
+                        <Grid item xl lg={0} md sm xs>
+                            <Box
+                                component="div"
+                                sx={{
+                                    display: {
+                                        xl: 'none',
+                                        lg: 'none',
+                                        md: 'none',
+                                        xs: 'block',
+                                    },
+                                }}>
+                                <div className="header--burger-menu">
+                                    <MenuIcon onClick={() => setOpen(true)} />
+                                </div>
+                            </Box>
+                        </Grid>
+                    </Grid>
                 </ToolBar>
             </Container>
 
