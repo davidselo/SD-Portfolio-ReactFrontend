@@ -62,6 +62,7 @@ const Header: React.FC = () => {
                                         variant="button"
                                         component="button"
                                         underline="none"
+                                        key={item.name}
                                     >
                                         {item.name}
                                     </Link>
@@ -98,23 +99,24 @@ const Header: React.FC = () => {
                 onOpen={() => setOpen(true)}
                 onClose={() => setOpen(false)}
             >
-                <div>
+                <Box>
                     <ChevronRightIcon onClick={() => setOpen(false)} />
-                </div>
+                </Box>
                 <Divider />
                 {/* @todo: Create a function/helper to retrieve the links. DRY */}
                 <List>
                     {navigationLinks.map(item => (
                         // eslint-disable-next-line react/jsx-key
-                        <ListItem>
+                        <ListItem key={item.name}>
                             <Link
                                 className={styles.link}
                                 color="textPrimary"
                                 variant="button"
                                 component="button"
                                 underline="none"
+                                key={item?.name}
                             >
-                                {item.name}
+                                {item?.name}
                             </Link>
                         </ListItem>
                     ))}

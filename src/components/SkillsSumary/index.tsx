@@ -29,9 +29,9 @@ const SkillsSumary: React.FC = () => {
                         <Typography variant="h4">
                             Why Do I enjoy what I do?
                         </Typography>
-                        {data.introductionSkills.map((skill, index) => (
+                        {data?.introductionSkills.map((skill, index) => (
                             <Typography variant="h5" key={index}>
-                                {skill.description}
+                                {skill?.description}
                             </Typography>
                         ))}
                     </Stack>

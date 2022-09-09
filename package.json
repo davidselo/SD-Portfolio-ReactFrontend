@@ -11,7 +11,7 @@
         "test": "jest"
     },
     "devDependencies": {
-        "@testing-library/react": "^13.4.0",
+        "@testing-library/react": "12",
         "@types/jest": "^29.0.0",
         "@types/react": "^17.0.37",
         "@types/react-dom": "^17.0.11",
@@ -68,5 +68,8 @@
             "tsx",
             "js"
         ]
+    },
+    "resolutions": {
+        "@types/react": "17.0.37"
     }
 }
