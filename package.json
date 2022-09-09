@@ -6,7 +6,8 @@
     "scripts": {
         "start": "webpack-cli serve --mode=development --env development --open --hot",
         "build": "webpack --mode=production --env production --progress",
-        "lint": "eslint src/**/*.{ts,tsx} --quiet --fix"
+        "lint": "eslint src/**/*.{ts,tsx} --quiet --fix",
+        "prettier-format": "prettier --config .prettierrc 'src/**/*.tsx' --write"
     },
     "devDependencies": {
         "@types/react": "^17.0.37",
@@ -26,7 +27,7 @@
         "fork-ts-checker-webpack-plugin": "^6.1.1",
         "html-webpack-plugin": "^5.3.1",
         "node-sass": "^7.0.0",
-        "prettier": "^2.5.1",
+        "prettier": "^2.7.1",
         "style-loader": "^2.0.0",
         "ts-loader": "^8.0.18",
         "ts-node": "^10.9.1",

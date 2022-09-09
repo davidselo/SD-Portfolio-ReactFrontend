@@ -23,7 +23,7 @@ const navigationLinks = [
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
     link: {
         marginRight: 20,
     },
@@ -51,16 +51,18 @@ const Header: React.FC = () => {
                                     xs: 'none',
                                 },
                                 paddingTop: '7.25',
-                            }}>
+                            }}
+                        >
                             <div className="header--menu-items">
-                                {navigationLinks.map((item) => (
+                                {navigationLinks.map(item => (
                                     // eslint-disable-next-line react/jsx-key
                                     <Link
                                         className={styles.link}
                                         color="textPrimary"
                                         variant="button"
                                         component="button"
-                                        underline="none">
+                                        underline="none"
+                                    >
                                         {item.name}
                                     </Link>
                                 ))}
@@ -77,10 +79,12 @@ const Header: React.FC = () => {
                                     md: 'none',
                                     xs: 'block',
                                 },
-                            }}>
+                            }}
+                        >
                             <Box
                                 className="header--burger-menu"
-                                sx={{paddingTop: '8'}}>
+                                sx={{paddingTop: '8'}}
+                            >
                                 <MenuIcon onClick={() => setOpen(true)} />
                             </Box>
                         </Box>
@@ -92,14 +96,15 @@ const Header: React.FC = () => {
                 open={open}
                 anchor="right"
                 onOpen={() => setOpen(true)}
-                onClose={() => setOpen(false)}>
+                onClose={() => setOpen(false)}
+            >
                 <div>
                     <ChevronRightIcon onClick={() => setOpen(false)} />
                 </div>
                 <Divider />
                 {/* @todo: Create a function/helper to retrieve the links. DRY */}
                 <List>
-                    {navigationLinks.map((item) => (
+                    {navigationLinks.map(item => (
                         // eslint-disable-next-line react/jsx-key
                         <ListItem>
                             <Link
@@ -107,7 +112,8 @@ const Header: React.FC = () => {
                                 color="textPrimary"
                                 variant="button"
                                 component="button"
-                                underline="none">
+                                underline="none"
+                            >
                                 {item.name}
                             </Link>
                         </ListItem>

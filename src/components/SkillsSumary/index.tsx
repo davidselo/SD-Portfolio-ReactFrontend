@@ -22,7 +22,8 @@ const SkillsSumary: React.FC = () => {
                     backgroundColor: '#98B9F2',
                     padding: '30px 30px 30px 30px',
                     minHeight: '50vh',
-                }}>
+                }}
+            >
                 <Grid item xl={7} lg={8} md={6} sm={12} xs={12}>
                     <Stack spacing={3}>
                         <Typography variant="h4">
@@ -41,7 +42,8 @@ const SkillsSumary: React.FC = () => {
                             sx={{
                                 display: 'inline',
                                 color: '#e27e02',
-                            }}>
+                            }}
+                        >
                             <Typography
                                 component="span"
                                 sx={{
@@ -50,7 +52,8 @@ const SkillsSumary: React.FC = () => {
                                     display: 'inline',
                                     color: '#e27e02',
                                     lineHeight: '0.9',
-                                }}>
+                                }}
+                            >
                                 12
                             </Typography>
                         </Box>
