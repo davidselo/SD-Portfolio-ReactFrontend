@@ -9,7 +9,7 @@ const HomeBanner: React.FC = () => {
             <div className="header__topIntroduction-text">
                 <Box alignContent="center" textAlign="center">
                     <Typography variant="h4">
-                        Hello, I'm <span>David Villalba</span>
+                        Hello, I&apos;m <span>David Villalba</span>
                     </Typography>
                     <Typography variant="h5">
                         I am a full stack Developer

@@ -3,7 +3,6 @@ import Link from '@mui/material/Link';
 import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@mui/material/AppBar';
 import ToolBar from '@mui/material/Toolbar';
-import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import MenuIcon from '@mui/icons-material/Menu';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
@@ -35,61 +34,59 @@ const Header: React.FC = () => {
     const [open, setOpen] = useState(false);
     return (
         <AppBar position="sticky" color="default">
-            <Container maxWidth="xl">
-                <ToolBar disableGutters>
-                    <Grid container justifyContent="center">
-                        <Grid item xl lg md sm={0} xs={0} />
-                        <Grid item xl={6} lg={6} md={4} sm={9} xs={9}>
-                            <Avatar>DS</Avatar>
-                        </Grid>
-                        <Grid item xl={4} lg={5} md={6} xs={2} textAlign="end">
-                            <Box
-                                component="div"
-                                sx={{
-                                    display: {
-                                        xl: 'block',
-                                        lg: 'block',
-                                        md: 'block',
-                                        xs: 'none',
-                                    },
-                                    paddingTop: '7.25',
-                                }}>
-                                <div className="header--menu-items">
-                                    {navigationLinks.map((item) => (
-                                        // eslint-disable-next-line react/jsx-key
-                                        <Link
-                                            className={styles.link}
-                                            color="textPrimary"
-                                            variant="button"
-                                            component="button"
-                                            underline="none">
-                                            {item.name}
-                                        </Link>
-                                    ))}
-                                </div>
-                            </Box>
-                        </Grid>
-                        <Grid item xl lg={0} md sm xs textAlign="end">
-                            <Box
-                                component="div"
-                                sx={{
-                                    display: {
-                                        xl: 'none',
-                                        lg: 'none',
-                                        md: 'none',
-                                        xs: 'block',
-                                    },
-                                }}>
-                                <Box
-                                    className="header--burger-menu"
-                                    sx={{paddingTop: '8'}}>
-                                    <MenuIcon onClick={() => setOpen(true)} />
-                                </Box>
-                            </Box>
-                        </Grid>
+            <ToolBar disableGutters>
+                <Grid container justifyContent="center">
+                    <Grid item xl lg md sm={0} xs={0} />
+                    <Grid item xl={6} lg={6} md={4} sm={9} xs={9}>
+                        <Avatar>DS</Avatar>
                     </Grid>
-                </ToolBar>
-            </Container>
+                    <Grid item xl={4} lg={5} md={6} xs={2} textAlign="end">
+                        <Box
+                            component="div"
+                            sx={{
+                                display: {
+                                    xl: 'block',
+                                    lg: 'block',
+                                    md: 'block',
+                                    xs: 'none',
+                                },
+                                paddingTop: '7.25',
+                            }}>
+                            <div className="header--menu-items">
+                                {navigationLinks.map((item) => (
+                                    // eslint-disable-next-line react/jsx-key
+                                    <Link
+                                        className={styles.link}
+                                        color="textPrimary"
+                                        variant="button"
+                                        component="button"
+                                        underline="none">
+                                        {item.name}
+                                    </Link>
+                                ))}
+                            </div>
+                        </Box>
+                    </Grid>
+                    <Grid item xl lg={0} md sm xs textAlign="end">
+                        <Box
+                            component="div"
+                            sx={{
+                                display: {
+                                    xl: 'none',
+                                    lg: 'none',
+                                    md: 'none',
+                                    xs: 'block',
+                                },
+                            }}>
+                            <Box
+                                className="header--burger-menu"
+                                sx={{paddingTop: '8'}}>
+                                <MenuIcon onClick={() => setOpen(true)} />
+                            </Box>
+                        </Box>
+                    </Grid>
+                </Grid>
+            </ToolBar>
 
             <SwipeableDrawer
                 open={open}

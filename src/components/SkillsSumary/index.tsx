@@ -36,24 +36,32 @@ const SkillsSumary: React.FC = () => {
                     </Stack>
                 </Grid>
                 <Grid item xl={5} lg={4} md={6} sm={12} xs={12}>
-                    <Box textAlign="center" sx={{paddingTop: '35'}}>
+                    <Box textAlign="center" paddingTop="50">
                         <Box
                             sx={{
-                                fontSize: '10rem',
-                                textAlign: 'center',
                                 display: 'inline',
                                 color: '#e27e02',
                             }}>
-                            <Typography variant="string">12</Typography>
+                            <Typography
+                                component="span"
+                                sx={{
+                                    fontSize: '11rem',
+                                    textAlign: 'center',
+                                    display: 'inline',
+                                    color: '#e27e02',
+                                    lineHeight: '0.9',
+                                }}>
+                                12
+                            </Typography>
                         </Box>
                         <Box sx={{display: 'inline', color: '#e27e02'}}>
-                            <Typography variant="string">years</Typography>
+                            <Typography component="span">years</Typography>
                         </Box>
-                    </Box>
-                    <Box sx={{fontSize: '1.4rem', textAlign: 'center'}}>
-                        <Typography variant="string">
-                            of exciting web development journey
-                        </Typography>
+                        <Box sx={{fontSize: '1.4rem', textAlign: 'center'}}>
+                            <Typography component="span">
+                                of exciting web development journey
+                            </Typography>
+                        </Box>
                     </Box>
                 </Grid>
             </Grid>

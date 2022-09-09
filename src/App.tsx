@@ -3,7 +3,7 @@ import React from 'react';
 import HomeBanner from 'components/HomeBanner';
 import SkillsSumary from 'components/SkillsSumary';
 import Header from 'components/Header';
-import Typhography from '@mui/material/Typography';
+
 import {
     createTheme,
     responsiveFontSizes,
