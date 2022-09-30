@@ -85,8 +85,12 @@ const Header: React.FC = () => {
                             <Box
                                 className="header--burger-menu"
                                 sx={{paddingTop: '8'}}
+                                data-testid="header--burger-menu"
                             >
-                                <MenuIcon onClick={() => setOpen(true)} />
+                                <MenuIcon
+                                    onClick={() => setOpen(true)}
+                                    data-testid="header--burger-menu-icon"
+                                />
                             </Box>
                         </Box>
                     </Grid>
