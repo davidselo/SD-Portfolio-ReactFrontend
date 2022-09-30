@@ -13,9 +13,10 @@ import ListItem from '@mui/material/ListItem';
 import Grid from '@mui/material/Grid';
 // import './styles.scss';
 import Box from '@mui/material/Box';
+import {NavigationLinks} from 'contracts/NavigationLinks';
 
-// @todo: to get this data from Keystone. Define types too.
-const navigationLinks = [
+// @todo: to get this data from Keystone
+const navigationLinks: NavigationLinks = [
     {name: 'About', href: '/about'},
     {name: 'Projects', href: '/projects'},
     {name: 'Resume', href: '/resume'},
@@ -104,7 +105,10 @@ const Header: React.FC = () => {
                 onClose={() => setOpen(false)}
             >
                 <Box>
-                    <ChevronRightIcon onClick={() => setOpen(false)} />
+                    <ChevronRightIcon
+                        onClick={() => setOpen(false)}
+                        data-testid="header--chevron-icon"
+                    />
                 </Box>
                 <Divider />
                 {/* @todo: Create a function/helper to retrieve the links. DRY */}

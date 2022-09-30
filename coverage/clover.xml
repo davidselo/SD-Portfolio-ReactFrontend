@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1664534069975" clover="3.2.0">
-  <project timestamp="1664534069975" name="All files">
+<coverage generated="1664549728603" clover="3.2.0">
+  <project timestamp="1664549728603" name="All files">
     <metrics statements="27" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="4" elements="35" coveredelements="27" complexity="0" loc="27" ncloc="27" packages="1" files="1" classes="1"/>
     <file name="index.tsx" path="/Users/davidvillalbaflores/Projects/SD-Portfolio/frontend/src/components/Header/index.tsx">
       <metrics statements="27" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="4"/>
