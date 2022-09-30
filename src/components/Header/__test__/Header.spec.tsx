@@ -5,13 +5,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 describe('Header component', () => {
-    it('Should match test snapshot', () => {
+    test('Should match test snapshot', () => {
         const {container} = render(<Header />);
         expect(container).toMatchSnapshot();
     });
 });
 describe('MenuIcon component', () => {
-    it('calls onClick prop when clicked', () => {
+    test('calls onClick prop when clicked', () => {
         const handleClick = jest.fn();
         render(
             <MenuIcon
@@ -25,7 +25,7 @@ describe('MenuIcon component', () => {
     });
 });
 describe('ChevronRightIcon component', () => {
-    it('calls onClick prop when clicked', () => {
+    test('calls onClick prop when clicked', () => {
         const handleClick = jest.fn();
         render(
             <ChevronRightIcon
