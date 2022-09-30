@@ -30,6 +30,7 @@
         "fork-ts-checker-webpack-plugin": "^6.1.1",
         "html-webpack-plugin": "^5.3.1",
         "jest": "^29.0.2",
+        "jest-environment-jsdom": "^29.1.2",
         "node-sass": "^7.0.0",
         "prettier": "^2.7.1",
         "style-loader": "^2.0.0",
@@ -67,7 +68,8 @@
             "ts",
             "tsx",
             "js"
-        ]
+        ],
+        "testEnvironment": "jsdom"
     },
     "resolutions": {
         "@types/react": "17.0.37"
