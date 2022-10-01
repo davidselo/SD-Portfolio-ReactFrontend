@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skills Sumary Component Component renders the block with Mock data 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-container css-1chm1sj-MuiGrid-root"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-8 MuiGrid-grid-xl-7 css-1p3rggy-MuiGrid-root"
+    >
+      <div
+        class="css-1lwbda4-MuiStack-root"
+      >
+        <h4
+          class="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
+        >
+          Why Do I enjoy what I do?
+        </h4>
+        <h5
+          class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+        >
+          Description 1
+        </h5>
+        <h5
+          class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+        >
+          Description 2
+        </h5>
+        <h5
+          class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+        >
+          Description 3
+        </h5>
+        <h5
+          class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+        >
+          Description 4
+        </h5>
+        <h5
+          class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+        >
+          Description 5
+        </h5>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4 MuiGrid-grid-xl-5 css-frozg5-MuiGrid-root"
+    >
+      <div
+        class="MuiBox-root css-1pmgad6"
+      >
+        <div
+          class="MuiBox-root css-1tysxka"
+        >
+          <span
+            class="MuiTypography-root MuiTypography-body1 css-w71u00-MuiTypography-root"
+          >
+            12
+          </span>
+        </div>
+        <div
+          class="MuiBox-root css-1tysxka"
+        >
+          <span
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            years
+          </span>
+        </div>
+        <div
+          class="MuiBox-root css-ulowpu"
+        >
+          <span
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            of exciting web development journey
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

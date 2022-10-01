@@ -10,7 +10,7 @@ import Stack from '@mui/material/Stack';
 const SkillsSumary: React.FC = () => {
     const {loading, error, data} = useQuery<Skills>(GET_SKILLS);
     if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error! ${error.message}</p>;
+    if (error) return <p>Error! {error.message}</p>;
     return (
         <>
             <Grid
