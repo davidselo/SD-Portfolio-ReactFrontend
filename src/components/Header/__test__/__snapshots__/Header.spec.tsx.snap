@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component Should match test snapshot 1`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorDefault MuiAppBar-positionSticky css-1hnfq8z-MuiPaper-root-MuiAppBar-root"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular css-r6ewbb-MuiToolbar-root"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-container css-1lym95h-MuiGrid-root"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-true MuiGrid-grid-lg-true MuiGrid-grid-xl-true css-ehu4kr-MuiGrid-root"
+        />
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-9 MuiGrid-grid-sm-9 MuiGrid-grid-md-4 MuiGrid-grid-lg-6 MuiGrid-grid-xl-6 css-rwhae5-MuiGrid-root"
+        >
+          <div
+            class="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
+          >
+            DS
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2 MuiGrid-grid-md-6 MuiGrid-grid-lg-5 MuiGrid-grid-xl-4 css-14ysysj-MuiGrid-root"
+        >
+          <div
+            class="MuiBox-root css-1ccvj77"
+          >
+            <div
+              class="header--menu-items"
+            >
+              <button
+                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone MuiLink-button makeStyles-link-1 css-1eauaaz-MuiTypography-root-MuiLink-root"
+              >
+                About
+              </button>
+              <button
+                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone MuiLink-button makeStyles-link-1 css-1eauaaz-MuiTypography-root-MuiLink-root"
+              >
+                Projects
+              </button>
+              <button
+                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone MuiLink-button makeStyles-link-1 css-1eauaaz-MuiTypography-root-MuiLink-root"
+              >
+                Resume
+              </button>
+              <button
+                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone MuiLink-button makeStyles-link-1 css-1eauaaz-MuiTypography-root-MuiLink-root"
+              >
+                Contact
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true MuiGrid-grid-sm-true MuiGrid-grid-md-true MuiGrid-grid-xl-true css-14xwpcs-MuiGrid-root"
+        >
+          <div
+            class="MuiBox-root css-1vxiug2"
+          >
+            <div
+              class="header--burger-menu MuiBox-root css-19qr23f"
+              data-testid="header--burger-menu"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="header--burger-menu-icon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="PrivateSwipeArea-root css-x15wq9"
+      style="width: 20px;"
+    />
+  </header>
+</div>
+`;

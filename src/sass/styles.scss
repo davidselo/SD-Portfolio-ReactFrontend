@@ -1,5 +1,11 @@
 @import './colors.scss';
+@import './screen-breakpoints.scss';
 
-.body {
-    background-color: red;
+body {
+    margin: 0;
+}
+
+#root {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
 }
