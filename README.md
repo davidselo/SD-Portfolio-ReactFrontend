@@ -13,3 +13,4 @@ Frontend project to create a personal portfolio consuming a GraphQL API to creat
 ## SD-Portfolio-ReactFrontend
 
 -   vscode-jest
+-   test
