@@ -36,6 +36,5 @@ describe('ChevronRightIcon component', () => {
         const element = screen.getByTestId('header--chevron-icon');
         fireEvent.click(element);
         expect(handleClick).toHaveBeenCalledTimes(1);
-        expect(1).toBe(3);
     });
 });
