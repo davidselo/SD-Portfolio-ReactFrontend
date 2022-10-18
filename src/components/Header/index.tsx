@@ -33,6 +33,7 @@ const useStyles = makeStyles(theme => ({
 const Header: React.FC = () => {
     const styles = useStyles();
     const [open, setOpen] = useState(false);
+    /* istanbul ignore next */
     return (
         <AppBar position="sticky" color="default">
             <ToolBar disableGutters>
@@ -103,6 +104,7 @@ const Header: React.FC = () => {
                 anchor="right"
                 onOpen={() => setOpen(true)}
                 onClose={() => setOpen(false)}
+                data-testid="header--swipeable-drawer"
             >
                 <Box>
                     <ChevronRightIcon
