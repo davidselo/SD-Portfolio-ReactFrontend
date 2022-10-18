@@ -8,12 +8,8 @@ Frontend project to create a personal portfolio consuming a GraphQL API to creat
 
 ## Comands:
 
-<<<<<<< HEAD
 -   Running tests on watch mode: `yarn run test -- --watch`.
 
 ## SD-Portfolio-ReactFrontend
 
 -   vscode-jest
-=======
--   Running tests on watch mode: `yarn run test -- --watch`
->>>>>>> 31e9f2f9edc8917c365a18fb832225c906e45485
