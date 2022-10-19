@@ -23,12 +23,14 @@
     "plugins": [
         "@typescript-eslint",
         "react",
+        "no-loops",
         "react-hooks",
         "eslint-plugin-import",
         "prettier"
     ],
     "rules": {
         "no-console": 1, // Means warning
+        "no-loops/no-loops": 2, // 2 means throw an ERROR
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "@typescript-eslint/explicit-module-boundary-types": "off",
