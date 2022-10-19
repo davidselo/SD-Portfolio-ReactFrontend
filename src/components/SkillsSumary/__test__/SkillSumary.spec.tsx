@@ -51,7 +51,7 @@ describe('Skills Sumary Component', () => {
                 },
             },
         ];
-        const {container} = render(
+        render(
             <MockedProvider mocks={mocks} addTypename={false}>
                 <SkillsSumary />
             </MockedProvider>,
