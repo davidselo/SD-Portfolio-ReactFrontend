@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    app:
+        restart: on-failure
+        build: ./
+        ports:
+            - '3001:3001'
+        #   - "8888:8888"
+        volumes:
+            - ./src:/usr/src/app/src
+            - ./error.log:/usr/src/app/error.log
+        environment:
+            - NODE_ENV=dev
