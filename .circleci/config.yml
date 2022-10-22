@@ -14,6 +14,11 @@ jobs:
         # See: https://circleci.com/docs/2.0/configuration-reference/#steps
         steps:
             - checkout
+            # ... steps for building/testing app ...
+
+            - setup_remote_docker:
+                  version: 20.10.14
+                  docker_layer_caching: true
             - run:
                   name: 'Build Docker Compones'
                   command: 'docker-compose build app'
