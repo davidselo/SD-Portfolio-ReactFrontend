@@ -37,4 +37,6 @@ jobs:
 workflows:
     deploy-react-app-pipeline:
         jobs:
-            - build
+            - build:
+                  context:
+                      - github-packages
