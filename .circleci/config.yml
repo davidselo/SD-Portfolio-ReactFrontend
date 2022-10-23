@@ -11,12 +11,12 @@ jobs:
         machine:
             image: cimg/base:stable
             docker_layer_caching: true
+
         # Add steps to the job
         # See: https://circleci.com/docs/2.0/configuration-reference/#steps
         steps:
             - checkout
             # ... steps for building/testing app ...
-
             - run:
                   name: 'Build Docker Compones'
                   command: 'docker-compose build app'
@@ -32,7 +32,13 @@ jobs:
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+###
+### Workflows
+###
 workflows:
-    deploy-react-app-pipeline:
+    version: 2
+    build:
         jobs:
-            - build
+            - build:
+                  context:
+                      - github-packages
