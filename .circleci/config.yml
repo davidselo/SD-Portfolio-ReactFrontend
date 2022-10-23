@@ -23,9 +23,9 @@ jobs:
             - run:
                   name: 'Start Docker Compose'
                   command: 'docker-compose up -d app'
-            #- run:
-            #       name: 'Run Code Quality Checks'
-            #       command: 'docker-compose exec app yarn lint'
+            - run:
+                  name: 'Run Code Quality Checks'
+                  command: 'docker-compose exec app yarn lint'
             - run:
                   name: 'Run Unit Tests'
                   command: 'docker-compose exec app yarn test'
