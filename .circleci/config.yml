@@ -9,8 +9,8 @@ jobs:
         # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
         # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
         machine:
-            image: circleci/classic:201710-01
-            docker_layer_caching: true
+            image: ubuntu-2004:current
+            resource_class: large
 
         # Add steps to the job
         # See: https://circleci.com/docs/2.0/configuration-reference/#steps
