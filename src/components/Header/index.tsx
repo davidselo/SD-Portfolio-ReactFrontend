@@ -31,6 +31,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Header: React.FC = () => {
+    console.log('patata');
     const styles = useStyles();
     const [open, setOpen] = useState(false);
     /* istanbul ignore next */

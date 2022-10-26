@@ -6,13 +6,18 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
+import getClient from '../../client/factory';
 
 const SkillsSumary: React.FC = () => {
+    console.log('patata');
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const dataClient = getClient();
     const {loading, error, data} = useQuery<Skills>(GET_SKILLS);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error! {error.message}</p>;
     return (
         <>
+            <pre>{dataClient.useQuery()}</pre>
             <Grid
                 container
                 spacing={0}
