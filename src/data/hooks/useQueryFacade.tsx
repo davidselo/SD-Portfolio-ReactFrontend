@@ -3,9 +3,9 @@ import {Skills} from 'contracts/Skills';
 import {getStaticData} from 'data/staticData/DataMapping';
 
 const STATIC_PERSISTANCE_MODE = 'static';
-const GRAPHQL_PERSISTANCE_MODE = 'graphQL';
+const GRAPHQL_PERSISTANCE_MODE = 'headless';
 
-export const useQueryFacade = (
+const useQueryFacade = (
     collectionName: string, // collection name for static mode.
     grapQLQuery: DocumentNode, // GraphQL query for Headless mode.
 ) => {

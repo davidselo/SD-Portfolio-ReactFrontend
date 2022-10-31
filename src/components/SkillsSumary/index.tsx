@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import useQueryFacade from 'data/hooks/useQueryFacade';
+import {SkillItem} from 'contracts/Skills';
 
 const SkillsSumary: React.FC = () => {
     const {loading, error, data} = useQueryFacade('SKILLS', GET_SKILLS);
@@ -28,11 +29,16 @@ const SkillsSumary: React.FC = () => {
                         <Typography variant="h4">
                             Why Do I enjoy what I do?
                         </Typography>
-                        {data?.introductionSkills.map((skill, index) => (
-                            <Typography variant="h5" key={index}>
-                                {skill?.description}
-                            </Typography>
-                        ))}
+                        {data?.introductionSkills.map(
+                            (
+                                skill: SkillItem,
+                                index: React.Key | null | undefined,
+                            ) => (
+                                <Typography variant="h5" key={index}>
+                                    {skill?.description}
+                                </Typography>
+                            ),
+                        )}
                     </Stack>
                 </Grid>
                 <Grid item xl={5} lg={4} md={6} sm={12} xs={12}>
