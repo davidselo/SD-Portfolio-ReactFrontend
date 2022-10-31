@@ -1,14 +1,13 @@
 import React from 'react';
-import {GET_SKILLS} from '../../graphql/query/introdutionSkill';
-import {useQuery} from '@apollo/client';
-import {Skills} from '../../contracts/Skills';
 import Grid from '@mui/material/Grid';
+import {GET_SKILLS} from '../../graphql/query/introdutionSkill';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
+import useQueryFacade from 'data/hooks/useQueryFacade';
 
 const SkillsSumary: React.FC = () => {
-    const {loading, error, data} = useQuery<Skills>(GET_SKILLS);
+    const {loading, error, data} = useQueryFacade('SKILLS', GET_SKILLS);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error! {error.message}</p>;
     return (
