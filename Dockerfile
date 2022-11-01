@@ -21,5 +21,6 @@ COPY . .
 
 ENV IS_DOCKER=true
 ENV NODE_ENV=dev
+ENV PERSISTENCE_MODE=headless
 EXPOSE 3001
 CMD ["yarn","start"]
