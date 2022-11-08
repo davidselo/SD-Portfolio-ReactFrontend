@@ -10,4 +10,5 @@ services:
             - ./src:/usr/src/app/src
             - ./error.log:/usr/src/app/error.log
         environment:
-            - NODE_ENV=dev
+            - NODE_ENV=${NODE_ENV}
+            - PERSISTENCE_MODE=${PERSISTENCE_MODE}
