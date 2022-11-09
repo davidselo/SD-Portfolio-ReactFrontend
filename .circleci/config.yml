@@ -49,3 +49,4 @@ workflows:
             - test:
                   context:
                       - github-packages
+            - artifact
