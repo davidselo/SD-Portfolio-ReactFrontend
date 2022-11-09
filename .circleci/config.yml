@@ -53,7 +53,6 @@ jobs:
                 name: testing
                 command: ls -lrta
 
-    deploy:
 
 
 # Invoke jobs via workflows
@@ -69,5 +68,3 @@ workflows:
                   context:
                       - github-packages
             - build:
-            - deploy:
-                  requires: -build
