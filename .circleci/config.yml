@@ -5,7 +5,7 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-    build:
+    test:
         # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
         # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
         machine:
@@ -18,7 +18,7 @@ jobs:
             - checkout
             # ... steps for building/testing app ...
             - run:
-                  name: 'Build Docker Compones'
+                  name: 'Build Docker Compose'
                   command: 'docker-compose build app'
             - run:
                   name: 'Start Docker Compose'
@@ -29,6 +29,32 @@ jobs:
             - run:
                   name: 'Run Unit Tests'
                   command: 'docker-compose exec app yarn test'
+    build:
+        working_directory: ~/repo
+        docker:
+            - image: circleci/node:16.13.1-bullseye-browsers-legacy
+        steps:
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "package-lock.json" }}
+                      - v1-dependencies-
+            - run:
+                  name: build React app
+                  command: yarn run build
+            - save_cache:
+                  key: v1-dependencies-{{ checksum "package-lock.json" }}
+                  paths:
+                      - node_modules
+            - persist_to_workspace:
+                  root: .
+                  paths:
+                      - .
+            run: 
+                name: testing
+                command: ls -lrta
+
+    deploy:
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -39,6 +65,9 @@ workflows:
     version: 2
     build:
         jobs:
-            - build:
+            - test:
                   context:
                       - github-packages
+            - build:
+            - deploy:
+                  requires: -build
