@@ -34,12 +34,24 @@ jobs:
         docker:
             - image: circleci/node:16-browsers
         steps:
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "package-lock.json" }}
+                      - v1-dependencies-
             - run:
                   name: 'building react app'
-                  command: 'yarn run build'
+                  command: 'yarn && yarn run build'
+            - save_cache:
+                  key: v1-dependencies-{{ checksum "package-lock.json" }}
+                  paths:
+                      - node_modules
             - run:
                   name: 'testing'
                   command: 'ls -lrtah'
+            - persist_to_workspace:
+                  root: .
+                  paths:
+                      - .
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
