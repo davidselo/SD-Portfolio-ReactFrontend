@@ -30,22 +30,6 @@ jobs:
                   name: 'Run Unit Tests'
                   command: 'docker-compose exec app yarn test'
 
-    build:
-        working_directory: ~/repo
-        docker:
-            - image: circleci/node:16.13.1-bullseye-browsers-legacy
-        steps:
-            - run:
-                  name: build React app
-                  command: yarn run build
-            - run:
-                  name: testing
-                  command: ls -lrta
-            - persist_to_workspace:
-                  root: .
-                  paths:
-                      - .
-
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 ###
@@ -58,4 +42,3 @@ workflows:
             - test:
                   context:
                       - github-packages
-            - build:
