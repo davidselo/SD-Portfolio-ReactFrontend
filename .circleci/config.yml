@@ -30,6 +30,9 @@ jobs:
                   name: 'Run Unit Tests'
                   command: 'docker-compose exec app yarn test'
     artifact:
+        working_directory: ~/repo
+        docker:
+            - image: innovatorjapan/awscli:latest
         steps:
             - run:
                   name: 'testing'
