@@ -29,6 +29,7 @@ jobs:
             - run:
                   name: 'Run Unit Tests'
                   command: 'docker-compose exec app yarn test'
+
     build:
         working_directory: ~/repo
         docker:
@@ -37,17 +38,13 @@ jobs:
             - run:
                   name: build React app
                   command: yarn run build
-            - save_cache:
-                  key: v1-dependencies-{{ checksum "package-lock.json" }}
-                  paths:
-                      - node_modules
+            run: 
+                name: testing
+                command: ls -lrta
             - persist_to_workspace:
                   root: .
                   paths:
                       - .
-            run: 
-                name: testing
-                command: ls -lrta
 
 
 
