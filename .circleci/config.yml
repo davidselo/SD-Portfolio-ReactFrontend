@@ -32,11 +32,14 @@ jobs:
     artifact:
         working_directory: ~/repo
         docker:
-            - image: innovatorjapan/awscli:latest
+            - image: circleci/node:16-browsers
         steps:
             - run:
+                  name: 'building react app'
+                  command: 'yarn run build'
+            - run:
                   name: 'testing'
-                  command: 'echo Hello Patata'
+                  command: 'ls -lrtah'
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
