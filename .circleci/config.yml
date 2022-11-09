@@ -38,15 +38,13 @@ jobs:
             - run:
                   name: build React app
                   command: yarn run build
-            run: 
-                name: testing
-                command: ls -lrta
+            - run:
+                  name: testing
+                  command: ls -lrta
             - persist_to_workspace:
                   root: .
                   paths:
                       - .
-
-
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
