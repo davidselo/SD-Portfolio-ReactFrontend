@@ -29,7 +29,7 @@ jobs:
             - run:
                   name: 'Run Unit Tests'
                   command: 'docker-compose exec app yarn test'
-    artifact:
+    another-job:
         # build app before sync with the AWS bucket.
         steps:
             -run:
@@ -42,10 +42,9 @@ jobs:
 ### Workflows
 ###
 workflows:
-    version: 2
-    build:
+    workflow:
         jobs:
             - test:
                   context:
                       - github-packages
-            - artifact
+            - another-job
