@@ -48,4 +48,4 @@ workflows:
             - test:
                   context:
                       - github-packages
-            - build:
+            - build
