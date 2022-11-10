@@ -41,6 +41,8 @@ jobs:
             - run:
                   name: 'building react app'
                   command: 'yarn && yarn run build'
+                  environment:
+                      PERSISTENCE_MODE: static
             - aws-s3/sync:
                   arguments: |
                       --acl public-read \
