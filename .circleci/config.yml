@@ -50,10 +50,6 @@ jobs:
                   aws-secret-access-key: AWS_SECRET_ACCESS_KEY_BLUE
                   from: build
                   to: 's3://sd-portfolio-reactfrontend'
-            - aws-s3/copy:
-                  arguments: '--dryrun'
-                  from: build
-                  to: 's3://sd-portfolio-reactfrontend'
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
