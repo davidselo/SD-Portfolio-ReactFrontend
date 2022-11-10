@@ -5,7 +5,7 @@
     "license": "MIT",
     "scripts": {
         "start": "webpack-cli serve --mode=development --env development --open --host 0.0.0.0 --hot",
-        "build": "webpack --mode=production --env production --progress",
+        "build": "webpack --mode=production --env production --env PERSISTENCE_MODE=static --progress",
         "lint": "eslint 'src/**/*.{ts,tsx}' --quiet --fix",
         "prepare": "husky install",
         "prettier-format": "prettier --config .prettierrc 'src/**/*.{ts,tsx}' --write",
