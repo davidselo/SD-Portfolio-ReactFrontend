@@ -2,6 +2,9 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+orbs:
+    aws-s3: circleci/aws-s3@3.0
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -42,17 +45,22 @@ jobs:
             - run:
                   name: 'building react app'
                   command: 'yarn && yarn run build'
-            - save_cache:
-                  key: v1-dependencies-{{ checksum "package-lock.json" }}
-                  paths:
-                      - node_modules
-            - run:
-                  name: 'testing'
-                  command: 'ls -lrtah'
-            - persist_to_workspace:
-                  root: .
-                  paths:
-                      - .
+            - aws-s3/sync:
+                  arguments: |
+                      --acl public-read \
+                      --cache-control "max-age=86400"
+                  aws-access-key-id: AWS_ACCESS_KEY_ID_BLUE
+                  aws-region: AWS_REGION_BLUE
+                  aws-secret-access-key: AWS_SECRET_ACCESS_KEY_BLUE
+                  from: build
+                  to: 's3://sd-portfolio-reactfrontend'
+            - aws-s3/copy:
+                  arguments: '--dryrun'
+                  from: build
+                  to: 's3://sd-portfolio-reactfrontend'
+
+    deploy:
+        working_directory: ~/repo
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
