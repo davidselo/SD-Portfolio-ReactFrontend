@@ -36,11 +36,13 @@ jobs:
         working_directory: ~/repo
         docker:
             - image: circleci/node:16-browsers
+            environment: 
+                PERSISTENCE_MODE: static
         steps:
             - checkout
             - run:
                   name: 'building react app'
-                  command: 'set PERSISTENCE_MODE=static && yarn && yarn run build'
+                  command: 'yarn && yarn run build'
             - aws-s3/sync:
                   arguments: |
                       --acl public-read \
