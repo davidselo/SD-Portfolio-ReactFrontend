@@ -42,7 +42,7 @@ jobs:
             - checkout
             - run:
                  name: 'Checking environment variables'
-                 command: 'echo ${BASH_ENV}'
+                 command: 'printenv'
             - run:
                   name: 'building react app'
                   command: 'yarn && yarn run build'
