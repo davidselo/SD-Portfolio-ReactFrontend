@@ -40,6 +40,9 @@ jobs:
             - run:
                   name: 'building react app'
                   command: 'yarn && yarn run build'
+            - run:
+                  name: 'Testing environment variables'
+                  command: 'printenv'
             - aws-s3/sync:
                   arguments: |
                       --acl public-read \
