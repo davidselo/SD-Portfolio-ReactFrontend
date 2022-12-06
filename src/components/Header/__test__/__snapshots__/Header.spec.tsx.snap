@@ -32,26 +32,30 @@ exports[`Header component Should match test snapshot 1`] = `
             <div
               class="header--menu-items"
             >
-              <button
-                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone MuiLink-button makeStyles-link-1 css-1eauaaz-MuiTypography-root-MuiLink-root"
+              <a
+                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone makeStyles-link-1 css-h41b82-MuiTypography-root-MuiLink-root"
+                href="/"
               >
-                About
-              </button>
-              <button
-                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone MuiLink-button makeStyles-link-1 css-1eauaaz-MuiTypography-root-MuiLink-root"
+                home
+              </a>
+              <a
+                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone makeStyles-link-1 css-h41b82-MuiTypography-root-MuiLink-root"
+                href="/cv"
               >
-                Projects
-              </button>
-              <button
-                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone MuiLink-button makeStyles-link-1 css-1eauaaz-MuiTypography-root-MuiLink-root"
+                cv
+              </a>
+              <a
+                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone makeStyles-link-1 css-h41b82-MuiTypography-root-MuiLink-root"
+                href="/resume"
               >
                 Resume
-              </button>
-              <button
-                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone MuiLink-button makeStyles-link-1 css-1eauaaz-MuiTypography-root-MuiLink-root"
+              </a>
+              <a
+                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone makeStyles-link-1 css-h41b82-MuiTypography-root-MuiLink-root"
+                href="/resume"
               >
                 Contact
-              </button>
+              </a>
             </div>
           </div>
         </div>

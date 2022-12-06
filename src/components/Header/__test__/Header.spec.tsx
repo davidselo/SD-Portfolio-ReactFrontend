@@ -3,10 +3,15 @@ import {render, screen, fireEvent} from '@testing-library/react';
 import Header from '../index';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 describe('Header component', () => {
     test('Should match test snapshot', () => {
-        const {container} = render(<Header />);
+        const {container} = render(
+            <Router>
+                <Header />
+            </Router>,
+        );
         expect(container).toMatchSnapshot();
     });
 });
