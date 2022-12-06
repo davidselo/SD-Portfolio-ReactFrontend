@@ -1,11 +1,8 @@
 import React from 'react';
 // import { Header } from 'components/Header/Header';
-import HomeBanner from 'components/HomeBanner';
-import SkillsSumary from 'components/SkillsSumary';
-import Header from 'components/Header';
-import Manatee from 'components/Manatee';
-import Whale from 'components/Whale';
-import Narwhal from 'components/Narwhal';
+import Home from 'pages/Home';
+import Layout from 'pages/Layout';
+import Cv from 'pages/Cv';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
 
 import {
@@ -26,47 +23,16 @@ import Beluga from 'components/Whale/Beluga';
 
 const App: React.FC = () => (
     <ThemeProvider theme={theme}>
-        <div className="wrapper">
-            <HomeBanner />
-            <Header />
-            {/* @todo: Add the top menu*/}
-            <SkillsSumary />
-            {/* Testing React Routing*/}
+        <BrowserRouter>
             <div className="wrapper">
-                <h1>Marine Mammals</h1>
-                <BrowserRouter>
-                    <nav>
-                        <ul>
-                            <li>
-                                <Link to="/manatee">Manatee</Link>
-                            </li>
-                            <li>
-                                <Link to="/narwhal">Narwhal</Link>
-                            </li>
-                            <li>
-                                <Link to="/whale">Whale</Link>
-                                <ul>
-                                    <li>
-                                        <Link to="/whale/beluga">Beluga</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/whale/blue">Blue</Link>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                    <Routes>
-                        <Route path="/" element={<Manatee />} />
-                        <Route path="/manatee" element={<Manatee />} />
-                        <Route path="/whale" element={<Whale />}>
-                            <Route path=":type" />
-                        </Route>
-                        <Route path="/narwhal" element={<Narwhal />} />
-                    </Routes>
-                </BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Layout />}>
+                        <Route index element={<Home />} />
+                        <Route path="cv" element={<Cv />} />
+                    </Route>
+                </Routes>
             </div>
-        </div>
+        </BrowserRouter>
     </ThemeProvider>
 );
 

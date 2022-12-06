@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import Link from '@mui/material/Link';
+import {Link as RouterLink} from 'react-router-dom';
+
 import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@mui/material/AppBar';
 import ToolBar from '@mui/material/Toolbar';
@@ -17,8 +19,8 @@ import {NavigationLinks} from 'contracts/NavigationLinks';
 
 // @todo: to get this data from Keystone
 const navigationLinks: NavigationLinks = [
-    {name: 'About', href: '/about'},
-    {name: 'Projects', href: '/projects'},
+    {name: 'home', href: '/'},
+    {name: 'cv', href: '/cv'},
     {name: 'Resume', href: '/resume'},
     {name: 'Contact', href: '/resume'},
 ];
@@ -61,10 +63,12 @@ const Header: React.FC = () => {
                                     <Link
                                         className={styles.link}
                                         color="textPrimary"
+                                        component={RouterLink}
                                         variant="button"
-                                        component="button"
                                         underline="none"
                                         key={item.name}
+                                        href={item.href}
+                                        to={item.href}
                                     >
                                         {item.name}
                                     </Link>
@@ -121,10 +125,12 @@ const Header: React.FC = () => {
                             <Link
                                 className={styles.link}
                                 color="textPrimary"
+                                component={RouterLink}
                                 variant="button"
-                                component="button"
                                 underline="none"
                                 key={item?.name}
+                                href={item.href}
+                                to={item.href}
                             >
                                 {item?.name}
                             </Link>
