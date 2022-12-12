@@ -1,14 +1,11 @@
 import React from 'react';
 import {useViewport} from 'utils/hooks/useViewport';
+import MobileCv from 'components/Cv/Mobile';
+import BREAKPOINTS from 'utils/BreakPoints';
 
 const Cv: React.FC = () => {
     const {width, height} = useViewport();
 
-    return (
-        <h1>
-            <h2>Width: {width}</h2>
-            <h2>height: {height}</h2>
-        </h1>
-    );
+    return <>{width < BREAKPOINTS.tablet && <MobileCv />}</>;
 };
 export default Cv;
