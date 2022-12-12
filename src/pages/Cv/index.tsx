@@ -1,6 +1,14 @@
-import HomeBanner from 'components/HomeBanner';
-import SkillsSumary from 'components/SkillsSumary';
 import React from 'react';
+import {useViewport} from 'utils/hooks/useViewport';
 
-const Cv: React.FC = () => <h1>This is the CV page</h1>;
+const Cv: React.FC = () => {
+    const {width, height} = useViewport();
+
+    return (
+        <h1>
+            <h2>Width: {width}</h2>
+            <h2>height: {height}</h2>
+        </h1>
+    );
+};
 export default Cv;
