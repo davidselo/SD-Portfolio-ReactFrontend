@@ -1,4 +1,3 @@
-import HomeBanner from 'components/HomeBanner';
 import SkillsSumary from 'components/SkillsSumary';
 import React from 'react';
 
