@@ -1,0 +1,26 @@
+.wrapper {
+    display: block;
+    & > div {
+        float: left;
+        display: block;
+    }
+    .left {
+        background-color: yellowgreen;
+    }
+    .middle {
+        background-color: blueviolet;
+    }
+    .right {
+        background-color: purple;
+    }
+}
+
+.cv-container {
+    background-color: #98b9f2;
+}
+
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+    }
+}
