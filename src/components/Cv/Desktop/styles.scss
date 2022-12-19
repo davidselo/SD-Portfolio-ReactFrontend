@@ -1,0 +1,9 @@
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+.cv-content--header {
+    background-color: #98b9f2;
+}

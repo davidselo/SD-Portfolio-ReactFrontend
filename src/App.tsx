@@ -3,7 +3,7 @@ import React from 'react';
 import Home from 'pages/Home';
 import Layout from 'pages/Layout';
 import Cv from 'pages/Cv';
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import './sass/styles.scss';
 
