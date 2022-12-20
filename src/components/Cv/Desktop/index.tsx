@@ -3,6 +3,8 @@ import {Box, Container, Grid, Stack} from '@mui/material';
 import React from 'react';
 import './styles.scss';
 import * as cvData from 'data/staticData/cv/default.json';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 
 const DesktopCv: React.FC = () => {
     const printPage = () => {
@@ -23,6 +25,7 @@ const DesktopCv: React.FC = () => {
         return true;
     };
     const {basics} = cvData;
+    const {work} = cvData;
 
     return (
         <>
@@ -37,96 +40,92 @@ const DesktopCv: React.FC = () => {
                     sx={{marginTop: '20px'}}
                 >
                     {/* CV Header */}
-                    <Grid container className="cv-content--header">
-                        <Grid xs></Grid>
-                        <Grid xs={10}>
-                            <Box textAlign="center" minHeight="120px">
+                    {/* @todo: Move Header to his own Component. */}
+                    <Grid
+                        container
+                        spacing={1}
+                        alignContent="center"
+                        justifyContent="center"
+                        className="cv-content--header"
+                        paddingBottom="20px"
+                    >
+                        <Grid item xs></Grid>
+                        <Grid item xs={10}>
+                            <Box
+                                textAlign="center"
+                                marginTop="20px"
+                                sx={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                }}
+                            >
                                 <Typography variant="h4">
-                                    David Villalba Flores
+                                    {basics.name.toUpperCase()}
                                 </Typography>
                             </Box>
                         </Grid>
-                        <Grid xs></Grid>
+                        <Grid item xs></Grid>
+                        <Grid item xs={5} />
+                        <Grid item xs={4}>
+                            <Typography variant="h6">{basics.email}</Typography>
+                        </Grid>
+                        <Grid item xs={3}>
+                            <Typography variant="h6">{basics.phone}</Typography>
+                        </Grid>
                     </Grid>
                     {/* CV Body */}
                     <Grid container className="cv-content--body">
                         {/* Profesional Experience title*/}
-                        <Container>
+                        <Container sx={{marginTop: '20px'}}>
                             <Grid xs={12}>
                                 <Typography variant="h5">
+                                    <TipsAndUpdatesIcon />
                                     Profesional Experience
                                 </Typography>
                             </Grid>
                         </Container>
                         {/* Profesional Experience companies*/}
-                        <Container>
+                        <Container sx={{marginTop: '20px'}}>
                             <Grid container>
-                                <Grid xs={4}>
-                                    <Box className="cv-experience--places">
-                                        <Typography variant="h6">
-                                            Company 1
-                                        </Typography>
-                                    </Box>
-                                </Grid>
-                                <Grid xs={8}>
-                                    <Box sx={{width: '100%'}}>
-                                        <Stack>
-                                            <Typography variant="h6">
-                                                Item 1
-                                            </Typography>
-                                            <Typography variant="h6">
-                                                Item 2
-                                            </Typography>
-                                            <Typography variant="h6">
-                                                Item 3
-                                            </Typography>
-                                        </Stack>
-                                    </Box>
-                                </Grid>
-                                <Grid xs={4}>
-                                    <Box className="cv-experience--places">
-                                        <Typography variant="h6">
-                                            Company 1
-                                        </Typography>
-                                    </Box>
-                                </Grid>
-                                <Grid xs={8}>
-                                    <Box sx={{width: '100%'}}>
-                                        <Stack>
-                                            <Typography variant="h6">
-                                                Item 1
-                                            </Typography>
-                                            <Typography variant="h6">
-                                                Item 2
-                                            </Typography>
-                                            <Typography variant="h6">
-                                                Item 3
-                                            </Typography>
-                                        </Stack>
-                                    </Box>
-                                </Grid>
-                                <Grid xs={4}>
-                                    <Box className="cv-experience--places">
-                                        <Typography variant="h6">
-                                            Company 1
-                                        </Typography>
-                                    </Box>
-                                </Grid>
-                                <Grid xs={8}>
-                                    <Box sx={{width: '100%'}}>
-                                        <Stack>
-                                            <Typography variant="h6">
-                                                Item 1
-                                            </Typography>
-                                            <Typography variant="h6">
-                                                Item 2
-                                            </Typography>
-                                            <Typography variant="h6">
-                                                Item 3
-                                            </Typography>
-                                        </Stack>
-                                    </Box>
-                                </Grid>
+                                {work.map(company => {
+                                    return (
+                                        <>
+                                            <Grid xs={4}>
+                                                <Box className="cv-experience--places">
+                                                    <Typography variant="h6">
+                                                        {company.position}
+                                                    </Typography>
+                                                </Box>
+                                                <Box className="cv-experience--places">
+                                                    <Typography variant="h6">
+                                                        {company.name}
+                                                    </Typography>
+                                                </Box>
+                                                <Box className="cv-experience--places">
+                                                    <Typography variant="h6">
+                                                        {company.startDate}-
+                                                        {company.endDate}
+                                                    </Typography>
+                                                </Box>
+                                            </Grid>
+                                            <Grid xs={8}>
+                                                <Box sx={{width: '100%'}}>
+                                                    <Stack>
+                                                        {company.highlights.map(
+                                                            hightlight => (
+                                                                // eslint-disable-next-line react/jsx-key
+                                                                <Typography variant="inherit">
+                                                                    {hightlight}
+                                                                </Typography>
+                                                            ),
+                                                        )}
+                                                    </Stack>
+                                                </Box>
+                                            </Grid>
+                                        </>
+                                    );
+                                })}
                             </Grid>
                         </Container>
                     </Grid>

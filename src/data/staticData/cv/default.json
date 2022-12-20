@@ -1,10 +1,10 @@
 {
     "basics": {
-        "name": "John Doe",
-        "label": "Programmer",
+        "name": "David Villalba Flores",
+        "label": "Full Stack Developer",
         "image": "",
-        "email": "john@gmail.com",
-        "phone": "(912) 555-4321",
+        "email": "david.selo@gmail.com",
+        "phone": "+44 7561139547",
         "url": "https://johndoe.com",
         "summary": "A summary of John Doe…",
         "location": {
@@ -24,13 +24,19 @@
     },
     "work": [
         {
-            "name": "Company",
-            "position": "President",
-            "url": "https://company.com",
-            "startDate": "2013-01-01",
-            "endDate": "2014-01-01",
+            "name": "Missguided",
+            "position": "Full Stack Developer",
+            "url": "https://www.missguided.co.uk/",
+            "startDate": "2019-09-01",
+            "endDate": "2022-06-01",
             "summary": "Description…",
-            "highlights": ["Started the company"]
+            "highlights": [
+                "Integrating external tax provider on Magento.",
+                "Working on Node JS microservices and Lambdas.",
+                "Replacing Magento checkout with a React JS checkout.",
+                "Migration from Magento 1 to a microservices infrastructure.",
+                "Integration with Stripe and payment gateways."
+            ]
         }
     ],
     "volunteer": [
