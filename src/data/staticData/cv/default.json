@@ -37,6 +37,32 @@
                 "Migration from Magento 1 to a microservices infrastructure.",
                 "Integration with Stripe and payment gateways."
             ]
+        },
+        {
+            "name": "Dobell",
+            "position": "Magento Lead Developer",
+            "url": "https://www.dobell.co.uk/",
+            "startDate": "2016-02-01",
+            "endDate": "2019-06-01",
+            "summary": "Description…",
+            "highlights": [
+                "Development of custom extensions for a multi-language Magento Enterprise 1.4.",
+                "Developing custom integrations with third party providers (Trustpilot, Trusted Shops, Exponea, ImportExport, Akeneo, etc).",
+                "Magento 1 to Magento 2 migration."
+            ]
+        },
+        {
+            "name": "Compra Amiga S.L",
+            "position": "Magento Lead Developer",
+            "startDate": "2011-12-01",
+            "endDate": "2015-12-01",
+            "summary": "Description…",
+            "highlights": [
+                "Development of custom Magento sites.",
+                "Developing custom extensions.",
+                "Catalog providers and ERP integra",
+                "Tech lead of a small team of 3 developers."
+            ]
         }
     ],
     "volunteer": [

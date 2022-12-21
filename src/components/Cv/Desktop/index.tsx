@@ -1,18 +1,29 @@
 import {Typography} from '@material-ui/core';
-import {Box, Container, Grid, Stack} from '@mui/material';
+import {
+    Avatar,
+    Box,
+    Container,
+    Grid,
+    List,
+    ListItem,
+    ListItemAvatar,
+    ListItemText,
+} from '@mui/material';
+import CircleIcon from '@mui/icons-material/Circle';
 import React from 'react';
 import './styles.scss';
 import * as cvData from 'data/staticData/cv/default.json';
-import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 
 const DesktopCv: React.FC = () => {
     const printPage = () => {
+        window.print();
+        return;
         const divContents = document.getElementById(
             'cv-content',
         ) as HTMLElement | null;
         const divHtml = divContents?.innerHTML;
-        const a = window.open('', '', 'height=1024, width=1024');
+        const a = window.open('', 'PRINT', 'height=1024, width=1024');
         a?.document.write('<html>');
         a?.document.write(document?.head.innerHTML);
         a?.document.write('<body>');
@@ -38,6 +49,7 @@ const DesktopCv: React.FC = () => {
                     id="cv-content"
                     disableGutters
                     sx={{marginTop: '20px'}}
+                    maxWidth="md"
                 >
                     {/* CV Header */}
                     {/* @todo: Move Header to his own Component. */}
@@ -49,7 +61,7 @@ const DesktopCv: React.FC = () => {
                         className="cv-content--header"
                         paddingBottom="20px"
                     >
-                        <Grid item xs></Grid>
+                        <Grid item xs />
                         <Grid item xs={10}>
                             <Box
                                 textAlign="center"
@@ -91,36 +103,53 @@ const DesktopCv: React.FC = () => {
                                 {work.map(company => {
                                     return (
                                         <>
-                                            <Grid xs={4}>
+                                            <Grid xs={1} />
+                                            <Grid xs={3}>
                                                 <Box className="cv-experience--places">
-                                                    <Typography variant="h6">
+                                                    <Typography>
                                                         {company.position}
                                                     </Typography>
                                                 </Box>
                                                 <Box className="cv-experience--places">
-                                                    <Typography variant="h6">
+                                                    <Typography>
                                                         {company.name}
                                                     </Typography>
                                                 </Box>
                                                 <Box className="cv-experience--places">
-                                                    <Typography variant="h6">
+                                                    <Typography>
                                                         {company.startDate}-
                                                         {company.endDate}
                                                     </Typography>
                                                 </Box>
                                             </Grid>
-                                            <Grid xs={8}>
-                                                <Box sx={{width: '100%'}}>
-                                                    <Stack>
+                                            <Grid xs={1} />
+                                            <Grid xs={7}>
+                                                <Box
+                                                    sx={{
+                                                        width: '100%',
+                                                        fontWeight: 'bold',
+                                                    }}
+                                                >
+                                                    <List dense>
                                                         {company.highlights.map(
                                                             hightlight => (
-                                                                // eslint-disable-next-line react/jsx-key
-                                                                <Typography variant="inherit">
-                                                                    {hightlight}
-                                                                </Typography>
+                                                                <>
+                                                                    <ListItem
+                                                                        dense
+                                                                    >
+                                                                        <ListItemText
+                                                                            primary={
+                                                                                hightlight
+                                                                            }
+                                                                            inset={
+                                                                                false
+                                                                            }
+                                                                        />
+                                                                    </ListItem>
+                                                                </>
                                                             ),
                                                         )}
-                                                    </Stack>
+                                                    </List>
                                                 </Box>
                                             </Grid>
                                         </>
