@@ -1,15 +1,12 @@
 import {Typography} from '@material-ui/core';
 import {
-    Avatar,
     Box,
     Container,
     Grid,
     List,
     ListItem,
-    ListItemAvatar,
     ListItemText,
 } from '@mui/material';
-import CircleIcon from '@mui/icons-material/Circle';
 import React from 'react';
 import './styles.scss';
 import * as cvData from 'data/staticData/cv/default.json';
@@ -19,21 +16,6 @@ const DesktopCv: React.FC = () => {
     const printPage = () => {
         window.print();
         return;
-        const divContents = document.getElementById(
-            'cv-content',
-        ) as HTMLElement | null;
-        const divHtml = divContents?.innerHTML;
-        const a = window.open('', 'PRINT', 'height=1024, width=1024');
-        a?.document.write('<html>');
-        a?.document.write(document?.head.innerHTML);
-        a?.document.write('<body>');
-        a?.document.write(divHtml ?? '');
-        a?.document.write('</body></html>');
-        a?.document.close();
-        a?.focus();
-        a?.print();
-        a?.document.close();
-        return true;
     };
     const {basics} = cvData;
     const {work} = cvData;
