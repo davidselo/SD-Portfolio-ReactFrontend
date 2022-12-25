@@ -11,6 +11,8 @@ import React from 'react';
 import './styles.scss';
 import * as cvData from 'data/staticData/cv/default.json';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
+import SettingsIcon from '@mui/icons-material/Settings';
+import SchoolIcon from '@mui/icons-material/School';
 
 const DesktopCv: React.FC = () => {
     const printPage = () => {
@@ -19,6 +21,8 @@ const DesktopCv: React.FC = () => {
     };
     const {basics} = cvData;
     const {work} = cvData;
+    const {education} = cvData;
+    const {languages} = cvData;
 
     return (
         <>
@@ -69,13 +73,14 @@ const DesktopCv: React.FC = () => {
                         </Grid>
                     </Grid>
                     {/* CV Body */}
+                    {/* @todo: Move body to own component */}
                     <Grid container className="cv-content--body">
                         {/* Profesional Experience title*/}
                         <Container sx={{marginTop: '20px'}}>
                             <Grid xs={12}>
                                 <Typography variant="h5">
                                     <TipsAndUpdatesIcon />
-                                    Profesional Experience
+                                    PROFESIONAL EXPERIENCE
                                 </Typography>
                             </Grid>
                         </Container>
@@ -137,6 +142,82 @@ const DesktopCv: React.FC = () => {
                                         </>
                                     );
                                 })}
+                            </Grid>
+                        </Container>
+                        {/* Expertise and Education. */}
+                        <Container sx={{marginTop: '20px'}}>
+                            <Grid container>
+                                <Grid xs={1} />
+                                <Grid xs={3}>
+                                    <Typography variant="h5">
+                                        <SettingsIcon />
+                                        EXPERTISE
+                                    </Typography>
+                                    <Typography
+                                        variant="inherit"
+                                        sx={{marginTop: '20px'}}
+                                    >
+                                        {basics.summary}
+                                    </Typography>
+                                </Grid>
+                                <Grid xs={1} />
+                                <Grid xs={7}>
+                                    <Typography variant="h5">
+                                        <SchoolIcon />
+                                        Education
+                                    </Typography>
+                                    {education.map(item => {
+                                        return (
+                                            <>
+                                                <Box
+                                                    className="cv-experience--places"
+                                                    sx={{marginTop: '20px'}}
+                                                >
+                                                    <Typography>
+                                                        {item.studyType}
+                                                    </Typography>
+                                                </Box>
+                                                <Box className="cv-experience--places">
+                                                    <Typography>
+                                                        {item.institution}
+                                                    </Typography>
+                                                </Box>
+                                                <Box className="cv-experience--places">
+                                                    <Typography>
+                                                        {item.startDate}-
+                                                        {item.endDate}
+                                                    </Typography>
+                                                </Box>
+                                            </>
+                                        );
+                                    })}
+                                    <Typography
+                                        variant="h5"
+                                        sx={{marginTop: '20px'}}
+                                    >
+                                        <SchoolIcon />
+                                        Language
+                                    </Typography>
+                                    {languages.map(language => {
+                                        return (
+                                            <>
+                                                <Box
+                                                    className="cv-experience--places"
+                                                    sx={{marginTop: '20px'}}
+                                                >
+                                                    <Typography>
+                                                        {language.language}
+                                                    </Typography>
+                                                </Box>
+                                                <Box className="cv-experience--places">
+                                                    <Typography>
+                                                        {language.fluency}
+                                                    </Typography>
+                                                </Box>
+                                            </>
+                                        );
+                                    })}
+                                </Grid>
                             </Grid>
                         </Container>
                     </Grid>

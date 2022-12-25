@@ -6,7 +6,7 @@
         "email": "david.selo@gmail.com",
         "phone": "+44 7561139547",
         "url": "https://johndoe.com",
-        "summary": "A summary of John Doe…",
+        "summary": "Understanding business requirements and building software incrementally. Facilitating system migrations. Experience on system integrations. Developing new APIs for microservices.",
         "location": {
             "address": "2712 Broadway St",
             "postalCode": "CA 94115",
@@ -63,6 +63,26 @@
                 "Catalog providers and ERP integra",
                 "Tech lead of a small team of 3 developers."
             ]
+        },
+        {
+            "name": "Interactiv4",
+            "position": "Magento Developer",
+            "startDate": "2011-06-01",
+            "endDate": "2011-12-01",
+            "summary": "Description…",
+            "highlights": [
+                "Development of custom extensions for Magento 1."
+            ]
+        },
+        {
+            "name": "VipOfertas S.L",
+            "position": "Magento Developer",
+            "startDate": "2010-09-01",
+            "endDate": "2011-06-01",
+            "summary": "Description…",
+            "highlights": [
+                "Development of a Magento 1 private sales site."
+            ]
         }
     ],
     "volunteer": [
@@ -78,15 +98,26 @@
     ],
     "education": [
         {
-            "institution": "University",
-            "url": "https://institution.com/",
+            "institution": "Castilla-La Mancha University",
+            "url": "https://www.uclm.es/",
             "area": "Software Development",
-            "studyType": "Bachelor",
-            "startDate": "2011-01-01",
-            "endDate": "2013-01-01",
+            "studyType": "BSc Computer Science",
+            "startDate": "2002-01-01",
+            "endDate": "2006-01-01",
+            "score": "4.0",
+            "courses": ["DB1101 - Basic SQL"]
+        },
+        {
+            "institution": "Castilla-La Mancha University",
+            "url": "https://www.uclm.es/",
+            "area": "Software Development",
+            "studyType": "MSc Computer Science",
+            "startDate": "2006-01-01",
+            "endDate": "2010-01-01",
             "score": "4.0",
             "courses": ["DB1101 - Basic SQL"]
         }
+
     ],
     "awards": [
         {
@@ -122,8 +153,12 @@
     ],
     "languages": [
         {
-            "language": "English",
+            "language": "Spanish",
             "fluency": "Native speaker"
+        },
+        {
+            "language": "English",
+            "fluency": "Fluent"
         }
     ],
     "interests": [

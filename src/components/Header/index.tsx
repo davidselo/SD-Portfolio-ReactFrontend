@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import Link from '@mui/material/Link';
 import {Link as RouterLink} from 'react-router-dom';
 
-import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@mui/material/AppBar';
 import ToolBar from '@mui/material/Toolbar';
 import Avatar from '@mui/material/Avatar';
@@ -26,14 +25,8 @@ const navigationLinks: NavigationLinks = [
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const useStyles = makeStyles(theme => ({
-    link: {
-        marginRight: 20,
-    },
-}));
 
 const Header: React.FC = () => {
-    const styles = useStyles();
     const [open, setOpen] = useState(false);
     /* istanbul ignore next */
     return (
@@ -60,8 +53,8 @@ const Header: React.FC = () => {
                             <div className="header--menu-items">
                                 {navigationLinks.map(item => (
                                     // eslint-disable-next-line react/jsx-key
+
                                     <Link
-                                        className={styles.link}
                                         color="textPrimary"
                                         component={RouterLink}
                                         variant="button"
@@ -69,6 +62,7 @@ const Header: React.FC = () => {
                                         key={item.name}
                                         href={item.href}
                                         to={item.href}
+                                        sx={{marginRight: '20px'}}
                                     >
                                         {item.name}
                                     </Link>
@@ -123,7 +117,6 @@ const Header: React.FC = () => {
                         // eslint-disable-next-line react/jsx-key
                         <ListItem key={item.name}>
                             <Link
-                                className={styles.link}
                                 color="textPrimary"
                                 component={RouterLink}
                                 variant="button"

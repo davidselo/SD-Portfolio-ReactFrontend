@@ -18,7 +18,9 @@
             color: initial;
         }
     }
+    
 }
+
 
 @media print {
     #cv-content {
@@ -32,6 +34,7 @@
         // padding: 15px;
         font-size: 14px;
         line-height: 18px;
+        page-break-inside: avoid;
     }
     header {
         display: none !important ;
