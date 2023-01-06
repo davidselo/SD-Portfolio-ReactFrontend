@@ -1,6 +1,16 @@
 import React, {ReactNode} from 'react';
 
-const viewportContext = React.createContext({});
+interface AppContextInterface {
+    width: number;
+    height: number;
+}
+
+const sampleAppContext: AppContextInterface = {
+    width: 0,
+    height: 0,
+};
+const viewportContext =
+    React.createContext<AppContextInterface>(sampleAppContext);
 
 type Props = {
     children?: ReactNode;
