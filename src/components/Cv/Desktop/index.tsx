@@ -1,18 +1,11 @@
 import {Typography} from '@mui/material';
-import {
-    Box,
-    Container,
-    Grid,
-    List,
-    ListItem,
-    ListItemText,
-} from '@mui/material';
+import {Box, Container, Grid} from '@mui/material';
 import React from 'react';
 import './styles.scss';
 import * as cvData from 'data/staticData/cv/default.json';
-import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SchoolIcon from '@mui/icons-material/School';
+import JobExperienceList from 'components/JobExperienceList';
 
 const DesktopCv: React.FC = () => {
     const printPage = () => {
@@ -75,79 +68,10 @@ const DesktopCv: React.FC = () => {
                     {/* CV Body */}
                     {/* @todo: Move body to own component */}
                     <Grid container className="cv-content--body">
-                        {/* Profesional Experience title*/}
-                        <Container sx={{marginTop: '20px'}}>
-                            <Grid xs={12}>
-                                <Typography variant="h5">
-                                    <TipsAndUpdatesIcon />
-                                    PROFESIONAL EXPERIENCE
-                                </Typography>
-                            </Grid>
-                        </Container>
-                        {/* Profesional Experience companies*/}
-                        <Container sx={{marginTop: '20px'}}>
-                            <Grid container>
-                                {work.map(company => {
-                                    return (
-                                        <>
-                                            <Grid xs={1} />
-                                            <Grid xs={3}>
-                                                <Box className="cv-experience--places">
-                                                    <Typography>
-                                                        {company.position}
-                                                    </Typography>
-                                                </Box>
-                                                <Box className="cv-experience--places">
-                                                    <Typography>
-                                                        {company.name}
-                                                    </Typography>
-                                                </Box>
-                                                <Box className="cv-experience--places">
-                                                    <Typography>
-                                                        {company.startDate}-
-                                                        {company.endDate}
-                                                    </Typography>
-                                                </Box>
-                                            </Grid>
-                                            <Grid xs={1} />
-                                            <Grid xs={7}>
-                                                <Box
-                                                    sx={{
-                                                        width: '100%',
-                                                        fontWeight: 'bold',
-                                                    }}
-                                                >
-                                                    <List dense>
-                                                        {company.highlights.map(
-                                                            hightlight => (
-                                                                <>
-                                                                    <ListItem
-                                                                        dense
-                                                                    >
-                                                                        <ListItemText
-                                                                            primary={
-                                                                                hightlight
-                                                                            }
-                                                                            inset={
-                                                                                false
-                                                                            }
-                                                                        />
-                                                                    </ListItem>
-                                                                </>
-                                                            ),
-                                                        )}
-                                                    </List>
-                                                </Box>
-                                            </Grid>
-                                        </>
-                                    );
-                                })}
-                            </Grid>
-                        </Container>
+                        <JobExperienceList work={work} />
                         {/* Expertise and Education. */}
                         <Container sx={{marginTop: '20px'}}>
                             <Grid container>
-                                <Grid xs={1} />
                                 <Grid xs={3}>
                                     <Typography variant="h5">
                                         <SettingsIcon />
@@ -191,6 +115,9 @@ const DesktopCv: React.FC = () => {
                                             </>
                                         );
                                     })}
+                                </Grid>
+                                <Grid xs={1} />
+                                <Grid xs={3}>
                                     <Typography
                                         variant="h5"
                                         sx={{marginTop: '20px'}}
@@ -217,6 +144,16 @@ const DesktopCv: React.FC = () => {
                                             </>
                                         );
                                     })}
+                                </Grid>
+                                <Grid xs={1} />
+                                <Grid xs={7}>
+                                    <Typography
+                                        variant="h5"
+                                        sx={{marginTop: '20px'}}
+                                    >
+                                        <SchoolIcon />
+                                        Skills
+                                    </Typography>
                                 </Grid>
                             </Grid>
                         </Container>
