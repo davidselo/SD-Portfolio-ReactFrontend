@@ -28,25 +28,33 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
     return (
         <>
             {/* Profesional Experience title*/}
-            <Container sx={{marginTop: '20px'}}>
+            <Container sx={{marginTop: '10px'}}>
                 <Grid xs={12}>
                     <Typography variant="h5">
-                        <TipsAndUpdatesIcon />
-                        PROFESIONAL EXPERIENCE
+                        <Box sx={{display: 'flex', flexDirection: 'row'}}>
+                            <TipsAndUpdatesIcon />
+                            <Box sx={{marginLeft: '10px'}}>
+                                PROFESIONAL EXPERIENCE
+                            </Box>
+                        </Box>
                     </Typography>
                 </Grid>
             </Container>
             {/* Profesional Experience companies*/}
-            <Container sx={{marginTop: '20px'}}>
-                <Grid container>
-                    {work.map(company => {
-                        return (
-                            <>
-                                <Grid xs={1} />
-                                <Grid xs={3}>
+            <Container sx={{marginTop: '10px'}}>
+                {work.map(company => {
+                    return (
+                        <>
+                            <Grid container sx={{marginTop: '10px'}}>
+                                <Grid xs={4}>
                                     <Box className="cv-experience--places">
-                                        <Typography>
-                                            {company.position}
+                                        <Typography
+                                            variant="h6"
+                                            component="div"
+                                        >
+                                            <Box sx={{fontWeight: 'bold'}}>
+                                                {company.position}
+                                            </Box>
                                         </Typography>
                                     </Box>
                                     <Box className="cv-experience--places">
@@ -67,11 +75,31 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
                                             fontWeight: 'bold',
                                         }}
                                     >
-                                        <List dense>
+                                        <List
+                                            dense
+                                            sx={{
+                                                paddingTop: 'unset',
+                                                paddingBottom: 'unset',
+                                                listStyleType: 'disc',
+                                                pl: 4,
+                                            }}
+                                        >
                                             {company.highlights.map(
                                                 hightlight => (
                                                     <>
-                                                        <ListItem dense>
+                                                        <ListItem
+                                                            dense
+                                                            sx={{
+                                                                paddingTop:
+                                                                    'unset',
+                                                                paddingBottom:
+                                                                    'unset',
+                                                                display:
+                                                                    'list-item',
+                                                                paddingLeft:
+                                                                    'unset',
+                                                            }}
+                                                        >
                                                             <ListItemText
                                                                 primary={
                                                                     hightlight
@@ -85,10 +113,10 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
                                         </List>
                                     </Box>
                                 </Grid>
-                            </>
-                        );
-                    })}
-                </Grid>
+                            </Grid>
+                        </>
+                    );
+                })}
             </Container>
         </>
     );
