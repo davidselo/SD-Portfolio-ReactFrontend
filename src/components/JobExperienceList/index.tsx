@@ -29,7 +29,7 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
         <>
             {/* Profesional Experience title*/}
             <Container sx={{marginTop: '10px'}}>
-                <Grid xs={12}>
+                <Grid item xs={12}>
                     <Typography variant="h5">
                         <Box sx={{display: 'flex', flexDirection: 'row'}}>
                             <TipsAndUpdatesIcon />
@@ -45,8 +45,12 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
                 {work.map(company => {
                     return (
                         <>
-                            <Grid container sx={{marginTop: '10px'}}>
-                                <Grid xs={4}>
+                            <Grid
+                                container
+                                sx={{marginTop: '10px'}}
+                                key={company.name}
+                            >
+                                <Grid item xs={4}>
                                     <Box className="cv-experience--places">
                                         <Typography
                                             variant="h6"
@@ -67,8 +71,8 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
                                         </Typography>
                                     </Box>
                                 </Grid>
-                                <Grid xs={1} />
-                                <Grid xs={7}>
+                                <Grid item xs={1} />
+                                <Grid item xs={7}>
                                     <Box
                                         sx={{
                                             width: '100%',
@@ -99,6 +103,7 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
                                                                 paddingLeft:
                                                                     'unset',
                                                             }}
+                                                            key={hightlight}
                                                         >
                                                             <ListItemText
                                                                 primary={

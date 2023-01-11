@@ -6,9 +6,10 @@ import * as cvData from 'data/staticData/cv/default.json';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SchoolIcon from '@mui/icons-material/School';
 import JobExperienceList from 'components/JobExperienceList';
-import SendIcon from '@mui/icons-material/Send';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import LanguageIcon from '@mui/icons-material/Language';
+import LanguageCard from 'components/cv/LanguageCard';
 
 const DesktopCv: React.FC = () => {
     const printPage = () => {
@@ -104,13 +105,22 @@ const DesktopCv: React.FC = () => {
                     {/* @todo: Move body to own component */}
                     <Grid container className="cv-content--body">
                         <JobExperienceList work={work} />
-                        {/* Expertise and Education. */}
+                        {/* Expertise, Education & Language. */}
                         <Container sx={{marginTop: '20px'}}>
                             <Grid container>
-                                <Grid xs={3}>
+                                <Grid item xs={4}>
                                     <Typography variant="h5">
-                                        <SettingsIcon />
-                                        EXPERTISE
+                                        <Box
+                                            sx={{
+                                                display: 'flex',
+                                                flexDirection: 'row',
+                                            }}
+                                        >
+                                            <SettingsIcon />
+                                            <Box sx={{marginLeft: '10px'}}>
+                                                EXPERTISE
+                                            </Box>
+                                        </Box>
                                     </Typography>
                                     <Typography
                                         variant="inherit"
@@ -119,11 +129,20 @@ const DesktopCv: React.FC = () => {
                                         {basics.summary}
                                     </Typography>
                                 </Grid>
-                                <Grid xs={1} />
-                                <Grid xs={7}>
+                                <Grid item xs={1} />
+                                <Grid item xs={4}>
                                     <Typography variant="h5">
-                                        <SchoolIcon />
-                                        Education
+                                        <Box
+                                            sx={{
+                                                display: 'flex',
+                                                flexDirection: 'row',
+                                            }}
+                                        >
+                                            <SchoolIcon />
+                                            <Box sx={{marginLeft: '10px'}}>
+                                                EDUCATION
+                                            </Box>
+                                        </Box>
                                     </Typography>
                                     {education.map(item => {
                                         return (
@@ -151,37 +170,25 @@ const DesktopCv: React.FC = () => {
                                         );
                                     })}
                                 </Grid>
-                                <Grid xs={1} />
-                                <Grid xs={3}>
-                                    <Typography
-                                        variant="h5"
-                                        sx={{marginTop: '20px'}}
-                                    >
-                                        <SchoolIcon />
-                                        Language
+
+                                <Grid item xs={3}>
+                                    <Typography variant="h5">
+                                        <Box
+                                            sx={{
+                                                display: 'flex',
+                                                flexDirection: 'row',
+                                            }}
+                                        >
+                                            <LanguageIcon />
+                                            <Box sx={{marginLeft: '10px'}}>
+                                                LANGUAGE
+                                            </Box>
+                                        </Box>
                                     </Typography>
-                                    {languages.map(language => {
-                                        return (
-                                            <>
-                                                <Box
-                                                    className="cv-experience--places"
-                                                    sx={{marginTop: '20px'}}
-                                                >
-                                                    <Typography>
-                                                        {language.language}
-                                                    </Typography>
-                                                </Box>
-                                                <Box className="cv-experience--places">
-                                                    <Typography>
-                                                        {language.fluency}
-                                                    </Typography>
-                                                </Box>
-                                            </>
-                                        );
-                                    })}
+                                    <LanguageCard languages={languages} />
                                 </Grid>
-                                <Grid xs={1} />
-                                <Grid xs={7}>
+
+                                <Grid item xs={12}>
                                     <Typography
                                         variant="h5"
                                         sx={{marginTop: '20px'}}
