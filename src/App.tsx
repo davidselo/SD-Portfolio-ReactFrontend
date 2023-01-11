@@ -6,18 +6,26 @@ import Cv from 'pages/Cv';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import './sass/styles.scss';
+import {Container} from '@mui/material';
 
-const App: React.FC = () => (
-    <BrowserRouter>
-        <div className="wrapper">
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />
-                    <Route path="cv" element={<Cv />} />
-                </Route>
-            </Routes>
-        </div>
-    </BrowserRouter>
-);
+const App: React.FC = () => {
+    return (
+        <BrowserRouter>
+            <Container
+                className="wrapper"
+                sx={{backgroundColor: '#d3d0cb'}}
+                maxWidth={false}
+                disableGutters
+            >
+                <Routes>
+                    <Route path="/" element={<Layout />}>
+                        <Route index element={<Home />} />
+                        <Route path="cv" element={<Cv />} />
+                    </Route>
+                </Routes>
+            </Container>
+        </BrowserRouter>
+    );
+};
 
 export default App;

@@ -31,7 +31,7 @@ const DesktopCv: React.FC = () => {
                 <Container
                     id="cv-content"
                     disableGutters
-                    sx={{marginTop: '20px'}}
+                    sx={{marginTop: '20px', backgroundColor: '#ffffff'}}
                     maxWidth="md"
                 >
                     {/* CV Header */}
@@ -43,6 +43,7 @@ const DesktopCv: React.FC = () => {
                         justifyContent="center"
                         className="cv-content--header"
                         paddingBottom="20px"
+                        sx={{marginLeft: 'unset'}}
                     >
                         <Grid item xs={1} />
                         <Grid item xs={10}>
