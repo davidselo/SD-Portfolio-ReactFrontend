@@ -1,33 +1,13 @@
-@media print {
-    body {
-        -webkit-print-color-adjust: exact;
-    }
-}
-
 .cv-content--header {
     background-color: #98b9f2;
 }
-@media print {
-    html {
-        display: grid;
-        margin: 0;
-        padding: 2rem 0 2rem 2rem;
-        box-shadow: none;
-        a {
-            text-decoration: none;
-            color: initial;
-        }
-    }
-    
-}
-
 
 @media print {
     #cv-content {
         background-color: white;
         height: 100%;
         width: 100%;
-        position: fixed;
+        /* position: fixed; */
         top: 0;
         left: 0;
         margin: 0;
@@ -39,4 +19,14 @@
     header {
         display: none !important ;
     }
+    .cv--print-button{
+        display: none;
+    }
+    .cv--header{
+        display: none;
+    }
+    body {
+        -webkit-print-color-adjust: exact;
+    }
 }
+
