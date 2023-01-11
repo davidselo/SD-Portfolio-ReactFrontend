@@ -63,6 +63,7 @@ const Header: React.FC = () => {
                                         href={item.href}
                                         to={item.href}
                                         sx={{marginRight: '20px'}}
+                                        onClick={() => window.scrollTo(0, 0)}
                                     >
                                         {item.name}
                                     </Link>

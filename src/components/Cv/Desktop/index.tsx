@@ -38,12 +38,10 @@ const DesktopCv: React.FC = () => {
                     {/* @todo: Move Header to his own Component. */}
                     <Grid
                         container
-                        spacing={1}
                         alignContent="center"
                         justifyContent="center"
                         className="cv-content--header"
                         paddingBottom="20px"
-                        sx={{marginLeft: 'unset'}}
                     >
                         <Grid item xs={1} />
                         <Grid item xs={10}>
