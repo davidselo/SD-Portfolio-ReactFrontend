@@ -10,18 +10,17 @@ import {
 } from '@mui/material';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 
+interface Company {
+    name: string;
+    position: string;
+    url?: string;
+    startDate: string;
+    endDate: string;
+    summary: string;
+    highlights: string[];
+}
 interface Props {
-    work: [
-        {
-            name: string;
-            position: string;
-            url?: string;
-            startDate: string;
-            endDate: string;
-            summary: string;
-            highlights: string[];
-        },
-    ];
+    work: Array<Company>;
 }
 
 const JobExperienceList: React.FC<Props> = ({work}) => {

@@ -1,16 +1,15 @@
 import {Box, Typography} from '@mui/material';
 import React from 'react';
 
+interface language {
+    language: string;
+    fluency: string;
+}
 interface Props {
-    languages: [
-        {
-            language: string;
-            fluency: string;
-        },
-    ];
+    languages: Array<language>;
 }
 
-const LanguageCard: React.FC<Props> = ({languages}) => {
+const LanguageCard: React.FC<Props> = ({languages}: Props) => {
     return (
         <>
             {languages.map(language => {
