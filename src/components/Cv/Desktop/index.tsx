@@ -9,7 +9,7 @@ import JobExperienceList from 'components/JobExperienceList';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import LanguageIcon from '@mui/icons-material/Language';
-import LanguageCard from 'components/cv/LanguageCard';
+import LanguageCard from '../LanguageCard';
 
 const DesktopCv: React.FC = () => {
     const printPage = () => {
