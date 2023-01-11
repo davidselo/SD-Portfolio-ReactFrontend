@@ -6,6 +6,9 @@ import * as cvData from 'data/staticData/cv/default.json';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SchoolIcon from '@mui/icons-material/School';
 import JobExperienceList from 'components/JobExperienceList';
+import SendIcon from '@mui/icons-material/Send';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 
 const DesktopCv: React.FC = () => {
     const printPage = () => {
@@ -40,7 +43,7 @@ const DesktopCv: React.FC = () => {
                         className="cv-content--header"
                         paddingBottom="20px"
                     >
-                        <Grid item xs />
+                        <Grid item xs={1} />
                         <Grid item xs={10}>
                             <Box
                                 textAlign="center"
@@ -56,13 +59,45 @@ const DesktopCv: React.FC = () => {
                                 </Typography>
                             </Box>
                         </Grid>
-                        <Grid item xs></Grid>
+                        <Grid item xs={1}></Grid>
                         <Grid item xs={5} />
                         <Grid item xs={4}>
-                            <Typography variant="h6">{basics.email}</Typography>
+                            <Box sx={{paddingLeft: '31px'}}>
+                                <Typography variant="h6">
+                                    <Box
+                                        sx={{
+                                            display: 'flex',
+                                            flexDirection: 'row',
+                                        }}
+                                    >
+                                        <EmailIcon
+                                            fontSize="inherit"
+                                            sx={{paddingTop: '6px'}}
+                                        />
+
+                                        <Box sx={{marginLeft: '5px'}}>
+                                            {basics.email}
+                                        </Box>
+                                    </Box>
+                                </Typography>
+                            </Box>
                         </Grid>
                         <Grid item xs={3}>
-                            <Typography variant="h6">{basics.phone}</Typography>
+                            <Typography variant="h6">
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                    }}
+                                >
+                                    <PhoneIphoneIcon
+                                        fontSize="inherit"
+                                        sx={{paddingTop: '7px'}}
+                                    />
+
+                                    <Box>{basics.phone}</Box>
+                                </Box>
+                            </Typography>
                         </Grid>
                     </Grid>
                     {/* CV Body */}
