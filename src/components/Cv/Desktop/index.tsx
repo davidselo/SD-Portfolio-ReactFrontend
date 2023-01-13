@@ -10,6 +10,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import LanguageIcon from '@mui/icons-material/Language';
 import LanguageCard from '../LanguageCard';
+import EducationCard from '../EducationCard';
 
 const DesktopCv: React.FC = () => {
     const printPage = () => {
@@ -129,44 +130,7 @@ const DesktopCv: React.FC = () => {
                             </Grid>
                             <Grid item xs={1} />
                             <Grid item xs={4}>
-                                <Typography variant="h5">
-                                    <Box
-                                        sx={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                        }}
-                                    >
-                                        <SchoolIcon />
-                                        <Box sx={{marginLeft: '10px'}}>
-                                            EDUCATION
-                                        </Box>
-                                    </Box>
-                                </Typography>
-                                {education.map(item => {
-                                    return (
-                                        <Container key={item.studyType}>
-                                            <Box
-                                                className="cv-experience--places"
-                                                sx={{marginTop: '20px'}}
-                                            >
-                                                <Typography>
-                                                    {item.studyType}
-                                                </Typography>
-                                            </Box>
-                                            <Box className="cv-experience--places">
-                                                <Typography>
-                                                    {item.institution}
-                                                </Typography>
-                                            </Box>
-                                            <Box className="cv-experience--places">
-                                                <Typography>
-                                                    {item.startDate}-
-                                                    {item.endDate}
-                                                </Typography>
-                                            </Box>
-                                        </Container>
-                                    );
-                                })}
+                                <EducationCard education={education} />
                             </Grid>
 
                             <Grid item xs={3}>
