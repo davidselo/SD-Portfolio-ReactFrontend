@@ -8,7 +8,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import JobExperienceList from 'components/JobExperienceList';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
-import LanguageIcon from '@mui/icons-material/Language';
+
 import LanguageCard from '../LanguageCard';
 import EducationCard from '../EducationCard';
 
@@ -134,19 +134,6 @@ const DesktopCv: React.FC = () => {
                             </Grid>
 
                             <Grid item xs={3}>
-                                <Typography variant="h5">
-                                    <Box
-                                        sx={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                        }}
-                                    >
-                                        <LanguageIcon />
-                                        <Box sx={{marginLeft: '10px'}}>
-                                            LANGUAGE
-                                        </Box>
-                                    </Box>
-                                </Typography>
                                 <LanguageCard languages={languages} />
                             </Grid>
 
