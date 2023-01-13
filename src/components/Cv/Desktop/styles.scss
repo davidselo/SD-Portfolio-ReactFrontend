@@ -1,14 +1,7 @@
 @media print {
-    body {
-        -webkit-print-color-adjust: exact;
+    header {
+        display: none !important ;
     }
-    @page { size: auto;  margin: 0mm; }
-}
-
-.cv-content--header {
-    background-color: #98b9f2;
-}
-@media print {
     html {
         display: grid;
         margin: 0;
@@ -19,11 +12,17 @@
             color: initial;
         }
     }
-    
-}
 
-
-@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+    }
+    .cv--print-button {
+        display: none !important ;
+    }
+    @page {
+        size: auto;
+        margin: 0mm;
+    }
     #cv-content {
         background-color: white;
         height: 100%;
@@ -37,7 +36,8 @@
         line-height: 18px;
         page-break-inside: avoid;
     }
-    header {
-        display: none !important ;
-    }
+}
+
+.cv-content--header {
+    background-color: #98b9f2;
 }

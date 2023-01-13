@@ -1,4 +1,4 @@
-import {Box, Typography} from '@mui/material';
+import {Box, Typography, Container} from '@mui/material';
 import React from 'react';
 
 interface language {
@@ -14,7 +14,7 @@ const LanguageCard: React.FC<Props> = ({languages}: Props) => {
         <>
             {languages.map(language => {
                 return (
-                    <>
+                    <Container key={language.language}>
                         <Box
                             className="cv-experience--places"
                             sx={{marginTop: '20px'}}
@@ -24,7 +24,7 @@ const LanguageCard: React.FC<Props> = ({languages}: Props) => {
                         <Box className="cv-experience--places">
                             <Typography>{language.fluency}</Typography>
                         </Box>
-                    </>
+                    </Container>
                 );
             })}
         </>

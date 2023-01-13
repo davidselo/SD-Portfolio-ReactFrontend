@@ -43,82 +43,66 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
             <Container sx={{marginTop: '10px'}}>
                 {work.map(company => {
                     return (
-                        <>
-                            <Grid
-                                container
-                                sx={{marginTop: '10px'}}
-                                key={company.name}
-                            >
-                                <Grid item xs={4}>
-                                    <Box className="cv-experience--places">
-                                        <Typography
-                                            variant="h6"
-                                            component="div"
-                                        >
-                                            <Box sx={{fontWeight: 'bold'}}>
-                                                {company.position}
-                                            </Box>
-                                        </Typography>
-                                    </Box>
-                                    <Box className="cv-experience--places">
-                                        <Typography>{company.name}</Typography>
-                                    </Box>
-                                    <Box className="cv-experience--places">
-                                        <Typography>
-                                            {company.startDate}-
-                                            {company.endDate}
-                                        </Typography>
-                                    </Box>
-                                </Grid>
-                                <Grid item xs={1} />
-                                <Grid item xs={7}>
-                                    <Box
+                        <Grid
+                            container
+                            sx={{marginTop: '10px'}}
+                            key={company.name}
+                        >
+                            <Grid item xs={4}>
+                                <Box className="cv-experience--places">
+                                    <Typography variant="h6" component="div">
+                                        <Box sx={{fontWeight: 'bold'}}>
+                                            {company.position}
+                                        </Box>
+                                    </Typography>
+                                </Box>
+                                <Box className="cv-experience--places">
+                                    <Typography>{company.name}</Typography>
+                                </Box>
+                                <Box className="cv-experience--places">
+                                    <Typography>
+                                        {company.startDate}-{company.endDate}
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid item xs={1} />
+                            <Grid item xs={7}>
+                                <Box
+                                    sx={{
+                                        width: '100%',
+                                        fontWeight: 'bold',
+                                    }}
+                                >
+                                    <List
+                                        dense
                                         sx={{
-                                            width: '100%',
-                                            fontWeight: 'bold',
+                                            paddingTop: 'unset',
+                                            paddingBottom: 'unset',
+                                            listStyleType: 'disc',
+                                            pl: 4,
                                         }}
                                     >
-                                        <List
-                                            dense
-                                            sx={{
-                                                paddingTop: 'unset',
-                                                paddingBottom: 'unset',
-                                                listStyleType: 'disc',
-                                                pl: 4,
-                                            }}
-                                        >
-                                            {company.highlights.map(
-                                                hightlight => (
-                                                    <>
-                                                        <ListItem
-                                                            dense
-                                                            sx={{
-                                                                paddingTop:
-                                                                    'unset',
-                                                                paddingBottom:
-                                                                    'unset',
-                                                                display:
-                                                                    'list-item',
-                                                                paddingLeft:
-                                                                    'unset',
-                                                            }}
-                                                            key={hightlight}
-                                                        >
-                                                            <ListItemText
-                                                                primary={
-                                                                    hightlight
-                                                                }
-                                                                inset={false}
-                                                            />
-                                                        </ListItem>
-                                                    </>
-                                                ),
-                                            )}
-                                        </List>
-                                    </Box>
-                                </Grid>
+                                        {company.highlights.map(hightlight => (
+                                            <ListItem
+                                                dense
+                                                sx={{
+                                                    paddingTop: 'unset',
+                                                    paddingBottom: 'unset',
+                                                    display: 'list-item',
+                                                    paddingLeft: 'unset',
+                                                }}
+                                                key={hightlight}
+                                            >
+                                                <ListItemText
+                                                    primary={hightlight}
+                                                    inset={false}
+                                                />
+                                            </ListItem>
+                                        ))}
+                                    </List>
+                                </Box>
                             </Grid>
-                        </>
+                        </Grid>
                     );
                 })}
             </Container>
