@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-    Box,
-    Container,
-    Grid,
-    List,
-    ListItem,
-    ListItemText,
-    Typography,
-} from '@mui/material';
+import {Box, Container, Typography} from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 
 interface Props {
