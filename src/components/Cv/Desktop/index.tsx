@@ -33,7 +33,11 @@ const DesktopCv: React.FC = () => {
             <Container
                 id="cv-content"
                 disableGutters
-                sx={{marginTop: '20px', backgroundColor: '#ffffff'}}
+                sx={{
+                    marginTop: '20px',
+                    backgroundColor: '#ffffff',
+                    paddingBottom: '20px',
+                }}
                 maxWidth="md"
             >
                 {/* CV Header */}
@@ -152,7 +156,7 @@ const DesktopCv: React.FC = () => {
                                     >
                                         <SchoolIcon />
                                         <Box sx={{marginLeft: '10px'}}>
-                                            Skills
+                                            SKILLS
                                         </Box>
                                     </Box>
                                 </Typography>

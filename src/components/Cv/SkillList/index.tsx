@@ -19,15 +19,24 @@ const SkillList: React.FC<Props> = ({skills}: Props) => {
                         <ListItem>
                             <Grid container>
                                 <Grid item xs={2}>
-                                    <Box sx={{fontWeight: 'bold'}}>
-                                        <Typography>{skill.name}:</Typography>
-                                    </Box>
+                                    <Typography variant="h6">
+                                        <Box sx={{fontWeight: 'bold'}}>
+                                            {skill.name}:
+                                        </Box>
+                                    </Typography>
                                 </Grid>
                                 <Grid item xs={10}>
                                     <Typography>
-                                        {skill.keywords.map(keyword => {
-                                            return `${keyword}, `;
-                                        })}
+                                        {skill.keywords.map(
+                                            (keyword, index) => {
+                                                return `${keyword}${
+                                                    index !=
+                                                    skill.keywords.length - 1
+                                                        ? ','
+                                                        : '.'
+                                                } `;
+                                            },
+                                        )}
                                     </Typography>
                                 </Grid>
                             </Grid>
