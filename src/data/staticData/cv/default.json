@@ -70,9 +70,7 @@
             "startDate": "2011-06-01",
             "endDate": "2011-12-01",
             "summary": "Description…",
-            "highlights": [
-                "Development of custom extensions for Magento 1."
-            ]
+            "highlights": ["Development of custom extensions for Magento 1."]
         },
         {
             "name": "VipOfertas S.L",
@@ -80,9 +78,7 @@
             "startDate": "2010-09-01",
             "endDate": "2011-06-01",
             "summary": "Description…",
-            "highlights": [
-                "Development of a Magento 1 private sales site."
-            ]
+            "highlights": ["Development of a Magento 1 private sales site."]
         }
     ],
     "volunteer": [
@@ -117,7 +113,6 @@
             "score": "4.0",
             "courses": ["DB1101 - Basic SQL"]
         }
-
     ],
     "awards": [
         {
@@ -146,9 +141,87 @@
     ],
     "skills": [
         {
-            "name": "Web Development",
+            "name": "Backend",
             "level": "Master",
-            "keywords": ["HTML", "CSS", "JavaScript"]
+            "keywords": [
+                "PHP",
+                "Xhprof",
+                "Xdebug",
+                "Magento 1",
+                "Magento 2",
+                "NodeJS",
+                "Express",
+                "SOAP",
+                "REST",
+                "GraphQL",
+                "Mysql",
+                "SQL",
+                "AWS services (Lambda, S3, IAM, DynamoDB)",
+                "Docker",
+                "docker-compose",
+                "Kubernetes",
+                "Linux",
+                "BASH",
+                "Queue Systems"
+            ]
+        },
+        {
+            "name": "Frontend",
+            "level": "Master",
+            "keywords": [
+                "Javascript",
+                "React",
+                "React Router",
+                "Material UI",
+                "Typescript",
+                "basic Redux",
+                "Next.js",
+                "CSS (Flexbox, Styled Components, Grid, BEM)",
+                "Webhooks"
+            ]
+        },
+        {
+            "name": "Misc",
+            "level": "Master",
+            "keywords": [
+                "GIT",
+                "CI/CD( Circle CI)",
+                "Unit Test",
+                "Jest",
+                "React Testing Library",
+                "Webpack",
+                "npm",
+                "yarn",
+                "Clean code",
+                "Pair Programming",
+                "Code Reviews",
+                "OpenAPI"
+            ]
+        },
+        {
+            "name": "Soft skills",
+            "level": "Master",
+            "keywords": [
+                "Transparency",
+                "Attention to detail",
+                "leadership skills",
+                "Agile",
+                "Scrum",
+                "mentoring Junior/mid-level developers"
+            ]
+        },
+        {
+            "name": "Future Plans",
+            "level": "Master",
+            "keywords": [
+                "Microservices",
+                "PWA",
+                "Static Websites",
+                "SSR on Javascript",
+                "Software architecture",
+                "AWS certification",
+                "Magento certification"
+            ]
         }
     ],
     "languages": [
