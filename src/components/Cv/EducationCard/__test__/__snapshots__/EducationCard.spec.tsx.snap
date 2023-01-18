@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EducationCard Component Should match the Screenshot 1`] = `
+<div>
+  <h5
+    class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+  >
+    <div
+      class="MuiBox-root css-1xhj18k"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        data-testid="SchoolIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"
+        />
+      </svg>
+      <div
+        class="MuiBox-root css-1y6ic72"
+      >
+        EDUCATION
+      </div>
+    </div>
+  </h5>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  >
+    <div
+      class="cv-experience--places MuiBox-root css-1xaekgw"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        Study type example
+      </p>
+    </div>
+    <div
+      class="cv-experience--places MuiBox-root css-0"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        Institution 1
+      </p>
+    </div>
+    <div
+      class="cv-experience--places MuiBox-root css-0"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        01/01/2002
+        -
+        01/01/2005
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EducationCard Component Should match the Screenshot for two education items 1`] = `
+<div>
+  <h5
+    class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+  >
+    <div
+      class="MuiBox-root css-1xhj18k"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        data-testid="SchoolIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"
+        />
+      </svg>
+      <div
+        class="MuiBox-root css-1y6ic72"
+      >
+        EDUCATION
+      </div>
+    </div>
+  </h5>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  >
+    <div
+      class="cv-experience--places MuiBox-root css-1xaekgw"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        Study type example 1
+      </p>
+    </div>
+    <div
+      class="cv-experience--places MuiBox-root css-0"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        Institution 1
+      </p>
+    </div>
+    <div
+      class="cv-experience--places MuiBox-root css-0"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        01/01/2002
+        -
+        01/01/2005
+      </p>
+    </div>
+  </div>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  >
+    <div
+      class="cv-experience--places MuiBox-root css-1xaekgw"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        Study type example 2
+      </p>
+    </div>
+    <div
+      class="cv-experience--places MuiBox-root css-0"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        Institution 2
+      </p>
+    </div>
+    <div
+      class="cv-experience--places MuiBox-root css-0"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        01/01/2002
+        -
+        01/01/2005
+      </p>
+    </div>
+  </div>
+</div>
+`;
