@@ -6,6 +6,7 @@ import * as cvData from 'data/staticData/cv/default.json';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SchoolIcon from '@mui/icons-material/School';
 import JobExperienceList from 'components/JobExperienceList';
+import SkillList from 'components/Cv/SkillList';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 
@@ -21,6 +22,7 @@ const DesktopCv: React.FC = () => {
     const {work} = cvData;
     const {education} = cvData;
     const {languages} = cvData;
+    const {skills} = cvData;
 
     return (
         <Container className="cv--wrapper">
@@ -154,6 +156,11 @@ const DesktopCv: React.FC = () => {
                                         </Box>
                                     </Box>
                                 </Typography>
+                            </Grid>
+                            <Grid container>
+                                <Grid item xs={12}>
+                                    <SkillList skills={skills} />
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Container>

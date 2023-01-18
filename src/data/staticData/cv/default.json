@@ -162,7 +162,8 @@
                 "Kubernetes",
                 "Linux",
                 "BASH",
-                "Queue Systems"
+                "Queue Systems",
+                "Payment gateways"
             ]
         },
         {
@@ -197,7 +198,8 @@
                 "Clean code",
                 "Pair Programming",
                 "Code Reviews",
-                "OpenAPI"
+                "OpenAPI",
+                "Stripe"
             ]
         },
         {
