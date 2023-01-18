@@ -176,7 +176,7 @@
                 "Typescript",
                 "basic Redux",
                 "Next.js",
-                "CSS (Flexbox, Styled Components, Grid, BEM)",
+                "CSS (Flexbox, Styled Components, Grid, BEM, sass)",
                 "Webhooks"
             ]
         },
@@ -185,6 +185,8 @@
             "level": "Master",
             "keywords": [
                 "GIT",
+                "GIT hooks",
+                "Husky",
                 "CI/CD( Circle CI)",
                 "Unit Test",
                 "Jest",
