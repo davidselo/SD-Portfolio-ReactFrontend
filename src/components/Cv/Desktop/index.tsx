@@ -111,7 +111,7 @@ const DesktopCv: React.FC = () => {
                 <Grid container className="cv-content--body">
                     <JobExperienceList work={work} />
                     {/* Expertise, Education & Language. */}
-                    <Container sx={{marginTop: '20px'}}>
+                    <Container sx={{marginTop: '15px'}}>
                         <Grid container>
                             <Grid item xs={1} />
                             <Grid item xs={3}>
@@ -148,7 +148,7 @@ const DesktopCv: React.FC = () => {
                             <Grid item xs={11}>
                                 <Typography
                                     variant="h6"
-                                    sx={{marginTop: '20px'}}
+                                    sx={{marginTop: '15px'}}
                                 >
                                     <Box
                                         sx={{

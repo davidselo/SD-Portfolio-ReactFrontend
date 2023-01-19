@@ -16,7 +16,7 @@ const SkillList: React.FC<Props> = ({skills}: Props) => {
             <List>
                 {skills.map(skill => {
                     return (
-                        <ListItem key={skill.name} dense>
+                        <ListItem key={skill.name} dense disableGutters>
                             <Grid container>
                                 <Grid item xs={2}>
                                     <Typography variant="body1">

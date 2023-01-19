@@ -26,8 +26,8 @@ interface Props {
 const JobExperienceList: React.FC<Props> = ({work}) => {
     return (
         <>
-            {/* Profesional Experience title*/}
-            <Container sx={{marginTop: '10px'}}>
+            {/* Professional Experience title*/}
+            <Container sx={{marginTop: '15px'}}>
                 <Grid container>
                     <Grid item xs={1} />
                     <Grid item xs={11}>
@@ -35,20 +35,20 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
                             <Box sx={{display: 'flex', flexDirection: 'row'}}>
                                 <TipsAndUpdatesIcon />
                                 <Box sx={{marginLeft: '10px'}}>
-                                    PROFESIONAL EXPERIENCE
+                                    PROFESSIONAL EXPERIENCE
                                 </Box>
                             </Box>
                         </Typography>
                     </Grid>
                 </Grid>
             </Container>
-            {/* Profesional Experience companies*/}
+            {/* Professional Experience companies*/}
             <Container sx={{marginTop: '10px'}}>
                 {work.map((company, index) => {
                     return (
                         <Grid
                             container
-                            sx={{marginTop: index == 0 ? '0px' : '10px'}}
+                            sx={{marginTop: index == 0 ? '0px' : '15px'}}
                             key={company.name}
                         >
                             <Grid item xs={1} />
