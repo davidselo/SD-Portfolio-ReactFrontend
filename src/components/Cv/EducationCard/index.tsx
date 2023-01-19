@@ -20,7 +20,7 @@ interface Study {
 export const EducationCard: React.FC<Props> = ({education}: Props) => {
     return (
         <>
-            <Typography variant="h5">
+            <Typography variant="h6">
                 <Box
                     sx={{
                         display: 'flex',
@@ -36,15 +36,19 @@ export const EducationCard: React.FC<Props> = ({education}: Props) => {
                     <Container key={item.studyType}>
                         <Box
                             className="cv-experience--places"
-                            sx={{marginTop: '20px'}}
+                            sx={{marginTop: '10px'}}
                         >
-                            <Typography>{item.studyType}</Typography>
+                            <Typography variant="body1">
+                                {item.studyType}
+                            </Typography>
                         </Box>
                         <Box className="cv-experience--places">
-                            <Typography>{item.institution}</Typography>
+                            <Typography variant="body2">
+                                {item.institution}
+                            </Typography>
                         </Box>
                         <Box className="cv-experience--places">
-                            <Typography>
+                            <Typography variant="body2">
                                 {item.startDate}-{item.endDate}
                             </Typography>
                         </Box>

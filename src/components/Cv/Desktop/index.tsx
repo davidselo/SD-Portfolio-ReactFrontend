@@ -113,8 +113,9 @@ const DesktopCv: React.FC = () => {
                     {/* Expertise, Education & Language. */}
                     <Container sx={{marginTop: '20px'}}>
                         <Grid container>
-                            <Grid item xs={4}>
-                                <Typography variant="h5">
+                            <Grid item xs={1} />
+                            <Grid item xs={3}>
+                                <Typography variant="h6">
                                     <Box
                                         sx={{
                                             display: 'flex',
@@ -128,8 +129,8 @@ const DesktopCv: React.FC = () => {
                                     </Box>
                                 </Typography>
                                 <Typography
-                                    variant="inherit"
-                                    sx={{marginTop: '20px'}}
+                                    variant="body2"
+                                    sx={{marginTop: '10px'}}
                                 >
                                     {basics.summary}
                                 </Typography>
@@ -143,9 +144,10 @@ const DesktopCv: React.FC = () => {
                                 <LanguageCard languages={languages} />
                             </Grid>
 
-                            <Grid item xs={12}>
+                            <Grid item xs={1} />
+                            <Grid item xs={11}>
                                 <Typography
-                                    variant="h5"
+                                    variant="h6"
                                     sx={{marginTop: '20px'}}
                                 >
                                     <Box
@@ -162,7 +164,8 @@ const DesktopCv: React.FC = () => {
                                 </Typography>
                             </Grid>
                             <Grid container>
-                                <Grid item xs={12}>
+                                <Grid item xs={1} />
+                                <Grid item xs={11}>
                                     <SkillList skills={skills} />
                                 </Grid>
                             </Grid>

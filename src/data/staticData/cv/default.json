@@ -188,7 +188,7 @@
                 "GIT",
                 "GIT hooks",
                 "Husky",
-                "CI/CD( Circle CI)",
+                "CI/CD (Circle CI)",
                 "Unit Test",
                 "Jest",
                 "React Testing Library",
@@ -212,19 +212,6 @@
                 "Agile",
                 "Scrum",
                 "mentoring Junior/mid-level developers"
-            ]
-        },
-        {
-            "name": "Future Plans",
-            "level": "Master",
-            "keywords": [
-                "Microservices",
-                "PWA",
-                "Static Websites",
-                "SSR on Javascript",
-                "Software architecture",
-                "AWS certification",
-                "Magento certification"
             ]
         }
     ],

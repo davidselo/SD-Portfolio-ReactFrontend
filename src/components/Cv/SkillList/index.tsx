@@ -13,20 +13,20 @@ interface Props {
 const SkillList: React.FC<Props> = ({skills}: Props) => {
     return (
         <>
-            {skills.map(skill => {
-                return (
-                    <List key={skill.name}>
-                        <ListItem>
+            <List>
+                {skills.map(skill => {
+                    return (
+                        <ListItem key={skill.name} dense>
                             <Grid container>
                                 <Grid item xs={2}>
-                                    <Typography variant="h6">
+                                    <Typography variant="body1">
                                         <Box sx={{fontWeight: 'bold'}}>
                                             {skill.name}:
                                         </Box>
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={10}>
-                                    <Typography>
+                                    <Typography variant="body2">
                                         {skill.keywords.map(
                                             (keyword, index) => {
                                                 return `${keyword}${
@@ -41,9 +41,9 @@ const SkillList: React.FC<Props> = ({skills}: Props) => {
                                 </Grid>
                             </Grid>
                         </ListItem>
-                    </List>
-                );
-            })}{' '}
+                    );
+                })}
+            </List>
         </>
     );
 };

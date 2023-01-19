@@ -29,12 +29,16 @@ const LanguageCard: React.FC<Props> = ({languages}: Props) => {
                     <Container key={language.language}>
                         <Box
                             className="cv-experience--places"
-                            sx={{marginTop: '20px'}}
+                            sx={{marginTop: '10px'}}
                         >
-                            <Typography>{language.language}</Typography>
+                            <Typography variant="body1">
+                                {language.language}
+                            </Typography>
                         </Box>
                         <Box className="cv-experience--places">
-                            <Typography>{language.fluency}</Typography>
+                            <Typography variant="body2">
+                                {language.fluency}
+                            </Typography>
                         </Box>
                     </Container>
                 );

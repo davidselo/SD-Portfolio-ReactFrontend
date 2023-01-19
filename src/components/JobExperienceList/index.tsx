@@ -28,39 +28,45 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
         <>
             {/* Profesional Experience title*/}
             <Container sx={{marginTop: '10px'}}>
-                <Grid item xs={12}>
-                    <Typography variant="h5">
-                        <Box sx={{display: 'flex', flexDirection: 'row'}}>
-                            <TipsAndUpdatesIcon />
-                            <Box sx={{marginLeft: '10px'}}>
-                                PROFESIONAL EXPERIENCE
+                <Grid container>
+                    <Grid item xs={1} />
+                    <Grid item xs={11}>
+                        <Typography variant="h6">
+                            <Box sx={{display: 'flex', flexDirection: 'row'}}>
+                                <TipsAndUpdatesIcon />
+                                <Box sx={{marginLeft: '10px'}}>
+                                    PROFESIONAL EXPERIENCE
+                                </Box>
                             </Box>
-                        </Box>
-                    </Typography>
+                        </Typography>
+                    </Grid>
                 </Grid>
             </Container>
             {/* Profesional Experience companies*/}
             <Container sx={{marginTop: '10px'}}>
-                {work.map(company => {
+                {work.map((company, index) => {
                     return (
                         <Grid
                             container
-                            sx={{marginTop: '10px'}}
+                            sx={{marginTop: index == 0 ? '0px' : '10px'}}
                             key={company.name}
                         >
-                            <Grid item xs={4}>
+                            <Grid item xs={1} />
+                            <Grid item xs={3}>
                                 <Box className="cv-experience--places">
-                                    <Typography variant="h6" component="div">
+                                    <Typography variant="body1" component="div">
                                         <Box sx={{fontWeight: 'bold'}}>
                                             {company.position}
                                         </Box>
                                     </Typography>
                                 </Box>
                                 <Box className="cv-experience--places">
-                                    <Typography>{company.name}</Typography>
+                                    <Typography variant="body1">
+                                        {company.name}
+                                    </Typography>
                                 </Box>
                                 <Box className="cv-experience--places">
-                                    <Typography>
+                                    <Typography variant="body1">
                                         {company.startDate}-{company.endDate}
                                     </Typography>
                                 </Box>
@@ -96,6 +102,10 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
                                                 <ListItemText
                                                     primary={hightlight}
                                                     inset={false}
+                                                    sx={{
+                                                        marginTop: 'unset',
+                                                        marginBottom: 'unset',
+                                                    }}
                                                 />
                                             </ListItem>
                                         ))}
