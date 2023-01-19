@@ -4,11 +4,11 @@ import React from 'react';
 import './styles.scss';
 import * as cvData from 'data/staticData/cv/default.json';
 import SettingsIcon from '@mui/icons-material/Settings';
-import SchoolIcon from '@mui/icons-material/School';
 import JobExperienceList from 'components/JobExperienceList';
 import SkillList from 'components/Cv/SkillList';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import PsychologyIcon from '@mui/icons-material/Psychology';
 
 import LanguageCard from '../LanguageCard';
 import EducationCard from '../EducationCard';
@@ -114,7 +114,7 @@ const DesktopCv: React.FC = () => {
                     <Container sx={{marginTop: '15px'}}>
                         <Grid container>
                             <Grid item xs={1} />
-                            <Grid item xs={3}>
+                            <Grid item xs={4}>
                                 <Typography variant="h6">
                                     <Box
                                         sx={{
@@ -135,7 +135,7 @@ const DesktopCv: React.FC = () => {
                                     {basics.summary}
                                 </Typography>
                             </Grid>
-                            <Grid item xs={1} />
+
                             <Grid item xs={4}>
                                 <EducationCard education={education} />
                             </Grid>
@@ -156,7 +156,7 @@ const DesktopCv: React.FC = () => {
                                             flexDirection: 'row',
                                         }}
                                     >
-                                        <SchoolIcon />
+                                        <PsychologyIcon />
                                         <Box sx={{marginLeft: '10px'}}>
                                             SKILLS
                                         </Box>
