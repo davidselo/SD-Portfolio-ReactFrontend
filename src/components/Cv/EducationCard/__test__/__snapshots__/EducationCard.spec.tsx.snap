@@ -2,8 +2,8 @@
 
 exports[`EducationCard Component Should match the Screenshot 1`] = `
 <div>
-  <h5
-    class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+  <h6
+    class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
   >
     <div
       class="MuiBox-root css-1xhj18k"
@@ -25,12 +25,12 @@ exports[`EducationCard Component Should match the Screenshot 1`] = `
         EDUCATION
       </div>
     </div>
-  </h5>
+  </h6>
   <div
     class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
   >
     <div
-      class="cv-experience--places MuiBox-root css-1xaekgw"
+      class="cv-experience--places MuiBox-root css-1q7njkh"
     >
       <p
         class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
@@ -42,7 +42,7 @@ exports[`EducationCard Component Should match the Screenshot 1`] = `
       class="cv-experience--places MuiBox-root css-0"
     >
       <p
-        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
       >
         Institution 1
       </p>
@@ -51,7 +51,7 @@ exports[`EducationCard Component Should match the Screenshot 1`] = `
       class="cv-experience--places MuiBox-root css-0"
     >
       <p
-        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
       >
         01/01/2002
         -
@@ -64,8 +64,8 @@ exports[`EducationCard Component Should match the Screenshot 1`] = `
 
 exports[`EducationCard Component Should match the Screenshot for two education items 1`] = `
 <div>
-  <h5
-    class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+  <h6
+    class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
   >
     <div
       class="MuiBox-root css-1xhj18k"
@@ -87,12 +87,12 @@ exports[`EducationCard Component Should match the Screenshot for two education i
         EDUCATION
       </div>
     </div>
-  </h5>
+  </h6>
   <div
     class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
   >
     <div
-      class="cv-experience--places MuiBox-root css-1xaekgw"
+      class="cv-experience--places MuiBox-root css-1q7njkh"
     >
       <p
         class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
@@ -104,7 +104,7 @@ exports[`EducationCard Component Should match the Screenshot for two education i
       class="cv-experience--places MuiBox-root css-0"
     >
       <p
-        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
       >
         Institution 1
       </p>
@@ -113,7 +113,7 @@ exports[`EducationCard Component Should match the Screenshot for two education i
       class="cv-experience--places MuiBox-root css-0"
     >
       <p
-        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
       >
         01/01/2002
         -
@@ -125,7 +125,7 @@ exports[`EducationCard Component Should match the Screenshot for two education i
     class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
   >
     <div
-      class="cv-experience--places MuiBox-root css-1xaekgw"
+      class="cv-experience--places MuiBox-root css-1q7njkh"
     >
       <p
         class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
@@ -137,7 +137,7 @@ exports[`EducationCard Component Should match the Screenshot for two education i
       class="cv-experience--places MuiBox-root css-0"
     >
       <p
-        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
       >
         Institution 2
       </p>
@@ -146,7 +146,7 @@ exports[`EducationCard Component Should match the Screenshot for two education i
       class="cv-experience--places MuiBox-root css-0"
     >
       <p
-        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
       >
         01/01/2002
         -
