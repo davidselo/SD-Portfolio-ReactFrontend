@@ -28,12 +28,14 @@ export const EducationCard: React.FC<Props> = ({education}: Props) => {
                     }}
                 >
                     <SchoolIcon />
-                    <Box sx={{marginLeft: '10px'}}>EDUCATION</Box>
+                    <Box sx={{marginLeft: '10px', fontWeight: 'bold'}}>
+                        EDUCATION
+                    </Box>
                 </Box>
             </Typography>
             {education.map(item => {
                 return (
-                    <Container key={item.studyType}>
+                    <Container disableGutters key={item.studyType}>
                         <Box
                             className="cv-experience--places"
                             sx={{marginTop: '10px'}}

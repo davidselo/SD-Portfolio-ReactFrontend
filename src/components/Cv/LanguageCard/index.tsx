@@ -13,7 +13,7 @@ interface Props {
 const LanguageCard: React.FC<Props> = ({languages}: Props) => {
     return (
         <>
-            <Typography variant="h5">
+            <Typography variant="h6">
                 <Box
                     sx={{
                         display: 'flex',
@@ -21,12 +21,14 @@ const LanguageCard: React.FC<Props> = ({languages}: Props) => {
                     }}
                 >
                     <LanguageIcon />
-                    <Box sx={{marginLeft: '10px'}}>LANGUAGE</Box>
+                    <Box sx={{marginLeft: '10px', fontWeight: 'bold'}}>
+                        LANGUAGE
+                    </Box>
                 </Box>
             </Typography>
             {languages.map(language => {
                 return (
-                    <Container key={language.language}>
+                    <Container disableGutters key={language.language}>
                         <Box
                             className="cv-experience--places"
                             sx={{marginTop: '10px'}}

@@ -6,12 +6,12 @@ import * as cvData from 'data/staticData/cv/default.json';
 import SettingsIcon from '@mui/icons-material/Settings';
 import JobExperienceList from 'components/JobExperienceList';
 import SkillList from 'components/Cv/SkillList';
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+
 import PsychologyIcon from '@mui/icons-material/Psychology';
 
 import LanguageCard from '../LanguageCard';
 import EducationCard from '../EducationCard';
+import CvHeader from '../CvHeader';
 
 const DesktopCv: React.FC = () => {
     const printPage = () => {
@@ -26,9 +26,17 @@ const DesktopCv: React.FC = () => {
 
     return (
         <Container className="cv--wrapper">
-            <Box textAlign="center" marginTop="20px">
-                <Typography variant="h2">CV page</Typography>
-            </Box>
+            <Container>
+                <Box textAlign="center" marginTop="20px">
+                    <Button
+                        className="cv--print-button"
+                        variant="contained"
+                        onClick={printPage}
+                    >
+                        Print CV
+                    </Button>
+                </Box>
+            </Container>
 
             <Container
                 id="cv-content"
@@ -41,71 +49,12 @@ const DesktopCv: React.FC = () => {
                 maxWidth="md"
             >
                 {/* CV Header */}
-                {/* @todo: Move Header to his own Component. */}
-                <Grid
-                    container
-                    alignContent="center"
-                    justifyContent="center"
-                    className="cv-content--header"
-                    paddingBottom="20px"
-                >
-                    <Grid item xs={1} />
-                    <Grid item xs={10}>
-                        <Box
-                            textAlign="center"
-                            marginTop="20px"
-                            sx={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                            }}
-                        >
-                            <Typography variant="h4">
-                                {basics.name.toUpperCase()}
-                            </Typography>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={1}></Grid>
-                    <Grid item xs={5} />
-                    <Grid item xs={4}>
-                        <Box sx={{paddingLeft: '31px'}}>
-                            <Typography variant="h6">
-                                <Box
-                                    sx={{
-                                        display: 'flex',
-                                        flexDirection: 'row',
-                                    }}
-                                >
-                                    <EmailIcon
-                                        fontSize="inherit"
-                                        sx={{paddingTop: '6px'}}
-                                    />
+                <CvHeader
+                    name={basics.name.toUpperCase()}
+                    email={basics.email}
+                    phone={basics.phone}
+                />
 
-                                    <Box sx={{marginLeft: '5px'}}>
-                                        {basics.email}
-                                    </Box>
-                                </Box>
-                            </Typography>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Typography variant="h6">
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'row',
-                                }}
-                            >
-                                <PhoneIphoneIcon
-                                    fontSize="inherit"
-                                    sx={{paddingTop: '7px'}}
-                                />
-
-                                <Box>{basics.phone}</Box>
-                            </Box>
-                        </Typography>
-                    </Grid>
-                </Grid>
                 {/* CV Body */}
                 {/* @todo: Move body to own component */}
                 <Grid container className="cv-content--body">
@@ -113,35 +62,42 @@ const DesktopCv: React.FC = () => {
                     {/* Expertise, Education & Language. */}
                     <Container sx={{marginTop: '15px'}}>
                         <Grid container>
-                            <Grid item xs={1} />
-                            <Grid item xs={4}>
-                                <Typography variant="h6">
-                                    <Box
-                                        sx={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                        }}
-                                    >
-                                        <SettingsIcon />
-                                        <Box sx={{marginLeft: '10px'}}>
-                                            EXPERTISE
+                            <Grid container spacing={5}>
+                                <Grid item xs={1} />
+                                <Grid item xs={4}>
+                                    <Typography variant="h6">
+                                        <Box
+                                            sx={{
+                                                display: 'flex',
+                                                flexDirection: 'row',
+                                            }}
+                                        >
+                                            <SettingsIcon />
+                                            <Box
+                                                sx={{
+                                                    marginLeft: '10px',
+                                                    fontWeight: 'bold',
+                                                }}
+                                            >
+                                                EXPERTISE
+                                            </Box>
                                         </Box>
-                                    </Box>
-                                </Typography>
-                                <Typography
-                                    variant="body2"
-                                    sx={{marginTop: '10px'}}
-                                >
-                                    {basics.summary}
-                                </Typography>
-                            </Grid>
+                                    </Typography>
+                                    <Typography
+                                        variant="body2"
+                                        sx={{marginTop: '10px'}}
+                                    >
+                                        {basics.summary}
+                                    </Typography>
+                                </Grid>
 
-                            <Grid item xs={4}>
-                                <EducationCard education={education} />
-                            </Grid>
+                                <Grid item xs={4}>
+                                    <EducationCard education={education} />
+                                </Grid>
 
-                            <Grid item xs={3}>
-                                <LanguageCard languages={languages} />
+                                <Grid item xs={3}>
+                                    <LanguageCard languages={languages} />
+                                </Grid>
                             </Grid>
 
                             <Grid item xs={1} />
@@ -157,7 +113,12 @@ const DesktopCv: React.FC = () => {
                                         }}
                                     >
                                         <PsychologyIcon />
-                                        <Box sx={{marginLeft: '10px'}}>
+                                        <Box
+                                            sx={{
+                                                marginLeft: '10px',
+                                                fontWeight: 'bold',
+                                            }}
+                                        >
                                             SKILLS
                                         </Box>
                                     </Box>

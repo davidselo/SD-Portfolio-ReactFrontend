@@ -34,7 +34,12 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
                         <Typography variant="h6">
                             <Box sx={{display: 'flex', flexDirection: 'row'}}>
                                 <TipsAndUpdatesIcon />
-                                <Box sx={{marginLeft: '10px'}}>
+                                <Box
+                                    sx={{
+                                        marginLeft: '10px',
+                                        fontWeight: 'bold',
+                                    }}
+                                >
                                     PROFESSIONAL EXPERIENCE
                                 </Box>
                             </Box>

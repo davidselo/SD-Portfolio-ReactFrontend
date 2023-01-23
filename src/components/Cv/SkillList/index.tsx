@@ -1,4 +1,4 @@
-import {Box, Grid, List, ListItem, Typography} from '@mui/material';
+import {Grid, List, ListItem, Typography} from '@mui/material';
 import React from 'react';
 
 interface Skill {
@@ -20,13 +20,11 @@ const SkillList: React.FC<Props> = ({skills}: Props) => {
                             <Grid container>
                                 <Grid item xs={2}>
                                     <Typography variant="body1">
-                                        <Box sx={{fontWeight: 'bold'}}>
-                                            {skill.name}:
-                                        </Box>
+                                        {skill.name}:
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={10}>
-                                    <Typography variant="body2">
+                                    <Typography variant="caption">
                                         {skill.keywords.map(
                                             (keyword, index) => {
                                                 return `${keyword}${
