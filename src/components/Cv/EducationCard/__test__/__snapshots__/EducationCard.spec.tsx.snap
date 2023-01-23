@@ -20,14 +20,14 @@ exports[`EducationCard Component Should match the Screenshot 1`] = `
         />
       </svg>
       <div
-        class="MuiBox-root css-1y6ic72"
+        class="MuiBox-root css-1c43q7x"
       >
         EDUCATION
       </div>
     </div>
   </h6>
   <div
-    class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+    class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-1p4tas-MuiContainer-root"
   >
     <div
       class="cv-experience--places MuiBox-root css-1q7njkh"
@@ -82,14 +82,14 @@ exports[`EducationCard Component Should match the Screenshot for two education i
         />
       </svg>
       <div
-        class="MuiBox-root css-1y6ic72"
+        class="MuiBox-root css-1c43q7x"
       >
         EDUCATION
       </div>
     </div>
   </h6>
   <div
-    class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+    class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-1p4tas-MuiContainer-root"
   >
     <div
       class="cv-experience--places MuiBox-root css-1q7njkh"
@@ -122,7 +122,7 @@ exports[`EducationCard Component Should match the Screenshot for two education i
     </div>
   </div>
   <div
-    class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+    class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-1p4tas-MuiContainer-root"
   >
     <div
       class="cv-experience--places MuiBox-root css-1q7njkh"
