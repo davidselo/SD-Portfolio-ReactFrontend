@@ -1,1 +1,2 @@
-export const selectCounterValue = (state: {value: unknown}) => state.value;
+export const selectCounterValue = (state: {counter: {value: any}}) =>
+    state.counter.value;
