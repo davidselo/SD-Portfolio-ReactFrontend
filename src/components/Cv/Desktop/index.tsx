@@ -13,6 +13,8 @@ import LanguageCard from '../LanguageCard';
 import EducationCard from '../EducationCard';
 import CvHeader from '../CvHeader';
 
+import {Counter} from 'components/Counter';
+
 const DesktopCv: React.FC = () => {
     const printPage = () => {
         window.print();
@@ -36,6 +38,7 @@ const DesktopCv: React.FC = () => {
                         Print CV
                     </Button>
                 </Box>
+                <Counter />
             </Container>
 
             <Container
