@@ -5,7 +5,7 @@ import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 import {ViewportProvider} from 'providers/Viewport';
 import {BrowserRouter} from 'react-router-dom';
 import {Provider as ReactReduxProvider} from 'react-redux';
-import {store} from 'utils/redux/store';
+import {store} from 'app/store';
 // import {increment} from 'utils/redux/actionCreators';
 // import {selectCounterValue} from 'utils/redux/actionSelector';
 

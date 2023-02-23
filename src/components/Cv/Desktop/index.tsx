@@ -12,8 +12,8 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import LanguageCard from '../LanguageCard';
 import EducationCard from '../EducationCard';
 import CvHeader from '../CvHeader';
-
-import {Counter} from 'components/Counter';
+import PostList from 'components/PostList';
+import AddPostForm from 'components/AddPostForm';
 
 const DesktopCv: React.FC = () => {
     const printPage = () => {
@@ -38,8 +38,9 @@ const DesktopCv: React.FC = () => {
                         Print CV
                     </Button>
                 </Box>
-                <Counter />
             </Container>
+            <PostList />
+            <AddPostForm />
 
             <Container
                 id="cv-content"

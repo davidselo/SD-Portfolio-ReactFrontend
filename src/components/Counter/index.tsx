@@ -1,17 +1,18 @@
-import React, {useEffect} from 'react';
-import {Box, Button} from '@mui/material';
-import {store} from 'utils/redux/store';
-import {decrement, increaseBy, increment} from 'utils/redux/actionCreators';
-import {selectCounterValue} from 'utils/redux/actionSelector';
-import {useDispatch, useSelector} from 'react-redux';
+import React, {useState} from 'react';
+import {Box, Button, TextField} from '@mui/material';
+import {
+    decrement,
+    increment,
+    selectCount,
+    incrementByAmount,
+} from 'features/counter/counterSlice';
+import {useAppSelector, useAppDispatch} from 'app/hooks';
 
 export const Counter: React.FC = () => {
-    const dispatch = useDispatch();
-    // const count = selectCounterValue(store.getState());
-    const count = useSelector(selectCounterValue);
+    const dispatch = useAppDispatch();
+    const count = useAppSelector(selectCount);
+    const [incrementAmount, setIncrementAmount] = useState('2');
 
-    // eslint-disable-next-line no-console
-    // useEffect(() => console.log('re-render component'), [count]);
     return (
         <Box textAlign="center" marginTop="20px">
             <Button
@@ -28,7 +29,7 @@ export const Counter: React.FC = () => {
                 className="cv--print-button"
                 variant="contained"
                 onClick={() => {
-                    store.dispatch(decrement());
+                    dispatch(decrement());
                 }}
             >
                 decrease
@@ -37,11 +38,16 @@ export const Counter: React.FC = () => {
                 className="cv--print-button"
                 variant="contained"
                 onClick={() => {
-                    store.dispatch(increaseBy(3));
+                    dispatch(incrementByAmount(Number(incrementAmount)));
                 }}
             >
-                Increase by 3
+                Increase by Amount
             </Button>
+            <TextField
+                aria-label="Set increment amount"
+                value={incrementAmount}
+                onChange={e => setIncrementAmount(e.target.value)}
+            />
         </Box>
     );
 };
