@@ -1,8 +1,8 @@
 import React from 'react';
-import {useAppSelector, useAppDispatch} from 'app/hooks';
 import {Card, CardContent, TextareaAutosize, Typography} from '@mui/material';
 import {RootState} from 'app/store';
 import {useSelector} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 interface Post {
     id: string;
@@ -25,6 +25,12 @@ export const PostList = () => {
                         defaultValue={post.content}
                         style={{width: 200}}
                     />
+                    <Link
+                        to={`/posts/${post.id}`}
+                        className="button muted-button"
+                    >
+                        View Post
+                    </Link>
                 </CardContent>
             </Card>
         </article>

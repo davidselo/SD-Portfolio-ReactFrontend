@@ -7,6 +7,7 @@ import {Routes, Route} from 'react-router-dom';
 
 import './sass/styles.scss';
 import {Container} from '@mui/material';
+import {SinglePostPage} from 'pages/SinglePost';
 
 const App: React.FC = () => {
     return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="cv" element={<Cv />} />
+                    <Route path="posts/:postId" element={<SinglePostPage />} />
                 </Route>
             </Routes>
         </Container>
