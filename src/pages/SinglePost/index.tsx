@@ -6,8 +6,7 @@ import {useParams} from 'react-router-dom';
 
 export const SinglePostPage = () => {
     const params = useParams();
-    // eslint-disable-next-line no-console
-    console.log('Patata', params);
+
     const {postId} = params;
 
     const post = useSelector((state: RootState) =>
