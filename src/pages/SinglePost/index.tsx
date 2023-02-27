@@ -2,7 +2,9 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {RootState} from 'app/store';
 import {Typography} from '@mui/material';
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
+import {PostAuthor} from 'components/PostAuthor';
+import {ReactionButtons} from 'components/ReactionButtons';
 
 export const SinglePostPage = () => {
     const params = useParams();
@@ -26,6 +28,11 @@ export const SinglePostPage = () => {
             <article className="post">
                 <Typography variant="h2">{post.title}</Typography>
                 <Typography variant="subtitle1">{post.content}</Typography>
+                <PostAuthor userId={post.user} />
+                <ReactionButtons post={post} />
+                <Link to={`/editPost/${post.id}`} className="button">
+                    Edit Post
+                </Link>
             </article>
         </section>
     );

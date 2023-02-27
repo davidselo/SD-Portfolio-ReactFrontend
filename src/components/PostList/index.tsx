@@ -1,19 +1,29 @@
 import React from 'react';
 import {Card, CardContent, TextareaAutosize, Typography} from '@mui/material';
 import {RootState} from 'app/store';
-import {useSelector} from 'react-redux';
+import {useAppSelector} from 'app/hooks';
 import {Link} from 'react-router-dom';
+import {ReactionButtons} from 'components/ReactionButtons';
 
 interface Post {
     id: string;
     title: string;
     content: string;
+    user: number;
+    date: string;
 }
 
 export const PostList = () => {
-    const posts: Array<Post> = useSelector((state: RootState) => state.posts);
+    const posts: Array<Post> = useAppSelector(
+        (state: RootState) => state.posts,
+    );
 
-    const renderedPosts = posts.map(post => (
+    // Sort posts in reverse chronological order by datetime string
+    const orderedPosts = posts
+        .slice()
+        .sort((a: Post, b: Post) => b.date.localeCompare(a.date));
+
+    const renderedPosts = orderedPosts.map(post => (
         <article key={post.id}>
             <Card>
                 <CardContent>
@@ -31,6 +41,7 @@ export const PostList = () => {
                     >
                         View Post
                     </Link>
+                    <ReactionButtons post={post} />
                 </CardContent>
             </Card>
         </article>
