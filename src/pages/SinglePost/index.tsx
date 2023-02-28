@@ -5,6 +5,7 @@ import {Typography} from '@mui/material';
 import {Link, useParams} from 'react-router-dom';
 import {PostAuthor} from 'components/PostAuthor';
 import {ReactionButtons} from 'components/ReactionButtons';
+import {selectPostById} from 'features/posts/postsSlice';
 
 export const SinglePostPage = () => {
     const params = useParams();
@@ -12,7 +13,7 @@ export const SinglePostPage = () => {
     const {postId} = params;
 
     const post = useSelector((state: RootState) =>
-        state.posts.find(post => post.id === postId),
+        selectPostById(state, postId || ''),
     );
 
     if (!post) {

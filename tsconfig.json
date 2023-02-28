@@ -27,5 +27,5 @@
         "src/**/*.tsx",
         "tests/**/*.ts",
         "webpack.config.ts"
-    ]
+, "src/api/server.js", "src/api/client.js"    ]
 }

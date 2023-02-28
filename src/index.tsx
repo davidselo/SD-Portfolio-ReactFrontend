@@ -6,6 +6,7 @@ import {ViewportProvider} from 'providers/Viewport';
 import {BrowserRouter} from 'react-router-dom';
 import {Provider as ReactReduxProvider} from 'react-redux';
 import {store} from 'app/store';
+import {worker} from 'api/server.js';
 // import {increment} from 'utils/redux/actionCreators';
 // import {selectCounterValue} from 'utils/redux/actionSelector';
 
@@ -27,20 +28,26 @@ let theme = createTheme({
 });
 
 theme = responsiveFontSizes(theme);
+// Wrap app rendering so we can wait for the mock API to initialize
+async function start() {
+    // Start our mock API server
+    await worker.start({onUnhandledRequest: 'bypass'});
+    ReactDOM.render(
+        <React.StrictMode>
+            <ApolloProvider client={client}>
+                <ReactReduxProvider store={store}>
+                    <ViewportProvider>
+                        <ThemeProvider theme={theme}>
+                            <BrowserRouter>
+                                <App />
+                            </BrowserRouter>
+                        </ThemeProvider>
+                    </ViewportProvider>
+                </ReactReduxProvider>
+            </ApolloProvider>
+        </React.StrictMode>,
+        document.getElementById('root'),
+    );
+}
 
-ReactDOM.render(
-    <React.StrictMode>
-        <ApolloProvider client={client}>
-            <ReactReduxProvider store={store}>
-                <ViewportProvider>
-                    <ThemeProvider theme={theme}>
-                        <BrowserRouter>
-                            <App />
-                        </BrowserRouter>
-                    </ThemeProvider>
-                </ViewportProvider>
-            </ReactReduxProvider>
-        </ApolloProvider>
-    </React.StrictMode>,
-    document.getElementById('root'),
-);
+start();

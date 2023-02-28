@@ -15,9 +15,9 @@ export const AddPostForm = () => {
     const users = useAppSelector(state => state.users);
 
     // handling onchange events
-    const onTitleChanged = e => setTitle(e.target.value);
-    const onContentChanged = e => setContent(e.target.value);
-    const onAuthorChanged = e => setUserId(e.target.value);
+    const onTitleChanged = (e: { target: { value: React.SetStateAction<string>; }; }) => setTitle(e.target.value);
+    const onContentChanged = (e: { target: { value: React.SetStateAction<string>; }; }) => setContent(e.target.value);
+    const onAuthorChanged = (e: { target: { value: React.SetStateAction<string>; }; }) => setUserId(e.target.value);
 
     const onSavePostClicked = () => {
         if (title && content) {
