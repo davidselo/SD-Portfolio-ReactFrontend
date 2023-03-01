@@ -23,8 +23,10 @@ export const EditPostForm = () => {
     const [content, setContent] = useState(post?.content);
 
     // event definition.
-    const onTitleChanged = e => setTitle(e.target.value);
-    const onContentChanged = e => setContent(e.target.value);
+    const onTitleChanged = (e: {target: {value: any}}) =>
+        setTitle(e.target.value);
+    const onContentChanged = (e: {target: {value: any}}) =>
+        setContent(e.target.value);
 
     const onSavePostClicked = () => {
         if (title && content) {

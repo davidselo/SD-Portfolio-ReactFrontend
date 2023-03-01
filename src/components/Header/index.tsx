@@ -20,6 +20,8 @@ import {NavigationLinks} from 'contracts/NavigationLinks';
 const navigationLinks: NavigationLinks = [
     {name: 'home', href: '/'},
     {name: 'cv', href: '/cv'},
+    {name: 'users', href: '/users'},
+    {name: 'notifications', href: '/notifications'},
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

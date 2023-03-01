@@ -9,6 +9,9 @@ import './sass/styles.scss';
 import {Container} from '@mui/material';
 import {SinglePostPage} from 'pages/SinglePost';
 import {EditPostForm} from 'components/EditPostForm';
+import {UserList} from 'components/UserList';
+import {UserPosts} from 'pages/UserPosts';
+import {NotificationsPage} from 'pages/Notifications';
 
 const App: React.FC = () => {
     return (
@@ -24,6 +27,11 @@ const App: React.FC = () => {
                     <Route path="cv" element={<Cv />} />
                     <Route path="posts/:postId" element={<SinglePostPage />} />
                     <Route path="editPost/:postId" element={<EditPostForm />} />
+                    <Route path="users" element={<UserList />} />
+                    <Route
+                        path="notifications"
+                        element={<NotificationsPage />}
+                    />
                 </Route>
             </Routes>
         </Container>

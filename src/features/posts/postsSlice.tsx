@@ -91,7 +91,10 @@ const postsSlice = createSlice({
 export const {postAdded, postUpdated, reactionAdded} = postsSlice.actions;
 
 // Selectors
-export const selectAllPosts = (state: RootState) => state.posts.posts;
+export const selectAllPosts = (state: RootState) => {
+    console.log('Select All posts', state.posts);
+    return state.posts.posts;
+};
 
 export const selectPostById = (state: RootState, postId: string) =>
     state.posts.posts.find(post => post.id === postId);
