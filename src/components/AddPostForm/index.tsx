@@ -1,6 +1,6 @@
 import {Typography} from '@mui/material';
 import React, {useState} from 'react';
-import {postAdded} from 'features/posts/postsSlice';
+import {postAdded, addNewPost} from 'features/posts/postsSlice';
 import {useAppDispatch, useAppSelector} from 'app/hooks';
 
 export const AddPostForm = () => {
@@ -8,6 +8,7 @@ export const AddPostForm = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [userId, setUserId] = useState('');
+    const [addRequestStatus, setAddRequestStatus] = useState('idle');
 
     const dispatch = useAppDispatch();
 
@@ -15,20 +16,37 @@ export const AddPostForm = () => {
     const users = useAppSelector(state => state.users);
 
     // handling onchange events
-    const onTitleChanged = (e: { target: { value: React.SetStateAction<string>; }; }) => setTitle(e.target.value);
-    const onContentChanged = (e: { target: { value: React.SetStateAction<string>; }; }) => setContent(e.target.value);
-    const onAuthorChanged = (e: { target: { value: React.SetStateAction<string>; }; }) => setUserId(e.target.value);
+    const onTitleChanged = (e: {
+        target: {value: React.SetStateAction<string>};
+    }) => setTitle(e.target.value);
+    const onContentChanged = (e: {
+        target: {value: React.SetStateAction<string>};
+    }) => setContent(e.target.value);
+    const onAuthorChanged = (e: {
+        target: {value: React.SetStateAction<string>};
+    }) => setUserId(e.target.value);
 
-    const onSavePostClicked = () => {
-        if (title && content) {
-            dispatch(postAdded(title, content, userId));
-
-            setTitle('');
-            setContent('');
+    const onSavePostClicked = async () => {
+        if (canSave) {
+            try {
+                setAddRequestStatus('pending');
+                await dispatch(
+                    addNewPost({title, content, user: userId}),
+                ).unwrap();
+                setTitle('');
+                setContent('');
+                setUserId('');
+            } catch (err) {
+                console.error('Failed to save the post: ', err);
+            } finally {
+                setAddRequestStatus('idle');
+            }
         }
     };
 
-    const canSave = Boolean(title) && Boolean(content) && Boolean(userId);
+    // const canSave = Boolean(title) && Boolean(content) && Boolean(userId);
+    const canSave =
+        [title, content, userId].every(Boolean) && addRequestStatus === 'idle';
 
     const usersOptions = users.map(user => (
         <option key={user.id} value={user.id}>
