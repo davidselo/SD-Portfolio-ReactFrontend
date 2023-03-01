@@ -7,7 +7,7 @@ interface Props {
 
 export const PostAuthor: React.FC<Props> = ({userId}: Props) => {
     const author = useAppSelector(state =>
-        state.users.find(user => Number(user.id) === userId),
+        state.users.find(user => user.id === userId),
     );
 
     return <span>by {author ? author.name : 'Unknown author'}</span>;

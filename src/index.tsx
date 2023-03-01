@@ -7,8 +7,7 @@ import {BrowserRouter} from 'react-router-dom';
 import {Provider as ReactReduxProvider} from 'react-redux';
 import {store} from 'app/store';
 import {worker} from 'api/server.js';
-// import {increment} from 'utils/redux/actionCreators';
-// import {selectCounterValue} from 'utils/redux/actionSelector';
+import {fetchUsers} from 'features/users/usersSlice';
 
 const client = new ApolloClient({
     uri: 'http://localhost:3000/api/graphql',
@@ -32,6 +31,7 @@ theme = responsiveFontSizes(theme);
 async function start() {
     // Start our mock API server
     await worker.start({onUnhandledRequest: 'bypass'});
+    store.dispatch(fetchUsers());
     ReactDOM.render(
         <React.StrictMode>
             <ApolloProvider client={client}>

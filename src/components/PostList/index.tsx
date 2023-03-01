@@ -1,12 +1,27 @@
-import React, { useEffect } from 'react';
-import {Card, CardContent, TextareaAutosize, Typography} from '@mui/material';
+import React, {useEffect} from 'react';
+import {
+    Box,
+    Card,
+    CardContent,
+    TextareaAutosize,
+    Typography,
+} from '@mui/material';
 import {RootState} from 'app/store';
 import {useAppSelector} from 'app/hooks';
 import {Link} from 'react-router-dom';
 import {ReactionButtons} from 'components/ReactionButtons';
 import {selectAllPosts, fetchPosts} from 'features/posts/postsSlice';
 import {useAppDispatch} from 'app/hooks';
+import CircularProgress from '@mui/material/CircularProgress';
+import {PostAuthor} from 'components/PostAuthor';
 
+interface ReactionsInterface {
+    thumbsUp: number;
+    hooray: number;
+    heart: number;
+    rocket: number;
+    eyes: number;
+}
 
 interface Post {
     id: string;
@@ -14,53 +29,64 @@ interface Post {
     content: string;
     user: number;
     date: string;
+    reactions: ReactionsInterface;
 }
+interface Props {
+    post: Post;
+}
+
+const PostExcerpt: React.FC<Props> = ({post}: Props) => {
+    return (
+        <section>
+            <article className="post">
+                <Typography variant="h2">{post.title}</Typography>
+                <Typography variant="subtitle1">{post.content}</Typography>
+                <PostAuthor userId={post.user} />
+                <ReactionButtons post={post} />
+                <Link to={`/posts/${post.id}`} className="button">
+                    View Post
+                </Link>
+            </article>
+        </section>
+    );
+};
 
 export const PostList = () => {
     const posts: Array<Post> = useAppSelector(selectAllPosts);
     const dispatch = useAppDispatch();
-    const postStatus = useAppSelector(state => state.posts.status)
-    console.log("Post Status", postStatus);
+    const postStatus = useAppSelector(state => state.posts.status);
+    const error = useAppSelector(state => state.posts.error);
 
-  useEffect(() => {
-    console.log("Post Status", postStatus);
-    if (postStatus === 'idle') {
-      dispatch(fetchPosts())
+    useEffect(() => {
+        console.log('Post Status', postStatus);
+        if (postStatus === 'idle') {
+            dispatch(fetchPosts());
+        }
+    }, [postStatus, dispatch]);
+
+    let content;
+
+    if (postStatus === 'loading') {
+        content = (
+            <Box sx={{display: 'flex'}}>
+                <CircularProgress />
+            </Box>
+        );
+    } else if (postStatus === 'succeeded') {
+        // Sort posts in reverse chronological order by datetime string
+        const orderedPosts = posts
+            .slice()
+            .sort((a: Post, b: Post) => b.date.localeCompare(a.date));
+        content = orderedPosts.map(post => (
+            <PostExcerpt key={post.id} post={post} />
+        ));
+    } else if (postStatus === 'failed') {
+        content = <div>{error}</div>;
     }
-  }, [postStatus, dispatch])
-
-    // Sort posts in reverse chronological order by datetime string
-    const orderedPosts = posts
-        .slice()
-        .sort((a: Post, b: Post) => b.date.localeCompare(a.date));
-
-    const renderedPosts = orderedPosts.map((post: Post )=> (
-        <article key={post.id}>
-            <Card>
-                <CardContent>
-                    <Typography variant="h3">{post.title}</Typography>
-                    <TextareaAutosize
-                        maxRows={4}
-                        aria-label="maximum height"
-                        placeholder="Maximum 4 rows"
-                        defaultValue={post.content}
-                        style={{ width: 200 }} nonce={undefined} onResize={undefined} onResizeCapture={undefined}                    />
-                    <Link
-                        to={`/posts/${post.id}`}
-                        className="button muted-button"
-                    >
-                        View Post
-                    </Link>
-                    <ReactionButtons post={post} />
-                </CardContent>
-            </Card>
-        </article>
-    ));
-
     return (
         <section className="posts-list">
             <h2>Posts</h2>
-            {renderedPosts}
+            {content}
         </section>
     );
 };
