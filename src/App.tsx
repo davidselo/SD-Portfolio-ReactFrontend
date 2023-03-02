@@ -28,6 +28,7 @@ const App: React.FC = () => {
                     <Route path="posts/:postId" element={<SinglePostPage />} />
                     <Route path="editPost/:postId" element={<EditPostForm />} />
                     <Route path="users" element={<UserList />} />
+                    <Route path="users/:userId" element={<UserPosts />} />
                     <Route
                         path="notifications"
                         element={<NotificationsPage />}
