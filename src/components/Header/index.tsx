@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Link from '@mui/material/Link';
 import {Link as RouterLink} from 'react-router-dom';
 
@@ -15,6 +15,14 @@ import Grid from '@mui/material/Grid';
 // import './styles.scss';
 import Box from '@mui/material/Box';
 import {NavigationLinks} from 'contracts/NavigationLinks';
+import {Badge} from '@mui/material';
+import MailIcon from '@mui/icons-material/Mail';
+import {useAppDispatch, useAppSelector} from 'app/hooks';
+
+import {
+    fetchNotifications,
+    selectAllNotifications,
+} from 'features/notification/NotificationsSlice';
 
 // @todo: to get this data from Keystone
 const navigationLinks: NavigationLinks = [
@@ -28,6 +36,14 @@ const navigationLinks: NavigationLinks = [
 
 const Header: React.FC = () => {
     const [open, setOpen] = useState(false);
+    const [unReadNotifications, setUnReadNotifications] = useState(0);
+
+    const notifications = useAppSelector(selectAllNotifications);
+
+    useEffect(() => {
+        setUnReadNotifications(notifications.filter(n => !n.read).length);
+    }, [notifications]);
+
     /* istanbul ignore next */
     return (
         <AppBar position="sticky" color="default">
@@ -53,20 +69,35 @@ const Header: React.FC = () => {
                             <div className="header--menu-items">
                                 {navigationLinks.map(item => (
                                     // eslint-disable-next-line react/jsx-key
-
-                                    <Link
-                                        color="textPrimary"
-                                        component={RouterLink}
-                                        variant="button"
-                                        underline="none"
-                                        key={item.name}
-                                        href={item.href}
-                                        to={item.href}
-                                        sx={{marginRight: '20px'}}
-                                        onClick={() => window.scrollTo(0, 0)}
-                                    >
-                                        {item.name}
-                                    </Link>
+                                    <>
+                                        <Link
+                                            color="textPrimary"
+                                            component={RouterLink}
+                                            variant="button"
+                                            underline="none"
+                                            key={item.name}
+                                            href={item.href}
+                                            to={item.href}
+                                            sx={{marginRight: '20px'}}
+                                            onClick={() =>
+                                                window.scrollTo(0, 0)
+                                            }
+                                        >
+                                            {item.name}
+                                        </Link>
+                                        {item.name === 'notifications' && (
+                                            <>
+                                                <Badge
+                                                    badgeContent={
+                                                        unReadNotifications
+                                                    }
+                                                    color="primary"
+                                                >
+                                                    <MailIcon color="action" />
+                                                </Badge>
+                                            </>
+                                        )}
+                                    </>
                                 ))}
                             </div>
                         </Box>
