@@ -117,9 +117,6 @@ export const {postAdded, postUpdated, reactionAdded} = postsSlice.actions;
 
 // Export the customized selectors for this adapter using `getSelectors`
 
-export const selectPostById = (state: RootState, postId: string) =>
-    state.posts.posts.find(post => post.id === postId);
-
 export const {
     selectAll: selectAllPosts,
     selectById: selectPostById,

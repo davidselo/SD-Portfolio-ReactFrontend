@@ -6,11 +6,16 @@ import {
     TextareaAutosize,
     Typography,
 } from '@mui/material';
+import {
+    selectAllPosts,
+    fetchPosts,
+    selectPostIds,
+    selectPostById,
+} from 'features/posts/postsSlice';
 import {RootState} from 'app/store';
 import {useAppSelector} from 'app/hooks';
 import {Link} from 'react-router-dom';
 import {ReactionButtons} from 'components/ReactionButtons';
-import {selectAllPosts, fetchPosts} from 'features/posts/postsSlice';
 import {useAppDispatch} from 'app/hooks';
 import CircularProgress from '@mui/material/CircularProgress';
 import {PostAuthor} from 'components/PostAuthor';
@@ -32,10 +37,14 @@ interface Post {
     reactions: ReactionsInterface;
 }
 interface Props {
-    post: Post;
+    postId: string;
 }
 
-let PostExcerpt: React.FC<Props> = ({post}: Props) => {
+let PostExcerpt: React.FC<Props> = ({postId}: Props) => {
+    const post: unknown = useAppSelector(state =>
+        selectPostById(state, postId),
+    );
+
     return (
         <section>
             <article className="post">
@@ -52,13 +61,12 @@ let PostExcerpt: React.FC<Props> = ({post}: Props) => {
 };
 
 export const PostList = () => {
-    const posts: Array<Post> = useAppSelector(selectAllPosts);
     const dispatch = useAppDispatch();
+    const orderedPostIds = useAppSelector(selectPostIds);
     const postStatus = useAppSelector(state => state.posts.status);
     const error = useAppSelector(state => state.posts.error);
 
     useEffect(() => {
-        console.log('Post Status', postStatus);
         if (postStatus === 'idle') {
             dispatch(fetchPosts());
         }
@@ -74,12 +82,9 @@ export const PostList = () => {
         );
     } else if (postStatus === 'succeeded') {
         // Sort posts in reverse chronological order by datetime string
-        const orderedPosts = posts
-            .slice()
-            .sort((a: Post, b: Post) => b.date.localeCompare(a.date));
-        content = orderedPosts.map(post => (
-            <PostExcerpt key={post.id} post={post} />
-        ));
+        return orderedPostIds.map(postId => {
+            return <PostExcerpt key={postId} postId={postId} />;
+        });
     } else if (postStatus === 'failed') {
         content = <div>{error}</div>;
     }
