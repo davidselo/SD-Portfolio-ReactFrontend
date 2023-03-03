@@ -35,7 +35,7 @@ interface Props {
     post: Post;
 }
 
-const PostExcerpt: React.FC<Props> = ({post}: Props) => {
+let PostExcerpt: React.FC<Props> = ({post}: Props) => {
     return (
         <section>
             <article className="post">
@@ -90,5 +90,7 @@ export const PostList = () => {
         </section>
     );
 };
+
+PostExcerpt = React.memo(PostExcerpt);
 
 export default PostList;

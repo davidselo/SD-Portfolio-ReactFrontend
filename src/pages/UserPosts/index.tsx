@@ -2,7 +2,7 @@ import React from 'react';
 import {useAppSelector} from 'app/hooks';
 import {Link, useParams} from 'react-router-dom';
 
-import {selectUserById} from 'features/users/usersSlice';
+import {selectPostsByUser, selectUserById} from 'features/users/usersSlice';
 import {selectAllPosts} from 'features/posts/postsSlice';
 import {RootState} from 'app/store';
 
@@ -29,11 +29,9 @@ export const UserPosts: React.FC = () => {
 
     const user = useAppSelector(state => selectUserById(state, userId));
 
-    const postsForUser = useAppSelector((state: RootState) => {
-        const allPosts = selectAllPosts(state);
-
-        return allPosts.filter((post: Post) => post.user === userId);
-    });
+    const postsForUser = useAppSelector((state: RootState) =>
+        selectPostsByUser(state, userId),
+    );
 
     const postTitles = postsForUser.map((post: Post) => (
         <li key={post.id}>
