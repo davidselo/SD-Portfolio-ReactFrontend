@@ -19,6 +19,7 @@ import {ReactionButtons} from 'components/ReactionButtons';
 import {useAppDispatch} from 'app/hooks';
 import CircularProgress from '@mui/material/CircularProgress';
 import {PostAuthor} from 'components/PostAuthor';
+import {EntityId} from '@reduxjs/toolkit';
 
 interface ReactionsInterface {
     thumbsUp: number;
@@ -37,30 +38,32 @@ interface Post {
     reactions: ReactionsInterface;
 }
 interface Props {
-    postId: string;
+    postId: EntityId;
 }
 
-let PostExcerpt: React.FC<Props> = ({postId}: Props) => {
+let PostExcerpt: React.FC<Props> = ({postId}: Props): JSX.Element => {
     const post: unknown = useAppSelector(state =>
         selectPostById(state, postId),
     );
 
     return (
-        <section>
-            <article className="post">
-                <Typography variant="h2">{post.title}</Typography>
-                <Typography variant="subtitle1">{post.content}</Typography>
-                <PostAuthor userId={post.user} />
-                <ReactionButtons post={post} />
-                <Link to={`/posts/${post.id}`} className="button">
-                    View Post
-                </Link>
-            </article>
-        </section>
+        <>
+            <section>
+                <article className="post">
+                    <Typography variant="h2">{post.title}</Typography>
+                    <Typography variant="subtitle1">{post.content}</Typography>
+                    <PostAuthor userId={post.user} />
+                    <ReactionButtons post={post} />
+                    <Link to={`/posts/${post.id}`} className="button">
+                        View Post
+                    </Link>
+                </article>
+            </section>
+        </>
     );
 };
 
-export const PostList = () => {
+export const PostList: React.FC = () => {
     const dispatch = useAppDispatch();
     const orderedPostIds = useAppSelector(selectPostIds);
     const postStatus = useAppSelector(state => state.posts.status);
@@ -82,17 +85,19 @@ export const PostList = () => {
         );
     } else if (postStatus === 'succeeded') {
         // Sort posts in reverse chronological order by datetime string
-        return orderedPostIds.map(postId => {
-            return <PostExcerpt key={postId} postId={postId} />;
-        });
+        content = orderedPostIds.map((postId: EntityId) => (
+            <PostExcerpt key={postId} postId={postId} />
+        ));
     } else if (postStatus === 'failed') {
         content = <div>{error}</div>;
     }
     return (
-        <section className="posts-list">
-            <h2>Posts</h2>
-            {content}
-        </section>
+        <>
+            <section className="posts-list">
+                <h2>Posts</h2>
+                {content}
+            </section>
+        </>
     );
 };
 

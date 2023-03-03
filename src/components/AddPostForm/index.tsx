@@ -2,6 +2,7 @@ import {Typography} from '@mui/material';
 import React, {useState} from 'react';
 import {postAdded, addNewPost} from 'features/posts/postsSlice';
 import {useAppDispatch, useAppSelector} from 'app/hooks';
+import {selectAllUsers} from 'features/users/usersSlice';
 
 export const AddPostForm = () => {
     // local state variables
@@ -13,7 +14,8 @@ export const AddPostForm = () => {
     const dispatch = useAppDispatch();
 
     // Using selector to retrieve Global state information
-    const users = useAppSelector(state => state.users);
+    const users = useAppSelector(selectAllUsers);
+    // console.log('users', users);
 
     // handling onchange events
     const onTitleChanged = (e: {
