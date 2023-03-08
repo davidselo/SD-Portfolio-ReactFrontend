@@ -4,6 +4,8 @@ const Dotenv = require('dotenv-webpack');
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import * as webpack from 'webpack';
+import * as webpackDevServer from 'webpack-dev-server';
 
 const webpackConfig = (): Configuration => ({
     entry: './src/index.tsx',
@@ -55,12 +57,7 @@ const webpackConfig = (): Configuration => ({
             // HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles
             template: './public/index.html',
         }),
-        new ForkTsCheckerWebpackPlugin({
-            // Speeds up TypeScript type checking and ESLint linting (by moving each to a separate process)
-            eslint: {
-                files: './src/**/*.{ts,tsx,js,jsx}',
-            },
-        }),
+        new ForkTsCheckerWebpackPlugin(),
         new Dotenv()
     ],
 });
