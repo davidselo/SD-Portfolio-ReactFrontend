@@ -1,0 +1,254 @@
+{
+    "basics": {
+        "name": "David Villalbaaaa",
+        "label": "Full Stack Developer",
+        "image": "",
+        "email": "david.selo@patata.com",
+        "phone": "+44 7561139547",
+        "url": "https://johndoe.com",
+        "summary": "Understanding business requirements and building software incrementally. Facilitating system migrations. Experience on system integrations. Developing new APIs for microservices.",
+        "location": {
+            "address": "2712 Broadway St",
+            "postalCode": "CA 94115",
+            "city": "San Francisco",
+            "countryCode": "US",
+            "region": "California"
+        },
+        "profiles": [
+            {
+                "network": "Twitter",
+                "username": "john",
+                "url": "https://twitter.com/john"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "Missguided",
+            "position": "Full Stack Developer",
+            "url": "https://www.missguided.co.uk/",
+            "startDate": "2019-09-01",
+            "endDate": "2022-06-01",
+            "summary": "Description…",
+            "highlights": [
+                "Integrating external tax provider on Magento.",
+                "Working on Node JS microservices and Lambdas.",
+                "Replacing Magento checkout with a React JS checkout.",
+                "Migration from Magento 1 to a microservices infrastructure.",
+                "Integration with Stripe and payment gateways."
+            ]
+        },
+        {
+            "name": "Dobell",
+            "position": "Magento Lead Developer",
+            "url": "https://www.dobell.co.uk/",
+            "startDate": "2016-02-01",
+            "endDate": "2019-06-01",
+            "summary": "Description…",
+            "highlights": [
+                "Development of custom extensions for a multi-language Magento Enterprise 1.4.",
+                "Developing custom integrations with third party providers (Trustpilot, Trusted Shops, Exponea, ImportExport, Akeneo, etc).",
+                "Magento 1 to Magento 2 migration."
+            ]
+        },
+        {
+            "name": "Compra Amiga S.L",
+            "position": "Magento Lead Developer",
+            "startDate": "2011-12-01",
+            "endDate": "2015-12-01",
+            "summary": "Description…",
+            "highlights": [
+                "Development of custom Magento sites.",
+                "Developing custom extensions.",
+                "Catalog providers and ERP integration",
+                "Tech lead of a small team of 3 developers."
+            ]
+        },
+        {
+            "name": "Interactiv4",
+            "position": "Magento Developer",
+            "startDate": "2011-06-01",
+            "endDate": "2011-12-01",
+            "summary": "Description…",
+            "highlights": ["Development of custom extensions for Magento 1."]
+        },
+        {
+            "name": "VipOfertas S.L",
+            "position": "Magento Developer",
+            "startDate": "2010-09-01",
+            "endDate": "2011-06-01",
+            "summary": "Description…",
+            "highlights": ["Development of a Magento 1 private sales site."]
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "Organization",
+            "position": "Volunteer",
+            "url": "https://organization.com/",
+            "startDate": "2012-01-01",
+            "endDate": "2013-01-01",
+            "summary": "Description…",
+            "highlights": ["Awarded 'Volunteer of the Month'"]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Castilla-La Mancha University",
+            "url": "https://www.uclm.es/",
+            "area": "Software Development",
+            "studyType": "BSc Computer Science",
+            "startDate": "2002-01-01",
+            "endDate": "2006-01-01",
+            "score": "4.0",
+            "courses": ["DB1101 - Basic SQL"]
+        },
+        {
+            "institution": "Castilla-La Mancha University",
+            "url": "https://www.uclm.es/",
+            "area": "Software Development",
+            "studyType": "MSc Computer Science",
+            "startDate": "2006-01-01",
+            "endDate": "2010-01-01",
+            "score": "4.0",
+            "courses": ["DB1101 - Basic SQL"]
+        }
+    ],
+    "awards": [
+        {
+            "title": "Award",
+            "date": "2014-11-01",
+            "awarder": "Company",
+            "summary": "There is no spoon."
+        }
+    ],
+    "certificates": [
+        {
+            "name": "Certificate",
+            "date": "2021-11-07",
+            "issuer": "Company",
+            "url": "https://certificate.com"
+        }
+    ],
+    "publications": [
+        {
+            "name": "Publication",
+            "publisher": "Company",
+            "releaseDate": "2014-10-01",
+            "url": "https://publication.com",
+            "summary": "Description…"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Backend",
+            "level": "Master",
+            "keywords": [
+                "PHP",
+                "Xhprof",
+                "Xdebug",
+                "Magento 1",
+                "Magento 2",
+                "NodeJS",
+                "Express",
+                "SOAP",
+                "REST",
+                "GraphQL",
+                "Mysql",
+                "SQL",
+                "AWS services (Lambda, S3, IAM, DynamoDB)",
+                "Docker",
+                "docker-compose",
+                "Kubernetes",
+                "Linux",
+                "BASH",
+                "Queue Systems",
+                "Payment gateways"
+            ]
+        },
+        {
+            "name": "Frontend",
+            "level": "Master",
+            "keywords": [
+                "Javascript",
+                "React",
+                "React Router",
+                "Material UI",
+                "Typescript",
+                "basic Redux",
+                "Next.js",
+                "CSS (Flexbox, Styled Components, Grid, BEM, sass)",
+                "Webhooks"
+            ]
+        },
+        {
+            "name": "Misc",
+            "level": "Master",
+            "keywords": [
+                "GIT",
+                "GIT hooks",
+                "Husky",
+                "CI/CD (Circle CI)",
+                "Unit Test",
+                "Jest",
+                "React Testing Library",
+                "Webpack",
+                "npm",
+                "yarn",
+                "Clean code",
+                "Pair Programming",
+                "Code Reviews",
+                "OpenAPI",
+                "Stripe"
+            ]
+        },
+        {
+            "name": "Soft skills",
+            "level": "Master",
+            "keywords": [
+                "Transparency",
+                "Attention to detail",
+                "leadership skills",
+                "Agile",
+                "Scrum",
+                "mentoring Junior/mid-level developers"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Spanish",
+            "fluency": "Native speaker"
+        },
+        {
+            "language": "English",
+            "fluency": "Fluent"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Wildlife",
+            "keywords": ["Ferrets", "Unicorns"]
+        }
+    ],
+    "references": [
+        {
+            "name": "Jane Doe",
+            "reference": "Reference…"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Project",
+            "description": "Description…",
+            "highlights": ["Won award at AIHacks 2016"],
+            "keywords": ["HTML"],
+            "startDate": "2019-01-01",
+            "endDate": "2021-01-01",
+            "url": "https://project.com/",
+            "roles": ["Team Lead"],
+            "entity": "Entity",
+            "type": "application"
+        }
+    ]
+}

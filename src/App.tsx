@@ -20,7 +20,9 @@ const App: React.FC = () => {
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Home />} />
-                        <Route path="cv" element={<Cv />} />
+                        <Route path="cv" element={<Cv />}>
+                            <Route path=":cvVersion" element={<Cv />} />
+                        </Route>
                     </Route>
                 </Routes>
             </Container>
