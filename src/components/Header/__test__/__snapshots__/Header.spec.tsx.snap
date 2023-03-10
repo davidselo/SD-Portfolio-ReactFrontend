@@ -30,7 +30,7 @@ exports[`Header component Should match test snapshot 1`] = `
             class="MuiBox-root css-1ccvj77"
           >
             <div
-              class="header--menu-items"
+              class="header--menu-items MuiBox-root css-0"
             >
               <a
                 class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone css-m3nf4w-MuiTypography-root-MuiLink-root"
