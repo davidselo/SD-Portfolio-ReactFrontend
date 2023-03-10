@@ -31,47 +31,41 @@ const CvBody: React.FC<Props> = ({cvData}: Props) => {
         <Grid container className="cv-content--body">
             <JobExperienceList work={work} />
             {/* Expertise, Education & Language. */}
-            <Container sx={{marginTop: '15px'}}>
-                <Grid container>
-                    <Grid container spacing={5}>
-                        <Grid item xs={1} />
-                        <Grid item xs={4}>
-                            <CvSectionTitle
-                                title="expertise"
-                                iconComponent={<SettingsIcon />}
-                            />
-                            <Typography
-                                variant="body2"
-                                sx={{marginTop: '10px'}}
-                            >
-                                {basics.summary}
-                            </Typography>
-                        </Grid>
 
-                        <Grid item xs={4}>
-                            <EducationCard education={education} />
-                        </Grid>
-
-                        <Grid item xs={3}>
-                            <LanguageCard languages={languages} />
-                        </Grid>
-                    </Grid>
-
-                    <Grid item xs={1} />
-                    <Grid item xs={11}>
+            <Grid container sx={{marginTop: '10px'}}>
+                <Grid container spacing={5}>
+                    <Grid item xs={4}>
                         <CvSectionTitle
-                            title="skills"
-                            iconComponent={<PsychologyIcon />}
+                            title="expertise"
+                            iconComponent={<SettingsIcon />}
                         />
+                        <Typography variant="body2" sx={{marginTop: '10px'}}>
+                            {basics.summary}
+                        </Typography>
                     </Grid>
-                    <Grid container>
-                        <Grid item xs={1} />
-                        <Grid item xs={11}>
-                            <SkillList skills={skills} />
-                        </Grid>
+
+                    <Grid item xs={4}>
+                        <EducationCard education={education} />
+                    </Grid>
+
+                    <Grid item xs={4}>
+                        <LanguageCard languages={languages} />
                     </Grid>
                 </Grid>
-            </Container>
+
+                <Container disableGutters sx={{marginTop: '10px'}}>
+                    <CvSectionTitle
+                        title="skills"
+                        iconComponent={<PsychologyIcon />}
+                    />
+                </Container>
+
+                <Container disableGutters>
+                    <Grid item xs={12}>
+                        <SkillList skills={skills} />
+                    </Grid>
+                </Container>
+            </Grid>
         </Grid>
     );
 };

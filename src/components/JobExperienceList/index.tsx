@@ -20,10 +20,10 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
     return (
         <>
             {/* Professional Experience title*/}
-            <Container sx={{marginTop: '15px'}}>
+            <Container disableGutters>
                 <Grid container>
-                    <Grid item xs={1} />
-                    <Grid item xs={11}>
+                    {/* <Grid item xs={1} /> */}
+                    <Grid item xs={12}>
                         <CvSectionTitle
                             title="professional experience"
                             iconComponent={<TipsAndUpdatesIcon />}
@@ -32,7 +32,7 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
                 </Grid>
             </Container>
             {/* Professional Experience companies*/}
-            <Container sx={{marginTop: '10px'}}>
+            <Container sx={{marginTop: '10px'}} disableGutters>
                 {work.map((company, index) => {
                     return (
                         <Grid
@@ -40,7 +40,7 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
                             sx={{marginTop: index == 0 ? '0px' : '15px'}}
                             key={company.name}
                         >
-                            <Grid item xs={1} />
+                            {/* <Grid item xs={1} /> */}
                             <Grid item xs={3}>
                                 <Box className="cv-experience--places">
                                     <Typography variant="body1" component="div">
@@ -61,7 +61,7 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
                                 </Box>
                             </Grid>
                             <Grid item xs={1} />
-                            <Grid item xs={7}>
+                            <Grid item xs={8}>
                                 <Box
                                     sx={{
                                         width: '100%',
