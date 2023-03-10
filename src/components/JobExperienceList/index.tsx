@@ -9,16 +9,8 @@ import {
     Typography,
 } from '@mui/material';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
+import {Company} from 'contracts/data/jsonResume';
 
-interface Company {
-    name: string;
-    position: string;
-    url?: string;
-    startDate: string;
-    endDate: string;
-    summary: string;
-    highlights: string[];
-}
 interface Props {
     work: Array<Company>;
 }

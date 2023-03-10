@@ -1,24 +1,24 @@
 {
     "basics": {
-        "name": "David Villalbaaaa",
-        "label": "Full Stack Developer",
+        "name": "David Villalba Flores",
+        "label": "Full Stack Software Engineer",
         "image": "",
-        "email": "david.selo@patata.com",
+        "email": "david.selo@gmail.com",
         "phone": "+44 7561139547",
         "url": "https://johndoe.com",
         "summary": "Understanding business requirements and building software incrementally. Facilitating system migrations. Experience on system integrations. Developing new APIs for microservices.",
         "location": {
-            "address": "2712 Broadway St",
-            "postalCode": "CA 94115",
-            "city": "San Francisco",
-            "countryCode": "US",
-            "region": "California"
+            "address": "",
+            "postalCode": "",
+            "city": "Lewes",
+            "countryCode": "",
+            "region": "East Sussex"
         },
         "profiles": [
             {
                 "network": "Twitter",
-                "username": "john",
-                "url": "https://twitter.com/john"
+                "username": "davidselo",
+                "url": "https://twitter.com/davidselo"
             }
         ]
     },
@@ -40,7 +40,7 @@
         },
         {
             "name": "Dobell",
-            "position": "Magento Lead Developer",
+            "position": "Lead Software Engineer",
             "url": "https://www.dobell.co.uk/",
             "startDate": "2016-02-01",
             "endDate": "2019-06-01",
@@ -53,7 +53,7 @@
         },
         {
             "name": "Compra Amiga S.L",
-            "position": "Magento Lead Developer",
+            "position": "Lead Software Engineer",
             "startDate": "2011-12-01",
             "endDate": "2015-12-01",
             "summary": "Description…",
@@ -66,7 +66,7 @@
         },
         {
             "name": "Interactiv4",
-            "position": "Magento Developer",
+            "position": "Software Engineer",
             "startDate": "2011-06-01",
             "endDate": "2011-12-01",
             "summary": "Description…",
@@ -74,7 +74,7 @@
         },
         {
             "name": "VipOfertas S.L",
-            "position": "Magento Developer",
+            "position": "Software Engineer",
             "startDate": "2010-09-01",
             "endDate": "2011-06-01",
             "summary": "Description…",

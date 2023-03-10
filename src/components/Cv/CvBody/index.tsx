@@ -13,10 +13,13 @@ import JobExperienceList from 'components/JobExperienceList';
 import SkillList from 'components/Cv/SkillList';
 
 // Loading Cv Data
-// @todo: Move the cv data to Redux.
-import * as cvData from 'data/staticData/cv/default.json';
+import {JSONResume} from 'contracts/data/jsonResume';
 
-const CvBody: React.FC = () => {
+interface Props {
+    cvData: JSONResume;
+}
+
+const CvBody: React.FC<Props> = ({cvData}: Props) => {
     const {basics} = cvData;
     const {work} = cvData;
     const {education} = cvData;

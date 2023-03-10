@@ -1,7 +1,7 @@
 // Import React
 import React, {useEffect, useState} from 'react';
 
-import {useParams, useSearchParams} from 'react-router-dom';
+import {useSearchParams} from 'react-router-dom';
 
 // Import Material UI Components.
 import {Box, Container, Button} from '@mui/material';
@@ -45,7 +45,7 @@ const DesktopCv: React.FC = () => {
         };
         // call the function
         fetchCvData();
-    }, []);
+    }, [cvVersion]);
 
     const {basics} = cvData;
 
@@ -81,7 +81,7 @@ const DesktopCv: React.FC = () => {
                 />
 
                 {/* CV Body */}
-                <CvBody />
+                <CvBody cvData={cvData} />
             </Container>
             <Container>
                 <Box textAlign="center" marginTop="20px">
