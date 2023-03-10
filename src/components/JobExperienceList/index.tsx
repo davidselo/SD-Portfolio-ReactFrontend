@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import {Company} from 'contracts/data/jsonResume';
+import {CvSectionTitle} from 'components/Cv/CvSectionTitle';
 
 interface Props {
     work: Array<Company>;
@@ -23,19 +24,10 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
                 <Grid container>
                     <Grid item xs={1} />
                     <Grid item xs={11}>
-                        <Typography variant="h6">
-                            <Box sx={{display: 'flex', flexDirection: 'row'}}>
-                                <TipsAndUpdatesIcon />
-                                <Box
-                                    sx={{
-                                        marginLeft: '10px',
-                                        fontWeight: 'bold',
-                                    }}
-                                >
-                                    PROFESSIONAL EXPERIENCE
-                                </Box>
-                            </Box>
-                        </Typography>
+                        <CvSectionTitle
+                            title="professional experience"
+                            iconComponent={<TipsAndUpdatesIcon />}
+                        />
                     </Grid>
                 </Grid>
             </Container>

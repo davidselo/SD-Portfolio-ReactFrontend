@@ -1,6 +1,7 @@
 import React from 'react';
 import {Box, Container, Typography} from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
+import {CvSectionTitle} from 'components/Cv/CvSectionTitle';
 
 interface Props {
     education: Array<Study>;
@@ -20,19 +21,7 @@ interface Study {
 export const EducationCard: React.FC<Props> = ({education}: Props) => {
     return (
         <>
-            <Typography variant="h6">
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                    }}
-                >
-                    <SchoolIcon />
-                    <Box sx={{marginLeft: '10px', fontWeight: 'bold'}}>
-                        EDUCATION
-                    </Box>
-                </Box>
-            </Typography>
+            <CvSectionTitle title="education" iconComponent={<SchoolIcon />} />
             {education.map(item => {
                 return (
                     <Container disableGutters key={item.studyType}>

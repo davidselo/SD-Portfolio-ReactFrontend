@@ -1,6 +1,7 @@
 import {Box, Typography, Container} from '@mui/material';
 import React from 'react';
 import LanguageIcon from '@mui/icons-material/Language';
+import {CvSectionTitle} from 'components/Cv/CvSectionTitle';
 
 interface language {
     language: string;
@@ -13,19 +14,7 @@ interface Props {
 const LanguageCard: React.FC<Props> = ({languages}: Props) => {
     return (
         <>
-            <Typography variant="h6">
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                    }}
-                >
-                    <LanguageIcon />
-                    <Box sx={{marginLeft: '10px', fontWeight: 'bold'}}>
-                        LANGUAGE
-                    </Box>
-                </Box>
-            </Typography>
+            <CvSectionTitle title="language" iconComponent={<LanguageIcon />} />
             {languages.map(language => {
                 return (
                     <Container disableGutters key={language.language}>
