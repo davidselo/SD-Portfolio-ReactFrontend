@@ -22,7 +22,6 @@ const JobExperienceList: React.FC<Props> = ({work}) => {
             {/* Professional Experience title*/}
             <Container disableGutters>
                 <Grid container>
-                    {/* <Grid item xs={1} /> */}
                     <Grid item xs={12}>
                         <CvSectionTitle
                             title="professional experience"

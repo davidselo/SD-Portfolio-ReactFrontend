@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react';
 import {useSearchParams} from 'react-router-dom';
 
 // Import Material UI Components.
-import {Box, Container, Button, Grid} from '@mui/material';
+import {Box, Container, Button, Grid, TextareaAutosize} from '@mui/material';
 import NoteIcon from '@mui/icons-material/Note';
 
 // Import styles.
@@ -82,15 +82,31 @@ const DesktopCv: React.FC = () => {
                 {/* CV Body */}
                 <Container sx={{marginTop: '30px'}}>
                     <Grid container>
-                        <Grid item xs={addNotes ? 3 : 1}>
+                        <Grid item xs={addNotes ? 4 : 1}>
                             {addNotes && (
-                                <CvSectionTitle
-                                    title="Notes"
-                                    iconComponent={<NoteIcon />}
-                                />
+                                <>
+                                    <CvSectionTitle
+                                        title="Notes"
+                                        iconComponent={<NoteIcon />}
+                                    />
+
+                                    <TextareaAutosize
+                                        style={{
+                                            //resize: 'vertical',
+                                            border: 'none',
+                                            overflow: 'auto',
+                                            outline: 'none',
+                                            boxShadow: 'none',
+                                            resize: 'none',
+                                            fontFamily: 'Raleway',
+                                            marginTop: '10px',
+                                        }}
+                                        placeholder="Please Add your notes in here"
+                                    ></TextareaAutosize>
+                                </>
                             )}
                         </Grid>
-                        <Grid item xs={addNotes ? 9 : 11}>
+                        <Grid item xs={addNotes ? 8 : 11}>
                             <CvBody cvData={cvData} />
                         </Grid>
                     </Grid>
