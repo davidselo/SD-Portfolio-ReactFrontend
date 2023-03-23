@@ -11,6 +11,7 @@ import LanguageCard from '../LanguageCard';
 import EducationCard from '../EducationCard';
 import JobExperienceList from 'components/JobExperienceList';
 import SkillList from 'components/Cv/SkillList';
+import CvExpertiseCard from 'components/Cv/CvExpertiseCard';
 
 // Loading Cv Data
 import {JSONResume} from 'contracts/data/jsonResume';
@@ -30,29 +31,21 @@ const CvBody: React.FC<Props> = ({cvData}: Props) => {
     return (
         <Grid container className="cv-content--body">
             <JobExperienceList work={work} />
-            {/* Expertise, Education & Language. */}
 
             <Grid container sx={{marginTop: '10px'}}>
+                {/* Expertise, Education & Language. */}
                 <Grid container spacing={5}>
                     <Grid item xs={4}>
-                        <CvSectionTitle
-                            title="expertise"
-                            iconComponent={<SettingsIcon />}
-                        />
-                        <Typography variant="body2" sx={{marginTop: '10px'}}>
-                            {basics.summary}
-                        </Typography>
+                        <CvExpertiseCard basics={basics} />
                     </Grid>
-
                     <Grid item xs={4}>
                         <EducationCard education={education} />
                     </Grid>
-
                     <Grid item xs={4}>
                         <LanguageCard languages={languages} />
                     </Grid>
                 </Grid>
-
+                {/* Skills Summary*/}
                 <Container disableGutters sx={{marginTop: '10px'}}>
                     <CvSectionTitle
                         title="skills"
