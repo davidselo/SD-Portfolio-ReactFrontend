@@ -1,12 +1,8 @@
 import {Button, FormControlLabel, Grid, Switch} from '@mui/material';
 import React from 'react';
+import {printPage} from 'helper/printPage';
 
 export const CvTopBar = ({setAddNotes}: any) => {
-    const printPage = () => {
-        window.print();
-        return;
-    };
-
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         console.log(event.target.checked);
         setAddNotes(event.target.checked);

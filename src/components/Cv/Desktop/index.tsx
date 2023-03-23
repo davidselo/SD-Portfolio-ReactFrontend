@@ -15,8 +15,12 @@ import CvHeader from 'components/Cv/CvHeader';
 import CvBody from 'components/Cv/CvBody';
 import {CvTopBar} from '../CvTopBar';
 
+// Import Static Data
 import * as initialCvData from 'data/staticData/cv/default.json';
 import {CvSectionTitle} from '../CvSectionTitle';
+
+// Import Helpers
+import {printPage} from 'helper/printPage';
 
 export async function loadCvData(version = '') {
     switch (version) {
@@ -117,7 +121,7 @@ const DesktopCv: React.FC = () => {
                     <Button
                         className="cv--print-button"
                         variant="contained"
-                        //onClick={printPage}
+                        onClick={printPage}
                     >
                         Print CV
                     </Button>
