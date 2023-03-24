@@ -16,6 +16,8 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import {NavigationLinks} from 'contracts/NavigationLinks';
 
+import avatarImg from 'assets/avatar/face.png';
+
 // @todo: to get this data from Keystone
 const navigationLinks: NavigationLinks = [
     {name: 'home', href: '/'},
@@ -34,7 +36,7 @@ const Header: React.FC = () => {
                     <Grid container justifyContent="center">
                         <Grid item xl lg md sm={0} xs={0} />
                         <Grid item xl={6} lg={6} md={4} sm={9} xs={9}>
-                            <Avatar>DS</Avatar>
+                            <Avatar src={avatarImg} />
                         </Grid>
                         <Grid item xl={4} lg={5} md={6} xs={2} textAlign="end">
                             <Box
