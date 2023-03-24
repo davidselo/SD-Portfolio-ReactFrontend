@@ -32,7 +32,7 @@ const Header: React.FC = () => {
     return (
         <>
             <AppBar position="sticky" color="default">
-                <ToolBar disableGutters>
+                <ToolBar>
                     <Grid container justifyContent="center">
                         <Grid item xl lg md sm={0} xs={0} />
                         <Grid item xl={6} lg={6} md={4} sm={9} xs={9}>
