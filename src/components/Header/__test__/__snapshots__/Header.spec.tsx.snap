@@ -50,6 +50,12 @@ exports[`Header component Should match test snapshot 1`] = `
               </a>
               <a
                 class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone css-m3nf4w-MuiTypography-root-MuiLink-root"
+                href="/about-me"
+              >
+                about me
+              </a>
+              <a
+                class="MuiTypography-root MuiTypography-button MuiLink-root MuiLink-underlineNone css-m3nf4w-MuiTypography-root-MuiLink-root"
                 href="/cv"
               >
                 cv
