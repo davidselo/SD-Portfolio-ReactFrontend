@@ -14,15 +14,10 @@ import ListItem from '@mui/material/ListItem';
 import Grid from '@mui/material/Grid';
 // import './styles.scss';
 import Box from '@mui/material/Box';
-import {NavigationLinks} from 'contracts/NavigationLinks';
 
 import avatarImg from 'assets/avatar/face.png';
 
-// @todo: to get this data from Keystone
-const navigationLinks: NavigationLinks = [
-    {name: 'home', href: '/'},
-    {name: 'cv', href: '/cv'},
-];
+import {navigationLinks} from 'data/staticData/navigationLinks';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 

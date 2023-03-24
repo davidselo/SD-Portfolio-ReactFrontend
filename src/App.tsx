@@ -7,6 +7,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import './sass/styles.scss';
 import {Container} from '@mui/material';
+import AboutMe from 'pages/AboutMe';
 
 const App: React.FC = () => {
     return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
                         <Route path="cv" element={<Cv />}>
                             <Route path=":cvVersion" element={<Cv />} />
                         </Route>
+                        <Route path="/about-me" element={<AboutMe />} />
                     </Route>
                 </Routes>
             </Container>
