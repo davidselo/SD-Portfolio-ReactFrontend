@@ -9,6 +9,7 @@ services:
         volumes:
             - ./src:/usr/src/app/src
             - ./error.log:/usr/src/app/error.log
+            - ./mocks:/usr/src/app/mocks
         environment:
             - NODE_ENV=${NODE_ENV}
             - PERSISTENCE_MODE=${PERSISTENCE_MODE}
