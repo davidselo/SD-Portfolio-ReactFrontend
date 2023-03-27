@@ -126,7 +126,10 @@ const Header: React.FC = () => {
                                     key={item?.name}
                                     href={item.href}
                                     to={item.href}
-                                    onClick={() => window.scrollTo(0, 0)}
+                                    onClick={() => {
+                                        setOpen(false);
+                                        window.scrollTo(0, 0);
+                                    }}
                                 >
                                     {item?.name}
                                 </Link>

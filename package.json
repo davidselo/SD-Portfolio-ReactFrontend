@@ -56,11 +56,13 @@
         "@mui/icons-material": "^5.8.4",
         "@mui/material": "^5.10.0",
         "@mui/styles": "^5.9.3",
+        "@react-spring/parallax": "^9.7.1",
         "dotenv": "^16.0.0",
         "graphql": "^16.3.0",
         "graphql-tag": "^2.12.6",
         "history": "^5.3.0",
         "react": "^17.0.1",
+        "react-css-modules": "^4.7.11",
         "react-dom": "^17.0.1",
         "react-router": "^6.4.3",
         "react-router-dom": "^6.4.3",
@@ -88,7 +90,7 @@
         "moduleNameMapper": {
             "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileMock.js",
             "\\.(css|less)$": "<rootDir>/mocks/fileMock.js"
-          }
+        }
     },
     "resolutions": {
         "@types/react": "17.0.37"

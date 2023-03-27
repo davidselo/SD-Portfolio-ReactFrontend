@@ -19,7 +19,7 @@ const SkillsSumary: React.FC = () => {
                 alignContent="center"
                 rowSpacing={5}
                 sx={{
-                    backgroundColor: '#98B9F2',
+                    backgroundColor: '#d3d0cb',
                     padding: '30px 30px 30px 30px',
                     minHeight: '50vh',
                 }}

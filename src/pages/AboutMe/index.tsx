@@ -1,7 +1,9 @@
 import React from 'react';
 
+import ParallaxAboutMe from 'components/Parallax';
+
 const AboutMe: React.FC = () => {
-    return <h2>About Me</h2>;
+    return <ParallaxAboutMe />;
 };
 
 export default AboutMe;
