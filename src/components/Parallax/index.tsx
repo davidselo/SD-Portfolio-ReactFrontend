@@ -22,13 +22,14 @@ const url = (name: string, wrap = false) =>
 export const ParallaxAboutMe: React.FC = () => {
     const parallax = useRef<IParallax>(null!);
     const width = useAdaptiveTriggers({});
+    console.log(width);
 
     return (
         <Box sx={{width: '100%', height: '100%', background: '#253237'}}>
             <Parallax
                 ref={parallax}
                 pages={ParallaxConfig[width].pages}
-                style={{top: '0', left: '0'}}
+                style={{left: '0'}}
                 key={width}
             >
                 <ParallaxLayer
@@ -37,7 +38,9 @@ export const ParallaxAboutMe: React.FC = () => {
                     speed={ParallaxConfig[width][Pages.firstPage].speed}
                     style={{backgroundColor: '#805E73'}}
                 >
-                    <SectionItem sectionNumber="section1" />
+                    <Box color="#d3d0cb">
+                        <SectionItem sectionNumber="section1" />
+                    </Box>
                 </ParallaxLayer>
                 <ParallaxLayer
                     offset={ParallaxConfig[width][Pages.secondPage].offset}
@@ -65,7 +68,9 @@ export const ParallaxAboutMe: React.FC = () => {
                         justifyContent: 'center',
                     }}
                 >
-                    <SectionItem sectionNumber="section3" />
+                    <Box color="#d3d0cb">
+                        <SectionItem sectionNumber="section3" />
+                    </Box>
                 </ParallaxLayer>
 
                 <ParallaxLayer
@@ -147,7 +152,7 @@ export const ParallaxAboutMe: React.FC = () => {
                     />
                 </ParallaxLayer>
 
-                <ParallaxLayer offset={1.6} speed={-0.1} style={{opacity: 0.4}}>
+                {/* <ParallaxLayer offset={1.6} speed={-0.1} style={{opacity: 0.4}}>
                     <img
                         src={cloud}
                         style={{
@@ -172,7 +177,7 @@ export const ParallaxAboutMe: React.FC = () => {
                             marginLeft: '80%',
                         }}
                     />
-                </ParallaxLayer>
+                </ParallaxLayer> */}
 
                 <ParallaxLayer offset={2.6} speed={0.4} style={{opacity: 0.6}}>
                     <img

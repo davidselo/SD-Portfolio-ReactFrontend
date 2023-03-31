@@ -47,9 +47,9 @@ export const SectionItem: React.FC<Props> = ({sectionNumber}: Props) => {
                                 <Typography variant="h3">{title}</Typography>
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography variant="subtitle1">
-                                    {body}
-                                </Typography>
+                                <Box marginTop="20px">
+                                    <Typography variant="h5">{body}</Typography>
+                                </Box>
                             </Grid>
                         </Grid>
                     </Box>

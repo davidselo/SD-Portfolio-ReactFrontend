@@ -78,18 +78,18 @@ export const ParallaxConfig: Record<
     Record<Pages, PageConfig> & LayoutConfig
 > = {
     [Adaptive.xs]: {
-        pages: 2,
+        pages: 3,
         [Pages.firstPage]: {
-            offset: 0.22,
-            speed: 0.6,
+            offset: 0,
+            speed: 0.8,
         },
         [Pages.secondPage]: {
-            offset: 1,
-            speed: 1,
+            offset: 1.2,
+            speed: 0.8,
         },
         [Pages.thirdPage]: {
-            offset: 1.5,
-            speed: 0.5,
+            offset: 2.0,
+            speed: 0.8,
         },
     },
     [Adaptive.s]: {
