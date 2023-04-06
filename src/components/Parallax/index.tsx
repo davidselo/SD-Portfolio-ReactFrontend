@@ -22,7 +22,6 @@ const url = (name: string, wrap = false) =>
 export const ParallaxAboutMe: React.FC = () => {
     const parallax = useRef<IParallax>(null!);
     const width = useAdaptiveTriggers({});
-    console.log(width);
 
     return (
         <Box sx={{width: '100%', height: '100%', background: '#253237'}}>
@@ -209,6 +208,20 @@ export const ParallaxAboutMe: React.FC = () => {
                 >
                     <img src={url('earth')} style={{width: '60%'}} />
                 </ParallaxLayer>
+                <Box sx={{display: {xs: 'block', sm: 'none'}}}>
+                    <ParallaxLayer
+                        offset={2.5}
+                        speed={-0.6}
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            pointerEvents: 'none',
+                        }}
+                    >
+                        <img src={url('earth')} style={{width: '60%'}} />
+                    </ParallaxLayer>
+                </Box>
             </Parallax>
         </Box>
     );

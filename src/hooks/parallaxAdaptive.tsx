@@ -84,42 +84,42 @@ export const ParallaxConfig: Record<
             speed: 0.8,
         },
         [Pages.secondPage]: {
-            offset: 1.2,
+            offset: 1.1,
             speed: 0.8,
         },
         [Pages.thirdPage]: {
-            offset: 2.0,
-            speed: 0.8,
+            offset: 1.99,
+            speed: 0.6,
         },
     },
     [Adaptive.s]: {
         pages: 3,
         [Pages.firstPage]: {
-            offset: 0.4,
+            offset: 0,
             speed: 0.8,
         },
         [Pages.secondPage]: {
-            offset: 0.8,
-            speed: 0.2,
+            offset: 1.1,
+            speed: 0.8,
         },
         [Pages.thirdPage]: {
-            offset: 1.5,
-            speed: 0.5,
+            offset: 1.99,
+            speed: 0.7,
         },
     },
     [Adaptive.m]: {
         pages: 3,
         [Pages.firstPage]: {
-            offset: 0.4,
+            offset: 0,
             speed: 0.8,
         },
         [Pages.secondPage]: {
-            offset: 0.8,
-            speed: 0.2,
+            offset: 1.1,
+            speed: 0.8,
         },
         [Pages.thirdPage]: {
-            offset: 1.5,
-            speed: 0.5,
+            offset: 1.99,
+            speed: 0.7,
         },
     },
     [Adaptive.l]: {

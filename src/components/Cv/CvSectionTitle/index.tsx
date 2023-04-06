@@ -1,7 +1,7 @@
 import React from 'react';
 
 // MU Imports
-import {Box, SvgIcon, Typography} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 
 interface Props {
     title: string;

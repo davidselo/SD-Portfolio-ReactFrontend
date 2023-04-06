@@ -4,7 +4,6 @@ import {printPage} from 'helper/printPage';
 
 export const CvTopBar = ({setAddNotes}: any) => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(event.target.checked);
         setAddNotes(event.target.checked);
     };
 
