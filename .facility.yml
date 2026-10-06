@@ -6,7 +6,6 @@ environment:
   start: "docker compose up -d"
   secrets:
     - ANTHROPIC_API_KEY
-    - OPENAI_API_KEY
   services:
     app:
       port: 3000
