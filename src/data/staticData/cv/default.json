@@ -24,6 +24,24 @@
     },
     "work": [
         {
+            "name": "Animed Direct",
+            "position": "Senior Software Engineer",
+            "url": "https://www.animeddirect.co.uk/",
+            "startDate": "2023-04-01",
+            "endDate": "2026-08-01",
+            "summary": "Description…",
+            "highlights": [
+                "Played a key role in re-platforming the company's technology stack from a monolithic Adobe Commerce platform to an event-driven architecture on AWS, using TypeScript, Node.js, Serverless Framework and an Nx monorepo; Adobe Commerce remains in place, but the majority of business logic now runs through the new microservices.",
+                "Led the technical implementation of the warehouse management integration, exposing legacy SOAP services as REST APIs consumed by Adobe Commerce.",
+                "Designed asynchronous workflows using AWS Lambda, SQS and EventBridge to decouple integrations, improve scalability and support event replay.",
+                "Implemented resilient event replay capabilities, enabling failed business events to be safely reprocessed and significantly improving operational reliability and troubleshooting.",
+                "Developed collaborative real-time features for a React and Redux application used by veterinary professionals, including prescription locking, real-time synchronisation via AWS AppSync events, and an Approve & Next workflow.",
+                "Developed the fraud management workflow for veterinary prescriptions, automatically preparing documentation before submission to the external regulatory organisation.",
+                "Produced architecture documentation, technical specifications and solution diagrams using Confluence and Lucid.",
+                "Set up a CI/CD pipeline using GitLab runners for the Adobe Commerce platform to automatically run unit and integration tests, catching regressions before deployment."
+            ]
+        },
+        {
             "name": "Missguided",
             "position": "Full Stack Developer",
             "url": "https://www.missguided.co.uk/",
